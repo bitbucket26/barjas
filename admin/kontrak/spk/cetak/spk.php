@@ -17,14 +17,14 @@
 <body style="background-color: white; line-height: 15px; font-family: tahoma;">
 <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -111,7 +111,7 @@
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
-            <img src="../../../img/kopno.png">
+            <img src="../../../../img/kopno.png">
         </div>
             <br>
         <!-- Judul Nota -->
@@ -120,9 +120,12 @@
         
         <table class="table table-bordered table-sm" style="font-size: 13px;">
             <thead>
-                <tr>
-                </tr>
             </thead>
+            <?php
+                                $no=1;
+                                 $data = mysqli_query($koneksi,"select * from kontrak where id='$_GET[id]'");
+                                 while($row = mysqli_fetch_array($data)){
+                                ?>
             <tbody>
                 <tr>
                     <td rowspan="5" class="col-6 text-center align-middle" style="font-size: 22px;"><b>SURAT PERINTAH KERJA (SPK)</b></td>
@@ -178,11 +181,12 @@
                     <td colspan="2" class="text-center"><b>NILAI PEKERJAAN :</b></td>
                 </tr>
                 <tr>
-                    <td colspan="2" class="text-center"><b>Rp. <?php echo number_format($row['nilainego']);?>,-</b></td>
+                    <td colspan="2" class="text-center"><b>Rp. <?php echo number_format($row['nilaitotalnego']);?>,-</b></td>
                 </tr>
             </tbody>
+            <?php } ?>
         </table>
-
+                                
         <table class="table table-bordered table-sm" style="font-size: 15px;">
             <thead>
                 <tr class="align-middle text-center">
@@ -195,60 +199,60 @@
                 </tr>
             </thead>
             <?php
-                                // $no=1;
-                                //  $data = mysqli_query($koneksi,"select * from barangspk where id='$_GET[id]'");
-                                //  while($d = mysqli_fetch_array($data)){
-                                // ?>
+                                include "../../../../koneksi.php";
+                                $no=1;
+                                $data = mysqli_query($koneksi,"select * from barang where id='$_GET[id]'");
+                                while($d = mysqli_fetch_array($data)){
+                                ?>
             <tbody>
                 <tr class="align-middle">
-                   <td class="col-1  text-center" text-center>1</td>
-                   <td class="col-5" text-center>Hardisk</td>
-                   <td class="col-1  text-center" text-center>10</td>
-                   <td class="col-1  text-center" text-center>PCS</td>
-                   <td class="col-2  text-end" text-center>250.000</td>
-                   <td class="col-2  text-end" text-center>2.500.000</td>
-                </tr>
-                <!-- <tr class="align-middle">
                    <td class="col-1  text-center" text-center><?php echo $no++;?></td>
-                   <td class="col-5" text-center><?php echo $row['namaproduk'];?></td>
-                   <td class="col-1  text-center" text-center><?php echo $row['volumenego'];?></td>
-                   <td class="col-1  text-center" text-center><?php echo $row['satuan'];?></td>
-                   <td class="col-2  text-end" text-center><?php echo number_format($row['hargasatuannego']);?></td>
-                   <td class="col-2  text-end" text-center><?php echo number_format($row['nilainego']);?></td>
-                </tr> -->
+                   <td class="col-5" text-center><?php echo $d['namaproduk'];?></td>
+                   <td class="col-1  text-center" text-center><?php echo $d['volumenego'];?></td>
+                   <td class="col-1  text-center" text-center><?php echo $d['satuan'];?></td>
+                   <td class="col-2  text-end" text-center><?php echo number_format($d['hargasatuannego']);?></td>
+                   <td class="col-2  text-end" text-center><?php echo number_format($d['jumlahnego']);?></td>
+                </tr>
             </tbody>
             <?php
-                                //  } 
+                                 } 
             ?>
+            <?php
+                                // $no=1;
+                                 $data = mysqli_query($koneksi,"select * from kontrak where id='$_GET[id]'");
+                                 while($row = mysqli_fetch_array($data)){
+                                ?>
             <tfoot>
                 <tr>
                     <!-- <td class="col-1  text-center"></td> -->
                     <td rowspan="3"></td>
                     <td rowspan="3"></td>
                     <td colspan="3" class="col-2  text-start fw-bold">Jumlah</td>
-                    <td class="col-2  text-end fw-bold" text-center>2.500.000</td>
+                    <td class="col-2  text-end fw-bold" text-center><?php echo number_format($row['nilainego']);?></td>
                 </tr>
                 <tr>
                     <!-- <td class="col-1  text-center"></td> -->
                     <!-- <td rowspan="3"></td> -->
                     <td colspan="3" class="col-2  text-start fw-bold">PPN 11%</td>
-                    <td class="col-2  text-end fw-bold" text-center>2.500.000</td>
+                    <td class="col-2  text-end fw-bold" text-center><?php echo number_format($row['nilaippnnego']);?></td>
                 </tr>
                 <tr>
                     <!-- <td class="col-1  text-center"></td> -->
                     <!-- <td rowspan="3"></td> -->
                     <td colspan="3" class="col-2  text-start fw-bold">Total</td>
-                    <td class="col-2  text-end fw-bold" text-center>2.500.000</td>
+                    <td class="col-2  text-end fw-bold" text-center><?php echo number_format($row['nilaitotalnego']);?></td>
                 </tr>
                 <tr>
-                    <td colspan="6" class="text-center"><i>Terbilang</i></td>
+                    <td colspan="6" class="text-center"><i><?php echo $row['terbilangtotalnego'];?></i></td>
                 </tr>
+                
                 <tr>
-                    <td colspan="6" style="text-align: justify; line-height: 20px;"">
+                    <td colspan="6" style="text-align: justify; line-height: 20px;">
                     INSTRUKSI KEPADA PENYEDIA: Penagihan hanya dapat dilakukan setelah penyelesaian pekerjaan yang diperintahkan dalam SPK ini dan dibuktikan dengan Berita Acara Serah Terima. Jika pekerjaan tidak dapat diselesaikan dalam jangka waktu pelaksanaan pekerjaan karena kesalahan atau kelalaian Penyedia maka Penyedia berkewajiban untuk membayar denda kepada PPK sebesar 1/1000 (satu per seribu) dari bagian tertentu nilai SPK sebelum PPN setiap hari kalender keterlambatan.
                     </td>
                 </tr>
             </tfoot>
+            
         </table>
         <br>
         <div class="row text-center">
@@ -292,6 +296,7 @@
             <?php echo $row['jabatan'];?>
             </div>
         </div>
+        <?php } ?>
        
 
 

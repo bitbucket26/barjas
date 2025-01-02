@@ -17,14 +17,14 @@
 <body style="background-color: white; font-size: 20px; line-height: 23px">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -56,7 +56,7 @@
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
-            <img src="../../../img/kop3.png">
+            <img src="../../../../img/kop3.png">
         </div>
             <br>
         <!-- Judul Nota -->
@@ -172,6 +172,12 @@
             <div class="col-6">
             NIP. <?php echo $row['nipppk']; ?>	
             </div>
+        </div><br>
+        <div class="row">
+            Tembusan : Yth. :
+        </div>
+        <div class="row">
+            1. Pejabat Barjas RSUD Indramayu.
         </div>
     </div>
         <script>

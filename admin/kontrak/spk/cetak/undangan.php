@@ -14,17 +14,17 @@
   }
 }
 </style>
-<body style="background-color: white; font-size: 20px; line-height: 23px; font-family: tahoma;">
+<body style="background-color: white; line-height: 20px; font-family: tahoma;">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -52,11 +52,11 @@
         }
 
     ?>
-<section class="sheet padding-10mm" style="font-size:17px;">
+<section class="sheet padding-10mm" style="font-size:15px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
-            <img src="../../../img/barjas.png">
+            <img src="../../../../img/barjas.png">
         </div>
             <br>
         <!-- Judul Nota -->
@@ -153,7 +153,7 @@
             Nilai Total HPS
             </div>
             <div class="col-8">
-            : Rp. <?php echo number_format($row['nilaihps']); ?>,-
+            : Rp. <?php echo number_format($row['nilaitotalhps']); ?>,-
             </div>
         </div>
         <div class="row">
@@ -162,7 +162,7 @@
             <div class="col-3">
             </div>
             <div class="col-8">
-            ( <?php echo $row['terbilanghps']; ?> )
+            ( <?php echo $row['terbilangtotalhps']; ?> )
             </div>
         </div>
         <div class="row">

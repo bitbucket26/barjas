@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>BA. Hasil Evaluasi Penawaran</title>
+    <title>BAHPL</title>
 </head>
 <style>
 @media print {
@@ -14,17 +14,17 @@
   }
 }
 </style>
-<body style="background-color: white; font-size: 17px; line-height: 20px; font-family: tahoma;">
+<body style="background-color: white; line-height: 20px; font-family: tahoma;">
 <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -107,15 +107,15 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:17px;">
+<section class="sheet padding-10mm" style="font-size:15px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
-            <img src="../../../img/barjas.png">
+            <img src="../../../../img/barjas.png">
         </div>
             <br>
         <!-- Judul Nota -->
-         <u><h4 class="text-center"><b>BERITA ACARA HASIL PENGADAAN LANGSUNG (BAHPL)</b></h4></u>
+         <h5 class="text-center"><u><b>BERITA ACARA HASIL PENGADAAN LANGSUNG (BAHPL)</b></u></h5>
         <div class="row">
             <div class="col-4">
             </div>
@@ -147,7 +147,7 @@
                 telah mengadakan Klarifikasi Teknis dan Negosiasi Harga kepada Calon Penyedia Paket Pekerjaan tersebut di atas 
                 dengan hasil sebagai berikut :
         </div>
-
+<br>
         <div class="row">
             <div class="col-1 text-end">
             I.
@@ -187,6 +187,7 @@
             Setelah dilakukan penilaian kualifikasi/kompetensi badan usaha maka penyedia tersebut dianggap mampu untuk melaksanakan pekerjaan pengadaan langsung tersebut.														
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-1 text-end">
             II.
@@ -204,7 +205,7 @@
             1.
             </div>
             <div class="col-10">
-            <table class="table table-bordered text-center table-sm" style="font-size: 15px;">
+            <table class="table table-bordered border-dark text-center table-sm" style="font-size: 15px;">
             <thead>
                 <tr class="align-middle">
                     <th colspan="3">PENAWARAN</th>
@@ -240,7 +241,7 @@
             Harga Penawaran
             </div>
             <div class="col-7">
-            : Rp. <?php echo number_format($row['nilaihps']); ?> (<?php echo $row['terbilanghps']; ?>)						
+            : Rp. <?php echo number_format($row['nilaitotalhps']); ?> (<?php echo $row['terbilangtotalhps']; ?>)						
             </div>
         </div>
 
@@ -254,7 +255,7 @@
             Harga Penawaran setelah Koreksi Aritmatik
             </div>
             <div class="col-7">
-            : Rp. <?php echo number_format($row['nilaihps']); ?> (<?php echo $row['terbilanghps']; ?>)						
+            : Rp. <?php echo number_format($row['nilaitotalhps']); ?> (<?php echo $row['terbilangtotalhps']; ?>)						
             </div>
         </div>
 
@@ -347,7 +348,7 @@
             
             </div>
             <div class="col-10">
-            <table class="table table-bordered table-sm" style="font-size: 15px;">
+            <table class="table table-bordered border-dark table-sm" style="font-size: 15px;">
             <thead class="text-center">
                 <tr class="align-middle">
                     <th class="col-1">NO</th>
@@ -426,7 +427,7 @@
             
             </div>
             <div class="col-10">
-            <table class="table table-bordered table-sm" style="font-size: 15px;">
+            <table class="table table-bordered border-dark table-sm" style="font-size: 15px;">
             <thead class="text-center">
                 <tr class="align-middle">
                     <th class="col-1">NO</th>
@@ -500,7 +501,7 @@
             
             </div>
             <div class="col-10">
-            <table class="table table-bordered table-sm" style="font-size: 15px;">
+            <table class="table table-bordered border-dark table-sm" style="font-size: 15px;">
             <thead class="text-center">
                 <tr class="align-middle">
                     <th class="col-1">NO</th>
@@ -532,6 +533,7 @@
         </table>
         </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-1">
             IV.
@@ -549,7 +551,7 @@
             Harga Penawaran
             </div>
             <div class="col-8">
-            : Rp. <?php echo number_format($row['nilaihps']); ?>,- (<?php echo $row['terbilanghps']; ?>)						
+            : Rp. <?php echo number_format($row['nilaitotalhps']); ?>,- (<?php echo $row['terbilangtotalhps']; ?>)						
             </div>
         </div>
 
@@ -561,9 +563,10 @@
             Negosiasi
             </div>
             <div class="col-8">
-            : Rp. <?php echo number_format($row['nilainego']); ?>,- (<?php echo $row['terbilangnego']; ?>)						
+            : Rp. <?php echo number_format($row['nilaitotalnego']); ?>,- (<?php echo $row['terbilangtotalnego']; ?>)						
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-1">
             V.

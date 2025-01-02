@@ -17,14 +17,14 @@
 <body style="background-color: white; line-height: 15px">
 <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -107,7 +107,7 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:10px;">
+<section class="sheet padding-10mm" style="font-size: 13px;">
     <div class="container-xxl">
         <!-- KOP -->
         <!-- <div class="d-flex justify-content-center">
@@ -147,7 +147,7 @@
             Nilai HPS
             </div>
             <div class="col-10">
-            : Rp. <?php echo number_format($row['nilaihps']);?>,-
+            : Rp. <?php echo number_format($row['nilaitotalhps']);?>,-
             </div>
         </div>
         <div class="row">
@@ -155,7 +155,7 @@
             Tahun Anggaran
             </div>
             <div class="col-10">
-            : <?php echo tglindo($row['tglhps']);?>
+            : <?php echo $row['tahunanggaran'];?>
             </div>
         </div>
         <br>
@@ -164,7 +164,7 @@
             A. KLARIFIKSAI TEKNIS
             </div>
         </div></b>
-        <table class="table table-bordered table-sm" style="font-size: 10px;">
+        <table class="table table-bordered border-dark table-sm" style="font-size: 10px;">
             <thead>
                 <tr class="align-middle">
                     <th class="col-1 text-center">No</th>
@@ -200,7 +200,7 @@
             B. NEGOSIASI HARGA/BIAYA
             </div>
         </div></b>
-        <table class="table table-bordered table-sm" style="font-size: 10px;">
+        <table class="table table-bordered border-dark table-sm" style="font-size: 10px;">
             <thead class="align-middle">
                 <tr>
                     <th rowspan="2" class="col-1 text-center">No</th>
@@ -212,17 +212,17 @@
                 <tr>
                     <th class="col-1 text-center">VOLUME</th>
                     <th class="col-1 text-center">SATUAN</th>
-                    <th class="col-1 text-center">HARGA SATUAN</th>
-                    <th class="col-1 text-center">JUMLAH HARGA</th>
-                    <th class="col-1 text-center">HARGA SATUAN</th>
-                    <th class="col-1 text-center">JUMLAH HARGA</th>
-                    <th class="col-1 text-center">HARGA SATUAN</th>
-                    <th class="col-1 text-center">JUMLAH HARGA</th>
+                    <th class="col-1 text-center">HARGA SATUAN (Rp)</th>
+                    <th class="col-1 text-center">JUMLAH HARGA (Rp)</th>
+                    <th class="col-1 text-center">HARGA SATUAN (Rp)</th>
+                    <th class="col-1 text-center">JUMLAH HARGA (Rp)</th>
+                    <th class="col-1 text-center">HARGA SATUAN (Rp)</th>
+                    <th class="col-1 text-center">JUMLAH HARGA (Rp)</th>
                 </tr>
             </thead>
             <?php
                                 $no=1;
-                                 $data = mysqli_query($koneksi,"select * from barangspk where id='$_GET[id]'");
+                                 $data = mysqli_query($koneksi,"select * from barang where id='$_GET[id]'");
                                  while($d = mysqli_fetch_array($data)){
                                 ?>
             <tbody>
@@ -239,21 +239,22 @@
                     <td class="col-1 text-end"><?php echo number_format($d['jumlahnego']);?></td>
                 </tr>
             </tbody>
-            <?php
-                                 } 
-            ?>
-            <?php
-                                    include "../../../koneksi.php";
-                                    $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+            <?php 
+                                 }
+                                 ?>
+                                 <?php
+                                    include "../../../../koneksi.php";
+                                    $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
                                     $d =mysqli_fetch_array($sql);                                
                                 ?>
             <tfoot>
                 <tr>
                     <td colspan="4" class="fw-bold">Jumlah</td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaitotalhps']);?></td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaitotalhps']);?></td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaitotalnego']);?></td>
+                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaihps']);?></td>
+                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaihps']);?></td>
+                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilainego']);?></td>
                 </tr>
+                
                 <tr>
                     <td colspan="4" class="fw-bold">PPN 11%</td>
                     <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaippnhps']);?></td>
@@ -262,15 +263,15 @@
                 </tr>
                 <tr>
                     <td colspan="4" class="fw-bold">Total</td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaihps']);?></td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaihps']);?></td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilainego']);?></td>
+                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaitotalhps']);?></td>
+                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaitotalhps']);?></td>
+                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaitotalnego']);?></td>
                 </tr>
                 <tr>
                     <td colspan="4"></td>
-                    <td colspan="2" class="" style="text-align: justify;"><i><?php echo $d['terbilanghps'];?></i></td>
-                    <td colspan="2" class="" style="text-align: justify;"><i><?php echo $d['terbilanghps'];?></i></td>
-                    <td colspan="2" class="" style="text-align: justify;"><i><?php echo $d['terbilangnego'];?></i></td>
+                    <td colspan="2" class="" style="text-align: justify;"><i><?php echo $d['terbilangtotalhps'];?></i></td>
+                    <td colspan="2" class="" style="text-align: justify;"><i><?php echo $d['terbilangtotalhps'];?></i></td>
+                    <td colspan="2" class="" style="text-align: justify;"><i><?php echo $d['terbilangtotalnego'];?></i></td>
                 </tr>
             </tfoot>
         </table>

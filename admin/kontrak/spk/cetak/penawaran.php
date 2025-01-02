@@ -14,17 +14,17 @@
   }
 }
 </style>
-<body style="background-color: white; font-size: 17px; line-height: 20px; font-family: Times New Roman;">
+<body style="background-color: white; font-size: 15px; line-height: 20px; font-family: Times New Roman;">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -115,17 +115,17 @@
                 <div class="col-12" style="text-align: justify; text-indent: 0.5in;">
                 Sehubungan dengan undangan pengadaan langsung Nomor  : <?php echo $row['undanganpejabatbarjas']; ?> tertanggal <?php echo tglindo($row['tglundanganpejabatbarjas']); ?>, 
                 dan setelah kami mempelajari dengan seksama Dokumen Pengadaan Barang/Jasa, dengan ini saya mengajukan penawaran 
-                harga untuk pekerjaan <?php echo $row['pekerjaan']; ?> sebesar Rp. <?php echo number_format($row['nilaihps']); ?>,- 
-                (<?php echo $row['terbilanghps']; ?> ).
+                harga untuk pekerjaan <?php echo $row['pekerjaan']; ?> sebesar Rp. <?php echo number_format($row['nilaitotalhps']); ?>,- 
+                (<?php echo $row['terbilangtotalhps']; ?> ).
         </div>
         </div>
-        
+        <br>
         <div class="row">
                 <div class="col-12" style="text-align: justify; text-indent: 0.5in;">
                 Dalam Penawaran ini sudah memperhitungkan keuntungan (profit), biaya umum (overhead) termasuk pengadaan tenaga kerja, 
                 biaya pengiriman serta semua kewajiban pajak yang harus dibayar untuk melaksanakan pekerjaan tersebut.		
                 </div>
-        </div>
+        </div><br>
         <div class="row">
                 
                 <div class="col-12" style="text-align: justify; text-indent: 0.5in;">
@@ -171,12 +171,12 @@
             <div class="col-11">
             Lampiran/copy dokumen - dokumen lainya sebagaimana ketentuan dalam dokumen Pengadaan Langsung.
             </div>
-        </div>
+        </div><br>
         <div class="row">
             <div class="col-12" style="text-align: justify;">
             Dokumen Penawaran masing – masing  terdiri dari 1 (satu) berkas asli dan 1 (satu) berkas copy.
             </div>
-        </div>
+        </div><br>    
         <div class="row">
             <div class="col-12" style="text-indent: 0.5in; text-align: justify;">
             Demikian surat penawaran ini kami sampaikan, dan kami menyatakan sanggup dan akan tunduk pada semua ketentuan yang tercantum dalam dokumen pengadaan barang/jasa.

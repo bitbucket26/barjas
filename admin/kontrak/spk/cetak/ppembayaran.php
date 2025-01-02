@@ -17,14 +17,14 @@
 <body style="background-color: white; font-family: times new roman; line-height: 20px;">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -52,7 +52,7 @@
         }
 
     ?>
-<section class="sheet padding-10mm" style="font-size:17px;">
+<section class="sheet padding-10mm" style="font-size:16px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -103,7 +103,7 @@
 
         <div class="row">
                 <div class="col-12" style="text-align: justify;">
-                       Menunjuk <?php echo $row['bilangjeniskontrak']; ?>
+                       Menunjuk <?php echo $row['bilangjeniskontrak']; ?> (<?php echo $row['jeniskontrak']; ?>)
                        Sub Kegiatan <?php echo $row['subkegiatan']; ?> :
                 </div>
             </div>
@@ -136,7 +136,7 @@
                 Nilai
                 </div>
                 <div class="col-10">: 
-                Rp. <?php echo number_format($row['nilainego']); ?>,-
+                Rp. <?php echo number_format($row['nilaitotalnego']); ?>,-
                 </div>
         </div>
         <div class="row">
@@ -144,7 +144,7 @@
                 Terbilang
                 </div>
                 <div class="col-10">: 
-                (<?php echo $row['terbilangnego']; ?>)
+                (<?php echo $row['terbilangtotalnego']; ?>)
                 </div>
         </div>
         <br>
@@ -154,7 +154,7 @@
                 tanggal <?php echo tglindo($row['tglbaphp']); ?> Berita Acara Serah Terima Barang 
                 Nomor : <?php echo $row['nobastb']; ?> tanggal <?php echo tglindo($row['tglbastb']); ?>. 
                 Kami selaku penyedia barang/jasa mengajukan permohonan pembayaran 100% yaitu sebesar 
-                Rp. <?php echo number_format($row['nilainego']); ?>,- (<?php echo $row['terbilangnego']; ?>)
+                Rp. <?php echo number_format($row['nilaitotalnego']); ?>,- (<?php echo $row['terbilangtotalnego']; ?>)
                 </div><br>
                 <div class="col-12" style="text-align: justify;">
                 Demikian permohonan kami sampaikan, atas perkenannya kami sampaikan terima kasih.

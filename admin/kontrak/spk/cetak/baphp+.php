@@ -297,7 +297,7 @@
         </div>
         <div class="row" style="text-align: justify;">
                 <div class="col-4" style="text-align: justify;">
-                Surat Pesanan
+                Surat Pesanan E-Catalogue (Sp)
                 </div>
                 <div class="col-8" style="text-align: justify;">
                 : <?php echo $row['nomorkontrak']; ?> Tanggal <?php echo tglindo($row['tglmulaikontrak']); ?>

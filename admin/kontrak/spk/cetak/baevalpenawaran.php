@@ -14,17 +14,17 @@
   }
 }
 </style>
-<body style="background-color: white; font-size: 17px; line-height: 23px; font-size: tahoma;">
+<body style="background-color: white; line-height: 20px; font-size: tahoma;">
 <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -107,15 +107,15 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:17px;">
+<section class="sheet padding-10mm" style="font-size:15px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
-            <img src="../../../img/barjas.png">
+            <img src="../../../../img/barjas.png">
         </div>
             <br>
         <!-- Judul Nota -->
-         <u><h4 class="text-center">BERITA ACARA EALUASI PENAWARAN</h4></u>
+         <h5 class="text-center"><u><b>BERITA ACARA EALUASI PENAWARAN</b></u></h5>
         <div class="row">
             <div class="col-4">
             </div>
@@ -150,7 +150,7 @@
                 Nilai HPS
             </div>
             <div class="col-9">
-: Rp. <?php echo number_format($row['nilaihps']);?>,-
+: Rp. <?php echo number_format($row['nilaitotalhps']);?>,-
             </div>
         </div>
         <div class="row">
@@ -174,7 +174,7 @@
         </div>
         <br>
 
-        <table class="table table-bordered text-center" style="font-size: 15px;">
+        <table class="table table-bordered border-dark text-center" style="font-size: 15px;">
             <thead>
                 <tr class="align-middle">
                     <th rowspan="2">No.</th>
@@ -196,7 +196,7 @@
                 <tr>
                     <td class="col-1">1</td>
                     <td class="col-3"><?php echo $row['namaperusahaan'];?></td>
-                    <td class="col-2">Rp. <?php echo number_format($row['nilaihps']);?></td>
+                    <td class="col-2">Rp. <?php echo number_format($row['nilaitotalhps']);?></td>
                     <td class="col-2">Memenuhi Syarat</td>
                     <td class="col-2">Memenuhi Syarat</td> 
                     <td class="col-2">Memenuhi Syarat</td> 
@@ -246,7 +246,7 @@
     </div>
         <script>
             window.print()
-            header("location:spk.php");
+            header("location:kspk.php");
         </script>
 </section>
 

@@ -14,18 +14,18 @@
   }
 }
 </style>
-<body style="background-color: white; font-size: 20px; line-height: 20px">
+<body style="background-color: white; line-height: 20px">
 <?php
     
     
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -96,7 +96,7 @@
 		return $hasil;
 	}
  
-        $tglbastb= $row['tglpembukaan'];
+        $tglbastb= $row['tglhps'];
         $hari = array("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
         $tanggal = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", 
                             "Sebelas", "Dua Belas", "tiga Belas", "Empat Belas", "Lima Belas", "Enam Belas", "Tujuh Belas", "Delapan Belas", "Sembilan Belas", 
@@ -108,15 +108,15 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:17px;">
+<section class="sheet padding-10mm" style="font-size:15px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
-            <img src="../../../img/kop3.png">
+            <img src="../../../../img/kop3.png">
         </div>
             <br>
         <!-- Judul Nota -->
-         <h4 class="text-center">HARGA PERKIRAAN SENDIRI (HPS)</h4>
+         <h5 class="text-center"><u><b>HARGA PERKIRAAN SENDIRI (HPS)</b></u></h5>
         
         <br>
 
@@ -160,7 +160,7 @@
             </thead>
             <?php
                                 $no=1;
-                                 $data = mysqli_query($koneksi,"select * from barangspk where id='$_GET[id]'");
+                                 $data = mysqli_query($koneksi,"select * from barang where id='$_GET[id]'");
                                  while($d = mysqli_fetch_array($data)){
                                 ?>
             <tbody>
@@ -178,8 +178,8 @@
             ?>
            
                                 <?php
-                                    include "../../../koneksi.php";
-                                    $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+                                    include "../../../../koneksi.php";
+                                    $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
                                     $d =mysqli_fetch_array($sql);
                                 ?>
                                 <tfoot>

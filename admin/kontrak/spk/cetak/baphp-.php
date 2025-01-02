@@ -10,21 +10,21 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: A4 portrait;
   }
 }
 </style>
-<body style="background-color: white; font-size: 14px;">
+<body style="background-color: white;">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -108,11 +108,11 @@
         // echo terbilang($angka);
         ?>
 
-<section class="sheet padding-10mm" style="font-size:17px; line-height: 1.2;">
+<section class="sheet padding-10mm" style="font-size:15px; line-height: 20px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center" >
-            <img src="../../../img/kop3.png" >
+            <img src="../../../../img/kop3.png" >
         </div>
         <br>
         <!-- Judul Nota -->
@@ -121,8 +121,8 @@
         </div>
 
         <div class="row">
-                <div class="col-12 text-center">
-                <u><b><h5>BERITA ACARA PEMERIKSAAN HASIL PEKERJAAN DAN ADMINISTRASI PEKERJAAN</h5></b></u>
+                <div class="col-12 text-center" style="font-size:19px;">
+                <u><b>BERITA ACARA PEMERIKSAAN HASIL PEKERJAAN DAN ADMINISTRASI PEKERJAAN</b></u>
                 </div>
                 <div class="col-12 text-center">
                 Nomor : <?php echo $row['nobaphp']; ?>
@@ -199,7 +199,7 @@
                 Nilai Kontrak
                 </div>
                 <div class="col-8" style="text-align: justify;">
-                : Rp. <?php echo number_format($row['nilainego']); ?>,-
+                : Rp. <?php echo number_format($row['nilaitotalnego']); ?>,-
                 </div>
         </div>
         <div class="row" style="text-align: justify;">
@@ -223,10 +223,9 @@
                 Surat Permohonan dari Pelaksana Pekerjaan
                 </div>
                 <div class="col-8" style="text-align: justify;">
-                : Nomor <?php echo $row['nopemeriksaan']; ?> Tanggal <?php echo tglindo($row['tglpemeriksaan']); ?>
+                : <?php echo $row['nopemeriksaan']; ?> Tanggal <?php echo tglindo($row['tglpemeriksaan']); ?>
                 </div>
         </div>
-        <br>
         <div class="row" style="text-align: justify;">
                 <div class="col-12">
                 Dengan ini menyatakan Hasil pemeriksaan/penilaian/pengujicobaan adalah sebagai berikut:
@@ -341,7 +340,7 @@
     </div>
         <script>
             window.print()
-            header("location:ekatalog.php");
+            header("location:spk.php");
         </script>
 </section>
 

@@ -94,7 +94,7 @@ if($_SESSION['role']==""){
                 <div class="container-fluid">
                     <div class="">
                     <button type="button" data-toggle="modal" class="btn btn-info btn-md" data-target="#myModaltambahpemeriksa2" style="border-radius: 30px;">
-                        <i class="fa fa-plus">  Tambah Pemeriksa</i>
+                        <i class="fa fa-plus">  Tambah</i>
                     </button>
                 </div>
                

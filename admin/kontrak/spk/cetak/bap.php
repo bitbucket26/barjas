@@ -20,14 +20,14 @@
 <body style="background-color: white; font-family: Bookman Old Style; line-height: 1.4;">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -59,7 +59,7 @@
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center" >
-            <img src="../../../img/kop3.png" >
+            <img src="../../../../img/kop3.png" >
         </div>
         <br>
         <!-- Judul Nota -->
@@ -87,7 +87,7 @@
                 <b>dr. DEDEN BONNI KOSWARA, MM</b>
                 </div>
                 <div class="col-9" style="text-align: justify;">
-                Pemimpin Badan Layanan Umum Daerah (BLUD) RSUD Indramayu yang diangkat berdasarkan Keputusan Bupati Kabupaten Indramayu 
+                :Pemimpin Badan Layanan Umum Daerah (BLUD) RSUD Indramayu yang diangkat berdasarkan Keputusan Bupati Kabupaten Indramayu 
                 Nomor : 440/Kep.24-Dinkes/2024 
                 Tanggal 02 Januari 2024 
                 bertindak untuk dan atas nama jabatannya, selanjutnya disebut sebagai PIHAK KESATU.
@@ -98,7 +98,7 @@
                 <b><?php echo $row['namapimpinan']; ?></b>
                 </div>
                 <div class="col-9" style="text-align: justify;">
-                <?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> beralamat 
+                :<?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> beralamat 
                 di <?php echo $row['alamat']; ?> 
                 selaku pelaksana sub kegiatan <?php echo $row['subkegiatan']; ?> 
                 Pekerjaan <?php echo $row['pekerjaan']; ?> 
@@ -116,8 +116,8 @@
                 1.
                 </div>        
                 <div class="col-11">
-                Dokumen Pelaksanaan Perubahan Anggaran (DPPA) No. DPPA/A.1/1.02.0.00.0.00.02.0000/001/2024 
-                tanggal 14 Oktober 2024 pada 
+                Dokumen Pelaksanaan Anggaran (DPA) No. <?php echo $row['nomordpa']; ?> 
+                tanggal <?php echo tglindo($row['tgldpa']); ?> pada 
                 Sub Kegiatan <?php echo $row['subkegiatan']; ?> dan RBA
                 No. Rekening Belanja <?php echo $row['koderekeningkegiatan']; ?> <?php echo $row['namarekening']; ?>
                 Pekerjaan <?php echo $row['pekerjaan']; ?>.
@@ -128,7 +128,7 @@
                 2.
                 </div>        
                 <div class="col-11">
-                Sesuai <?php echo $row['bilangjeniskontrak']; ?> Nomor : <?php echo $row['nomorkontrak']; ?> 
+                Sesuai <?php echo $row['bilangjeniskontrak']; ?> (<?php echo $row['jeniskontrak']; ?>) Nomor : <?php echo $row['nomorkontrak']; ?> 
                 tanggal <?php echo tglindo($row['tglmulaikontrak']); ?>
                 </div>        
         </div>
@@ -171,7 +171,7 @@
                 =
                 </div>        
                 <div class="col-3">
-                Rp. <?php echo number_format($row['nilainego']); ?>,-
+                Rp. <?php echo number_format($row['nilaitotalnego']); ?>,-
                 </div>        
         </div>
         <div class="row" style="text-align: justify;">
@@ -228,7 +228,7 @@
                 =
                 </div>        
                 <div class="col-3" id="nilaijumlah">
-                Rp. <?php echo number_format($row['nilaippnnego'] + $row['nilaipph']); ?>,-
+                <u>Rp. <?php echo number_format($row['nilaippnnego'] + $row['nilaipph']); ?></u>,-
                 </div>        
         </div>
         <div class="row">
@@ -242,8 +242,8 @@
                 <div class="col-1 text-end">
                 =
                 </div>        
-                <div class="col-3">
-               <b><u> Rp. <?php echo number_format($row['nilaitotalnego']); ?>,- </u></b>
+                <div class="col-3" id="terbilangbap">
+               <b> Rp. <?php echo number_format($row['totalbap']); ?>,- </b>
                 </div>        
         </div>
         <div class="row">
@@ -255,7 +255,7 @@
                 Terbilang
                 </div>        
                 <div class="col-8">
-                : (<?php echo $row['terbilangtotalnego']; ?>)
+                : (<?php echo $row['terbilangbap']; ?>)
                 </div>           
         </div>
 
@@ -350,8 +350,13 @@
                     <div class="col-6"><b><u>              
                     <?php echo $row['namapimpinan']; ?></u></b>
                     </div>
+                    <?php 
+                    include "../../../koneksi.php";
+                    $sql=mysqli_query($koneksi, "SELECT * FROM direktur WHERE id='$_GET[id]'");
+                    $d =mysqli_fetch_array($sql);
+                    ?>
                     <div class="col-6"><b><u>
-                    dr. DEDEN BONNI KOSWARA, MM </u></b>
+                    <?php echo $d['namadirektur']; ?></u></b>
                     </div>
                 </div>
                 <div class="row text-center">
@@ -359,15 +364,91 @@
                     <?php echo $row['jabatan']; ?>
                     </div>
                     <div class="col-6">
-                    NIP. 19740110 200212 1 008
+                    NIP. <?php echo $d['nipdirektur']; ?>
                     </div>
                 </div>
         </div>
         <!-- </div> -->
         <script>
             window.print()
-            header("location:sp.php");
+            header("location:spk.php");
         </script>
 </section>
+<script type="text/javascript">
+ 
+    // www.malasngoding.com
+    function terbilang(nilai) {
+      // deklarasi variabel nilai sebagai angka matemarika
+      // Objek Math bertujuan agar kita bisa melakukan tugas matemarika dengan javascript
+      nilai = Math.floor(Math.abs(nilai));
+ 
+      // deklarasi nama angka dalam bahasa indonesia
+      var huruf = [
+        '',
+        'Satu',
+        'Dua',
+        'Tiga',
+        'Empat',
+        'Lima',
+        'Enam',
+        'Tujuh',
+        'Delapan',
+        'Sembilan',
+        'Sepuluh',
+        'Sebelas',
+        ];
+ 
+      // menyimpan nilai default untuk pembagian
+      var bagi = 0;
+      // deklarasi variabel penyimpanan untuk menyimpan proses rumus terbilang
+      var penyimpanan = '';
+ 
+      // rumus terbilang
+      if (nilai < 12) {
+        penyimpanan = ' ' + huruf[nilai];
+      } else if (nilai < 20) {
+        penyimpanan = terbilang(Math.floor(nilai - 10)) + ' Belas';
+      } else if (nilai < 100) {
+        bagi = Math.floor(nilai / 10);
+        penyimpanan = terbilang(bagi) + ' Puluh' + terbilang(nilai % 10);
+      } else if (nilai < 200) {
+        penyimpanan = ' Seratus' + terbilang(nilai - 100);
+      } else if (nilai < 1000) {
+        bagi = Math.floor(nilai / 100);
+        penyimpanan = terbilang(bagi) + ' Ratus' + terbilang(nilai % 100);
+      } else if (nilai < 2000) {
+        penyimpanan = ' Seribu' + terbilang(nilai - 1000);
+      } else if (nilai < 1000000) {
+        bagi = Math.floor(nilai / 1000);
+        penyimpanan = terbilang(bagi) + ' Ribu' + terbilang(nilai % 1000);
+      } else if (nilai < 1000000000) {
+        bagi = Math.floor(nilai / 1000000);
+        penyimpanan = terbilang(bagi) + ' Juta' + terbilang(nilai % 1000000);
+      } else if (nilai < 1000000000000) {
+        bagi = Math.floor(nilai / 1000000000);
+        penyimpanan = terbilang(bagi) + ' Miliar' + terbilang(nilai % 1000000000);
+      } else if (nilai < 1000000000000000) {
+        bagi = Math.floor(nilai / 1000000000000);
+        penyimpanan = terbilang(nilai / 1000000000000) + ' Triliun' + terbilang(nilai % 1000000000000);
+      }
+ 
+      // mengambalikan nilai yang ada dalam variabel penyimpanan
+      return penyimpanan;
+    }
+ 
+    // membuat event pada saat form angka di ketik
+    document.getElementById("terbilangbap").addEventListener("change", function(){
+ 
+    // deklarasi id angka ke variabel input
+    var input = document.getElementById("terbilangbap").value;
+
+    // menyimpan hasil terbilang ke variabel huruf;
+    let huruf = terbilang(input);
+
+    // menampilkan hasil terbilang ke id huruf
+    document.getElementById("terbilangbap2").innerHTML  = huruf;
+    });
+
+</script>
 </body>
 </html>

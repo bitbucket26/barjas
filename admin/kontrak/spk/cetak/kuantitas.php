@@ -14,17 +14,17 @@
   }
 }
 </style>
-<body style="background-color: white; font-size: 20px; line-height: 20px; font-family: arial;">
+<body style="background-color: white; line-height: 20px; font-family: arial;">
 <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -107,7 +107,7 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:17px;">
+<section class="sheet padding-10mm" style="font-size:15px;">
     <div class="container-xxl">
         <!-- KOP -->
         <!-- <div class="d-flex justify-content-center">
@@ -115,23 +115,23 @@
         </div> -->
             <br><br><br><br><br><br><br><br>
         <!-- Judul Nota -->
-         <h4 class="text-center">DAFTAR KUANTITAS DAN HARGA</h4>
+         <h5 class="text-center"><u><b>DAFTAR KUANTITAS DAN HARGA</b></u></h5>
         
         <br>
 
         <div class="row">
-            <div class="col-3">
+            <div class="col-2">
             Sub Kegiatan
             </div>
-            <div class="col-9">
+            <div class="col-10">
             : <?php echo $row['subkegiatan'];?>
             </div>
         </div>
         <div class="row">
-            <div class="col-3">
+            <div class="col-2">
             Pekerjaan
             </div>
-            <div class="col-9">
+            <div class="col-10">
             : <?php echo $row['pekerjaan'];?>
             </div>
         </div>
@@ -139,7 +139,7 @@
 
         <br>
 
-        <table class="table table-bordered text-center table-sm" style="font-size: 15px;">
+        <table class="table table-bordered border-dark text-center table-sm" style="font-size: 15px;">
             <thead>
                 <tr class="align-middle">
                     <th class="col-1">No.</th>
@@ -152,7 +152,7 @@
             </thead>
             <?php
                                 $no=1;
-                                 $data = mysqli_query($koneksi,"select * from barangspk where id='$_GET[id]'");
+                                 $data = mysqli_query($koneksi,"select * from barang where id='$_GET[id]'");
                                  while($d = mysqli_fetch_array($data)){
                                 ?>
             <tbody>
@@ -169,8 +169,8 @@
             }
             ?>
             <?php
-                                    include "../../../koneksi.php";
-                                    $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+                                    include "../../../../koneksi.php";
+                                    $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
                                     $d =mysqli_fetch_array($sql);                                
                                 ?>
             <tfoot class="fw-bold">

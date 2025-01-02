@@ -14,17 +14,17 @@
   }
 }
 </style>
-<body style="background-color: white; font-size: 20px; font-family: Arial, Helvetica, sans-serif; ">
+<body style="background-color: white; font-family: Arial, Helvetica, sans-serif; ">
 <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -107,19 +107,19 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size: 20px;">
+<section class="sheet padding-10mm" style="font-size: 17px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
-            <img src="../../../img/kopno.png">
+            <img src="../../../../img/kopno.png">
         </div>
             <br><br><br><br><br>
         <!-- Judul Nota -->
         <div class="d-flex justify-content-center">
-            <img src="../../../img/cover.png">
+            <img src="../../../../img/cover.png">
         </div>
-
-         <h1 class="text-center"><b><?php echo $row['bilangjeniskontrak'];?></b></h1>
+<br>
+         <h1 class="text-center text-uppercase"><b><?php echo $row['bilangjeniskontrak'];?></b></h1>
          <h1 class="text-center"><b>( <?php echo $row['jeniskontrak'];?> )</b></h1>
 
          <br>
@@ -142,7 +142,7 @@
         </div>
         <div class="row">
             <div class="col-4">NILAI KONTRAK</div>
-            <div class="col-8">: Rp. <?php echo number_format($row['nilainego']);?>,-</div>
+            <div class="col-8">: Rp. <?php echo number_format($row['nilaitotalnego']);?>,-</div>
         </div>
         <div class="row">
             <div class="col-4">WAKTU PELAKSANAAN</div>

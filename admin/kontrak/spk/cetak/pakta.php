@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>SPTJM</title>
+    <title>Pakta Integritas</title>
 </head>
 <style>
 @media print {
@@ -17,14 +17,14 @@
 <body style="background-color: white; font-family: tahoma;">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -52,7 +52,7 @@
         }
 
     ?>
-<section class="sheet padding-10mm" style="font-size:17px;">
+<section class="sheet padding-10mm" style="font-size:15px;">
     <div class="container-xxl">
         <!-- KOP -->
         <!-- <div class="d-flex justify-content-center">
@@ -75,34 +75,34 @@
                 </div>
         </div>
         <div class="row">
-                <div class="col-5">
+                <div class="col-4">
                 Nama
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                 : <?php echo $row['namapimpinan']; ?>
                 </div>
         </div>
         <div class="row">
-                <div class="col-5">
+                <div class="col-4">
                 No. Identitas
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                 : -
                 </div>
         </div>
         <div class="row">
-                <div class="col-5">
+                <div class="col-4">
                 Jabatan
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                 : <?php echo $row['jabatan']; ?>
                 </div>
         </div>
         <div class="row">
-                <div class="col-5">
+                <div class="col-4">
                 Bertindak untuk dan atas nama
                 </div>
-                <div class="col-7">
+                <div class="col-8">
                 : <?php echo $row['namaperusahaan']; ?>
                 </div>
         </div>

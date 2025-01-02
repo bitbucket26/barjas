@@ -14,17 +14,17 @@
   }
 }
 </style>
-<body style="background-color: white; font-family: Bookman Old Style;">
+<body style="background-color: white; font-family: bookmand old style; line-height: 22px;">
 <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -95,19 +95,19 @@
 		return $hasil;
 	}
  
-        $tglbastb= $row['tglselesaikontrak'];
+        $tglbaphp= $row['tglbaphp'];
         $hari = array("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
         $tanggal = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", 
                             "Sebelas", "Dua Belas", "tiga Belas", "Empat Belas", "Lima Belas", "Enam Belas", "Tujuh Belas", "Delapan Belas", "Sembilan Belas", 
                             "Dua Puluh", "Dua Puluh Satu", "Dua Puluh Dua", "Dua Puluh Tiga", "Dua Puluh Empat", "Dua Puluh Lima", "Dua Puluh Enam", "Dua Puluh Tujuh", "Dua Puluh Delapan", "Dua Puluh Sembilan", "Tiga Puluh", "Tiga Puluh Satu");
         
         $bulan = array("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-	    $angka = date("Y", strtotime($tglbastb));
+	    $angka = date("Y", strtotime($tglbaphp));
 
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:15px;">
+<section class="sheet padding-10mm" style="font-size:20px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -137,7 +137,7 @@
             <tr>
 				<td class="col-1">Nomor</td>
 				<td class="col-5">: <?php echo $row['noundanganppk']; ?></td>
-				<td class="col-1 text-end">Yth.</td>
+				<td class="col-1">Yth.</td>
 				<td rowspan="3" style="vertical-align: text-top; text-align: justify;">
                     Pejabat Pemeriksa Hasil Pekerjaan <?php echo $row['pekerjaan']; ?> Sub Kegiatan <?php echo $row['subkegiatan']; ?>
                 </td>
@@ -154,9 +154,9 @@
 				<td class="col-1"></td>
 				<td class="col-5"></td>
 				<td class="col-1"></td>
-				<td class="col-5">di</td>
+				<td class="col-5">di -</td>
 			</tr>
-            <tr>
+			<tr>
 				<td class="col-1"></td>
 				<td class="col-5"></td>
 				<td class="col-1"></td>
@@ -164,6 +164,7 @@
 			</tr>
 		</tbody>
 </table>
+        
         <br>
         <div class="row">
                 <div class="col-12">
@@ -184,24 +185,24 @@
        <br><br>
 
        <div class="row">
-                <div class="col-2">
+                <div class="col-1">
                 </div>
-                <div class="col-10" style="text-align: justify; text-indent: 0.5in;">
+                <div class="col-11" style="text-align: justify; text-indent: 0.5in;">
                 Berdasarkan surat dari <?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> 
                 Nomor : <?php echo $row['nopemeriksaan']; ?> 
                 tanggal <?php echo tglindo($row['tglpemeriksaan']); ?> dalam rangka pelaksanaan 
                 Sub Kegiatan <?php echo $row['subkegiatan']; ?> 
                 Tahun Anggaran 2025, 
                 Pekerjaan <?php echo $row['pekerjaan']; ?> 
-                Lokasi di RSUD Indramayu bersumber dari dana <?php echo $row['sumberdana']; ?>.
+                Lokasi di RSUD Indramayu.
                 </div>
         </div>
         <br>
         <div class="row">
-                <div class="col-2">
+                <div class="col-1">
                 </div>
                 
-                <div class="col-10" style="text-align: justify; text-indent: 0.5in;">
+                <div class="col-11" style="text-align: justify; text-indent: 0.5in;">
                 Dengan ini kami mengundang Pejabat Pemeriksa Hasil Pekerjaan, 
                 untuk melaksanakan pemeriksaan atas permohonan perusahaan tersebut diatas, 
                 dengan ketentuan waktu pada :							
@@ -209,19 +210,19 @@
                 
         </div>
         <div class="row">
-                <div class="col-2">
+                <div class="col-1">
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                 Hari / Tanggal					
                 </div>
                 <div class="col-8">:
-                 <?php echo $hari[date("w", strtotime($tglbastb))];?>, <?php echo tglindo($row['tglbastb']); ?>					
+                <?php echo $hari[date("w", strtotime($tglbaphp))]?>, <?php echo tglindo($row['tglbaphp']); ?>					
                 </div>
         </div>
         <div class="row">
-                <div class="col-2">
+                <div class="col-1">
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                 Waktu				
                 </div>
                 <div class="col-8">:
@@ -229,9 +230,9 @@
                 </div>
         </div>
         <div class="row">
-                <div class="col-2">
+                <div class="col-1">
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                 Tempat				
                 </div>
                 <div class="col-8">:
@@ -240,10 +241,10 @@
         </div>
         <br>
         <div class="row">
-                <div class="col-2">
+                <div class="col-1">
                 </div>
                 
-                <div class="col-10" style="text-align: justify; text-indent: 0.5in;">
+                <div class="col-11" style="text-align: justify; text-indent: 0.5in;">
                 Demikian undangan ini dibuat untuk dilaksanakan sebagaimana mestinya.								
                 </div>
                 
@@ -264,7 +265,7 @@
                     <div class="col-7">
                     </div>
                     <div class="col-5">
-                    <?php echo $row['subkegiatan']; ?>
+                    Rumah Sakit Umum Daerah Indramayu
                     </div>
                 </div>
                 <br><br><br><br><br>
@@ -281,12 +282,47 @@
                     <div class="col-5">
                     NIP. <?php echo $row['nipppk']; ?>
                     </div>
+                </div><br><br>
+                <div class="row">
+                    <div class="col-12">
+                        TEMBUSAN :
+                    </div>
                 </div>
-        </div>
+        
+                <div class="row">
+                    <div class="col-12">
+                        1. Yth. Direktur RSUD Indramayu
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-12">
+                        2. Yth. Pejabat Penatausahaan Keuangan RSUD Indramayu
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-12">
+                        3. Yth. Pejabat Pelaksana Teknis kegiatan
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-12">
+                        4. Yth. Pejabat Pemeriksa Hasil Pekerjaan
+                    </div>
+                </div>
+      
+                <div class="row">
+                    <div class="col-12">
+                        5. Yth. <?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?>
+                    </div>
+                </div>
+    
     </div>
         <script>
             window.print()
-            header("location:homekasir1.php");
+            header("location:spk.php");
         </script>
 </section>
 

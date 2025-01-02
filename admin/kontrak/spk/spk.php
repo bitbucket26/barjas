@@ -101,7 +101,7 @@ if($_SESSION['role']==""){
                         <i class="fa fa-plus">  Tambah Kontrak (SP)</i>
                     </button> -->
                     <div class="">
-                    <a href="inputspk.php" type="button" class="btn btn-info btn-md" style="border-radius: 30px;">Tambah</a>
+                    <a href="inputspk.php" type="button" class="btn btn-info btn-md" style="border-radius: 30px;">+ Tambah</a>
                     </div>
                
                 <br>

@@ -17,14 +17,14 @@
 <body style="background-color: white; line-height: 20px; font-family: Times New Roman;">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -52,11 +52,11 @@
         }
 
     ?>
-<section class="sheet padding-10mm" style="font-size:17px;">
+<section class="sheet padding-10mm" style="font-size:20px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
-            <img src="../../../img/kop3.png">
+            <img src="../../../../img/kop3.png">
         </div>
             <br>
         <!-- Judul Nota -->
@@ -162,7 +162,7 @@
                     HPS
                     </div>
                     <div class="col-9">
-                    : Rp. <?php echo number_format($row['nilaihps']); ?>,-
+                    : Rp. <?php echo number_format($row['nilaitotalhps']); ?>,-
                     </div>
                 </div>
                 <div class="row">
@@ -176,7 +176,7 @@
 
 
 
-                <br><br>
+                <br>
        <div class="row">
                 <div class="col-12" style="text-align: justify; text-indent: 0.5in;">
                 Dengan ini meminta saudara untuk segera melaksanakan proses pengadaan barang/jasa pekerjaan tersebut dengan 
@@ -191,7 +191,7 @@
                 <div class="col-12" style="text-align: justify; text-indent: 0.5in;">
                 Apabila memenuhi persyaratan dan kualifikasi sebagaimana yang diatur dalam dokumen pengadaan, 
                 calon penyedia barang/jasa yang diundang untuk pekerjaan tersebut di atas adalah 
-                <?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> alamat <?php echo $row['alamat']; ?>			
+                <?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> alamat <?php echo $row['alamat']; ?>.			
                 </div>
                 
         </div>

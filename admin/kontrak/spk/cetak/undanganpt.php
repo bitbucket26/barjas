@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Pengadaan Langsung</title>
+    <title>Permohonan Pemeriksaan</title>
 </head>
 <style>
 @media print {
@@ -14,17 +14,17 @@
   }
 }
 </style>
-<body style="background-color: white; font-family: BatangChe;">
+<body style="background-color: white; font-family: BatangChe; line-height: 20px;">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -104,7 +104,7 @@
                 </div>
         </div>
         <div class="row">
-                <div class="col-12">
+                <div class="col-12" style="text-indent: 0.5in;">
                 Indramayu
                 </div>
         </div>
@@ -112,12 +112,12 @@
 
        <div class="row">
                 <div class="col-12" style="text-align: justify; text-indent: 0.5in;">
-                       Menunjuk <?php echo $row['bilangjeniskontrak']; ?>
+                       Menunjuk <?php echo $row['bilangjeniskontrak']; ?> (<?php echo $row['jeniskontrak']; ?>)
                        Nomor : <?php echo $row['nomorkontrak']; ?> 
                        Tanggal <?php echo tglindo($row['tglmulaikontrak']); ?> 
-                       tentang <?php echo $row['pekerjaan']; ?> 
-                       dengan nilai kontrak Rp. <?php echo number_format($row['nilainego']); ?> 
-                       (<?php echo $row['terbilangnego']; ?>).
+                       tentang <?php echo $row['pekerjaan']; ?> pada RSUD Indramayu
+                       dengan nilai kontrak Rp. <?php echo number_format($row['nilaitotalnego']); ?> 
+                       (<?php echo $row['terbilangtotalnego']; ?>).
                 </div>
                 <p>
                 <div class="col-12" style="text-align: justify; text-indent: 0.5in;">

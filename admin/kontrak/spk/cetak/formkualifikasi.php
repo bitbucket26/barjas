@@ -20,14 +20,14 @@
 <body style="background-color: white; line-height: 20px; font-family: courier new;">
 <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -448,10 +448,10 @@
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Nama</th>
-                            <th>No.KTP</th>
-                            <th>Jabatan dalam Badan Usaha</th>
+                            <th class="col-1">No.</th>
+                            <th class="col-5">Nama</th>
+                            <th class="col-3">No.KTP</th>
+                            <th class="col-3">Jabatan dalam Badan Usaha</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -490,7 +490,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1</td>
+                            <td >1</td>
                             <td><?php echo $row['namapimpinan'];?></trow>
                             <td>-</td>
                             <td><?php echo $row['jabatan'];?></td>
@@ -524,10 +524,10 @@
                 <table class="table table-bordered text-center">
                     <thead>
                         <tr>
-                            <th>No.</th>
-                            <th>Nama</th>
-                            <th>No.KTP</th>
-                            <th>persentase</th>
+                            <th class="col-1">No.</th>
+                            <th class="col-5">Nama</th>
+                            <th class="col-3">No.KTP</th>
+                            <th class="col-3">persentase</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -560,9 +560,9 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>1.</td>
-                            <td>Nomor Pokok Wajib Pajak</td>
-                            <td><?php echo $row['npwp'];?></td>
+                            <td class="col-1">1.</td>
+                            <td class="col-7">Nomor Pokok Wajib Pajak</td>
+                            <td class="col-4"><?php echo $row['npwp'];?></td>
                         </tr>
                         <tr>
                             <td>2.</td>

@@ -49,8 +49,8 @@
                 <div id="collapseOne2" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
                         <!-- <h6 class="collapse-header">Kategori</h6> -->
-                        <a class="collapse-item" href="kontrak/ekatalog/ekatalog.php">Nilai <= 200 Jt</a>
-                        <a class="collapse-item" href="kontrak/ekatalog2/ekatalog2.php">Nilai > 200 Jt</a>
+                        <a class="collapse-item" href="kontrak/ecatalogue/ecatalogue.php">Nilai <= 200 Jt</a>
+                        <a class="collapse-item" href="kontrak/ecatalogue2/ecatalogue2.php">Nilai > 200 Jt</a>
                     </div>
                 </div>
             </li>

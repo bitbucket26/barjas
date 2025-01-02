@@ -17,14 +17,14 @@
 <body style="background-color: white; font-family: tahoma; line-height: 20px;">
 <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -108,11 +108,11 @@
         // echo terbilang($angka);
         ?>
 
-<section class="sheet padding-10mm" style="font-size:17px;">
+<section class="sheet padding-10mm" style="font-size:15px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center" >
-            <img src="../../../img/kop3.png" >
+            <img src="../../../../img/kop3.png" >
         </div>
         <br>
         <!-- Judul Nota -->
@@ -144,7 +144,7 @@
                 1. <?php echo $row['namappk']; ?>
                 </div>
                 <div class="col-8">
-                <?php echo $row['jabatanppk']; ?> yang diangkat berdasarkan Keputusan Direktur RSUD Indramayu 
+                : <?php echo $row['jabatanppk']; ?> yang diangkat berdasarkan Keputusan Direktur RSUD Indramayu 
                 Nomor : <?php echo $row['nomorskppk']; ?> 
                 Tanggal <?php echo tglindo($row['tglskppk']); ?> 
                 bertindak untuk dan atas nama jabatannya, selanjutnya disebut PIHAK KESATU.
@@ -156,9 +156,9 @@
                 2. <?php echo $row['namapimpinan']; ?>
                 </div>
                 <div class="col-8">
-                <?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> beralamat 
+                : <?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> beralamat 
                 di <?php echo $row['alamat']; ?> 
-                selaku pelaksana kegiatan <?php echo $row['kegiatan']; ?> pekerjaan <?php echo $row['pekerjaan']; ?> 
+                selaku pelaksana kegiatan <?php echo $row['subkegiatan']; ?> pekerjaan <?php echo $row['pekerjaan']; ?> 
                 berdasarkan <?php echo $row['bilangjeniskontrak']; ?> (<?php echo $row['jeniskontrak']; ?>) Nomor : <?php echo $row['nomorkontrak']; ?> 
                 tanggal <?php echo tglindo($row['tglmulaikontrak']); ?>, 
                 bertindak untuk dan atas nama jabatannya, selanjutnya disebut PIHAK KEDUA.
@@ -176,14 +176,15 @@
                 </div>        
                 <div class="col-11">
                 Berdasarkan Berita Acara Pemeriksaan Hasil Pekerjaan 
-                Nomor : <?php echo$row['nomorkontrak']; ?> 
-                Tanggal <?php echo tglindo($row['tglmulaikontrak']); ?> PIHAK KEDUA menyerahkan hasil pekerjaan yakni 
+                Nomor : <?php echo$row['nobaphp']; ?> 
+                Tanggal <?php echo tglindo($row['tglbaphp']); ?> PIHAK KEDUA menyerahkan hasil pekerjaan yakni 
                 Sub Kegiatan Pelayanan Medik Umum 
                 Pekerjaan <?php echo$row['pekerjaan']; ?> 
-                Nilai kontrak Rp. <?php echo number_format( $row['nilainego']); ?> (<?php echo$row['terbilangnego']; ?> ) 
+                Nilai kontrak Rp. <?php echo number_format( $row['nilaitotalnego']); ?> (<?php echo$row['terbilangtotalnego']; ?> ) 
                 yang telah selesai dikerjakan, kepada PIHAK KESATU.
                 </div>        
         </div>
+        <br>
         <div class="row" style="text-align: justify;">
                 <div class="col-1">
                 b.
@@ -193,6 +194,7 @@
                 dan sesuai dengan yang dituangkan dalam Surat Perjanjian Kerja.
                 </div>        
         </div>
+        <br>
         <div class="row" style="text-align: justify;">
                 <div class="col-12">
                 Demikian Berita Acara Serah Terima 
@@ -245,7 +247,7 @@
     </div>
         <script>
             window.print()
-            header("location:sp.php");
+            header("location:spk.php");
         </script>
 </section>
 

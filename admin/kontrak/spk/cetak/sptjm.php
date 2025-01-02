@@ -14,17 +14,17 @@
   }
 }
 </style>
-<body style="background-color: white; font-size: 20px;">
+<body style="background-color: white;">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -136,7 +136,7 @@
 				<td class="col-1 text-center">1</td>
 				<td class="col-3 text-center"><?php echo $row['koderekeningkegiatan']; ?></td>
 				<td class="col-5"><?php echo $row['pekerjaan']; ?></td>
-				<td class="col-3 text-center">Rp. <?php echo number_format($row['nilainego']); ?></td>
+				<td class="col-3 text-center">Rp. <?php echo number_format($row['nilaitotalnego']); ?></td>
 			</tr>
 		</tbody>
     </table>

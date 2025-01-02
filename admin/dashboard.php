@@ -140,7 +140,7 @@ if($_SESSION['role']==""){
                                             <td><?php echo $d['id']; ?></td> 
                                             <td><?php echo $d['nomorkontrak']; ?></td> 
                                             <td><?php echo $d['namaperusahaan']; ?></td> 
-                                            <td>Rp. <?php echo number_format($d['nilainego']); ?></td>
+                                            <td>Rp. <?php echo number_format($d['nilaitotalnego']); ?></td>
                                             <td><?php echo tglindo($d['tglskppk']); ?></td>
                                             <td><?php echo $d['pekerjaan']; ?></td>
                                             <td><?php echo $d['user']; ?></td>

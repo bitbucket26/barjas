@@ -17,14 +17,14 @@
 <body style="background-color: white; font-family: cambria;;">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -52,10 +52,10 @@
         }
 
     ?>
-<section class="sheet padding-10mm" style="font-size:15px;">
+<section class="sheet padding-10mm" style="font-size:14px;">
     <div class="container-xxl">
     <!-- <table style="width:100%; border: 1px;"> -->
-    <table class="table table-borderless table-sm" style="width:90%; line-height: 1.2; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+    <table class="table table-borderless table-sm" style="width:90%; line-height: 17px; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
 		<thead>
             <tr>
 			</tr>
@@ -95,15 +95,15 @@
             <tr>
 				<td class="col-3 text-center" style="border-left: 1px solid; border-right: 1px solid"></td>
 				<td class="col-2 text-start">Uang Sejumlah</td>
-                <td colspan="2" style="border-right: 1px solid">: <?php echo $row['terbilangnego']; ?></td>
+                <td colspan="2" style="border-right: 1px solid">: <?php echo $row['terbilangtotalnego']; ?></td>
 
 			</tr>
             <tr >
 				<td class="col-3 text-center align-bottom" style="border-left: 1px solid; border-right: 1px solid"></td>
 				<td class="col-2 text-start">Untuk Pembayaran</td>
-                <td colspan="2" style="text-align: justify; border-right: 1px solid">: <?php echo $row['pekerjaan']; ?> 
+                <td colspan="2" style="text-align: justify; border-right: 1px solid">: <?php echo $row['pekerjaan']; ?> Kegiatan <?php echo $row['kegiatan']; ?> 
                 Sub Kegiatan <?php echo $row['subkegiatan']; ?> Sesuai dengan 
-                Surat Pesanan Nomor <?php echo $row['nomorkontrak']; ?> Tanggal <?php echo tglindo($row['tglmulaikontrak']); ?></td>
+                Surat Perjanjian (<?php echo $row['jeniskontrak']; ?>) Nomor <?php echo $row['nomorkontrak']; ?> Tanggal <?php echo tglindo($row['tglmulaikontrak']); ?></td>
 			</tr>
             <tr>
 				<td class="col-3 text-center align-top" style="border-left: 1px solid; border-right: 1px solid"><b><u>dr. DEDEN BONNI KOSWARA, MM</u></b></td>
@@ -150,7 +150,7 @@
 			</tr>
             <tr>
 				<td class="col-3 text-center" style="border-left: 1px solid; border-right: 1px solid"></td>
-				<td class="col-2 text-center border border-dark fs-5"><b>Rp. <?php echo number_format($row['nilainego']); ?></b></td>
+				<td class="col-2 text-center border border-dark fs-5"><b>Rp. <?php echo number_format($row['nilaitotalnego']); ?></b></td>
 				<td class="col-3 text-center"></td>
 				<td class="col-3 text-center" style="border-right: 1px solid"></td>
 			</tr>

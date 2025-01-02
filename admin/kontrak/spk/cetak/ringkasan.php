@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>RINGKASAN KONTRAK</title>
+    <title>Ringkasan Kontrak</title>
 </head>
 <style>
 @media print {
@@ -17,14 +17,14 @@
 <body style="background-color: white; font-family: Times New Roman; ">
     <?php
         
-        include "../../../koneksi.php";
+        include "../../../../koneksi.php";
          
         // Check connection
         if (mysqli_connect_error()){
             echo "Koneksi database gagal : " . mysqli_connect_error();
         }
          
-         $sql=mysqli_query($koneksi, "SELECT * FROM spk WHERE id='$_GET[id]'");
+         $sql=mysqli_query($koneksi, "SELECT * FROM kontrak WHERE id='$_GET[id]'");
          $row=mysqli_fetch_array($sql);
 
         function tglindo($tanggal){
@@ -52,7 +52,7 @@
         }
 
     ?>
-<section class="sheet padding-10mm" style="font-size:17px;">
+<section class="sheet padding-10mm" style="font-size:16px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -88,7 +88,7 @@
                 Nomor dan Tanggal DPA
                 </div>
                 <div class="col-7">
-                : DPPA/A.1/1.02.0.00.0.00.02.0000/001/2024 tanggal 11 Oktober 2024
+                : <?php echo $row['nomordpa']; ?> tanggal <?php echo tglindo($row['tgldpa']); ?>
                 </div>
         </div>
         <div class="row">
@@ -217,10 +217,10 @@
                 13.
                 </div>
                 <div class="col-4">
-                Nilai SPK / Kontrak
+                Nilai SP / Kontrak
                 </div>
                 <div class="col-7">
-                : Rp. <?php echo number_format($row['nilainego']); ?>,-
+                : Rp. <?php echo number_format($row['nilaitotalnego']); ?>,-
                 </div>
         </div>
         <div class="row">
@@ -228,7 +228,7 @@
                 14.
                 </div>
                 <div class="col-4">
-                Jenis SPK / Kontrak
+                Jenis SP / Kontrak
                 </div>
                 <div class="col-7">
                 : Pengadaan Langsung
@@ -253,7 +253,7 @@
                 Cara Pembayaran
                 </div>
                 <div class="col-7">
-                : Sekaligus Rp. <?php echo number_format($row['nilainego']); ?>,-
+                : Sekaligus Rp. <?php echo number_format($row['nilaitotalnego']); ?>,-
                 </div>
         </div>
         <div class="row">
@@ -357,7 +357,7 @@
     </div>
         <script>
             window.print()
-            header("location:sp.php");
+            header("location:spk.php");
         </script>
 </section>
 
