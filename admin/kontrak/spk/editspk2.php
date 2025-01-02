@@ -19,26 +19,26 @@ if($_SESSION['role']==""){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PEJABAT PELAKSANA TEKNIS KEGIATAN</title>
+    <title>Surat Perintah Kerja</title>
 
     <!-- Custom fonts for this template -->
-    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
-        href="../../https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
-    <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="my.js"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
 </style>
 </head>
     <?php	
-       include "../../koneksi.php";
+       include "../../../koneksi.php";
          
        // Check connection
        if (mysqli_connect_error()){
@@ -65,7 +65,7 @@ if($_SESSION['role']==""){
 
                 <!-- Topbar -->
                 <?php
-                    include "../../topbar.php";
+                    include "topbar.php";
                 ?>
                 <!-- End of Topbar -->
                 
@@ -76,15 +76,18 @@ if($_SESSION['role']==""){
 
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Input Kontrak (SPK)</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Edit Kontrak (SPK)</h6>
                             </div>
 
 
 
-                            <form action="simpanspk.php" method="POST">
-                            <?php 
-                                include "maxid.php";
-                            ?>
+                            <form action="updatespk.php" method="GET">
+                                                    <?php
+                                                        include '../../../koneksi.php';
+                                                        $id = $_GET['id']; 
+                                                        $query_edit = mysqli_query($koneksi,"SELECT * FROM spk WHERE id='$id'");
+                                                        while ($row = mysqli_fetch_array($query_edit)) {
+                                                    ?>
                                 <!-- Kolom 1 -->
                                 <div class="card-body">
                                     <div class="row">
@@ -93,15 +96,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">ID Kontrak</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="number" value="<?php echo $kodeauto;?>" name="id" class="form-control" style="height: 30px; font-size: 13px;" id="id" readonly>
+                                                            <input style="height: 30px; font-size: 13px;" type="number" value="<?php echo $row['id']; ?>" name="id" class="form-control" style="height: 30px; font-size: 13px;" id="id" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Tanggal Proses</label>
-                                                            <?php $dt = new DateTime();
-                                                            echo '<input style="height: 30px; font-size: 13px;" type="date" name="tglproses" class="form-control" id="tglproses" value="' .$dt->format('Y-m-d'). '" readonly>'
-                                                            ?>
+                                                            <input type="date"  value="<?php echo $row['tglproses']; ?>" name="tglproses" class="form-control" id="tglproses" hidden>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -109,13 +110,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Tanggal Mulai</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglmulaikontrak" class="form-control border-left-success shadow" id="tglmulaikontrak" required>
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglmulaikontrak']; ?>" type="date" name="tglmulaikontrak" class="form-control border-left-success shadow" id="tglmulaikontrak" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Tanggal Selesai</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglselesaikontrak" class="form-control border-left-danger shadow" onclick="waktupelaksanaan()" id="tglselesaikontrak" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglselesaikontrak']; ?>" type="date" name="tglselesaikontrak" class="form-control border-left-danger shadow" onclick="waktupelaksanaan()" id="tglselesaikontrak" required>                                               
                                                         </div>
                                                     </div>
                                                 </div>
@@ -137,7 +138,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-12">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nomor Kontrak</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nomorkontrak" class="form-control" id="nomorkontrak" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['nomorkontrak']; ?>" type="text" name="nomorkontrak" class="form-control" id="nomorkontrak" required>                                               
                                                         </div>
                                                     </div>
                                                 </div>
@@ -145,13 +146,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-4">
                                                         <div class="form-floating">
                                                             <label>Waktu Pelaksanaan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="number" name="waktupelaksanaan" class="form-control" id="waktupelaksanaan" readonly>
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['waktupelaksanaan']; ?>" type="number" name="waktupelaksanaan" class="form-control" id="waktupelaksanaan" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Terbilang</label>
-                                                            <textarea style="font-size: 13px;" type="text" name="terbilangwaktupelaksanaan" id="terbilangwaktupelaksanaan" class="form-control" readonly></textarea>
+                                                            <input style="font-size: 13px;" type="text" value="<?php echo $row['terbilangwaktupelaksanaan']; ?>" name="terbilangwaktupelaksanaan" id="terbilangwaktupelaksanaan" class="form-control" readonly>
                                                             <!-- <input style="height: 30px; font-size: 13px;" type="text" name="terbilangwaktupelaksanaan" class="form-control" id="terbilangwaktupelaksanaan" required>                                                -->
                                                         </div>
                                                     </div>
@@ -163,7 +164,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label>HPS</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="hps" class="form-control" id="hps" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['hps']; ?>"><?php echo $row['hps']; ?></option>
                                                              <option value="027/04/BAHP/HPS/I/2025">027/04/BAHPK/HPS/I/2025</option>
                                                              <option value="027/04/BAHP/HPS/II/2025">027/04/BAHPK/HPS/II/2025</option>
                                                              <option value="027/04/BAHP/HPS/III/2025">027/04/BAHPK/HPS/III/2025</option>
@@ -182,7 +183,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglhps" class="form-control border-left-info shadow" id="tglhps" required>                                                 
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglhps']; ?>" type="date" name="tglhps" class="form-control border-left-info shadow" id="tglhps" required>                                                 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -191,7 +192,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label>Undangan Pejabat Barjas</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="undanganpejabatbarjas" class="form-control" id="undanganpejabatbarjas" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['undanganpejabatbarjas']; ?>"><?php echo $row['undanganpejabatbarjas']; ?></option>
                                                              <option value="005/01/BAHP/UND/I/2025">005/01/BAHP/UND/I/2025</option>
                                                              <option value="005/01/BAHP/UND/II/2025">005/01/BAHP/UND/II/2025</option>
                                                              <option value="005/01/BAHP/UND/III/2025">005/01/BAHP/UND/III/2025</option>
@@ -210,7 +211,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglundanganpejabatbarjas" class="form-control border-left-info shadow" id="tglundanganpejabatbarjas" required>                                                 
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglundanganpejabatbarjas']; ?>" type="date" name="tglundanganpejabatbarjas" class="form-control border-left-info shadow" id="tglundanganpejabatbarjas" required>                                                 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -219,7 +220,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label>Pembukaan</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="pembukaan" class="form-control" id="pembukaan" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['pembukaan']; ?>"><?php echo $row['pembukaan']; ?></option>
                                                              <option value="027/02/BAHP/BAPP/I/2025">027/02/BAHP/BAPP/I/2025</option>
                                                              <option value="027/02/BAHP/BAPP/II/2025">027/02/BAHP/BAPP/II/2025</option>
                                                              <option value="027/02/BAHP/BAPP/III/2025">027/02/BAHP/BAPP/III/2025</option>
@@ -238,7 +239,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglpembukaan" class="form-control border-left-primary shadow" id="tglpembukaan" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglpembukaan']; ?>" type="date" name="tglpembukaan" class="form-control border-left-primary shadow" id="tglpembukaan" required>                                               
                                                         </div>
                                                     </div>
                                                 </div>
@@ -247,7 +248,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label>BA. Evaluasi Penawaran</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="baevaluasi" class="form-control" id="baevaluasi" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['baevaluasi']; ?>"><?php echo $row['baevaluasi']; ?></option>
                                                              <option value="027/03/BAHP/BAEP/I/2025">027/03/BAHP/BAEP/I/2025</option>
                                                              <option value="027/03/BAHP/BAEP/II/2025">027/03/BAHP/BAEP/II/2025</option>
                                                              <option value="027/03/BAHP/BAEP/III/2025">027/03/BAHP/BAEP/III/2025</option>
@@ -266,7 +267,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglbaevaluasi" class="form-control border-left-primary shadow" id="tglbaevaluasi" required>                                                 
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglbaevaluasi']; ?>" type="date" name="tglbaevaluasi" class="form-control border-left-primary shadow" id="tglbaevaluasi" required>                                                 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -275,7 +276,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label>Lam.BA.Evaluasi Penawaran</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="lambaevaluasi" class="form-control" id="lambaevaluasi" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['lambaevaluasi']; ?>"><?php echo $row['lambaevaluasi']; ?></option>
                                                              <option value="027/03/BAHP/LBAEP/I/2025">027/03/BAHP/LBAEP/I/2025</option>
                                                              <option value="027/03/BAHP/LBAEP/II/2025">027/03/BAHP/LBAEP/II/2025</option>
                                                              <option value="027/03/BAHP/LBAEP/III/2025">027/03/BAHP/LBAEP/III/2025</option>
@@ -294,7 +295,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tgllambaevaluasi" class="form-control border-left-primary shadow" id="tgllambaevaluasi" required>                                                 
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tgllambaevaluasi']; ?>" type="date" name="tgllambaevaluasi" class="form-control border-left-primary shadow" id="tgllambaevaluasi" required>                                                 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -303,7 +304,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label>BA.Klar. Teknis Dan Negosiasi</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="baklarifikasi" class="form-control" id="baklarifikasi" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['baklarifikasi']; ?>"><?php echo $row['baklarifikasi']; ?></option>
                                                              <option value="027/04/BAHP/NEGO/I/2025">027/04/BAHP/NEGO/I/2025</option>
                                                              <option value="027/04/BAHP/NEGO/II/2025">027/04/BAHP/NEGO/II/2025</option>
                                                              <option value="027/04/BAHP/NEGO/III/2025">027/04/BAHP/NEGO/III/2025</option>
@@ -322,7 +323,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                         <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglbaklarifikasi" class="form-control border-left-primary shadow" id="tglbaklarifikasi" required>                                                 
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglbaklarifikasi']; ?>" type="date" name="tglbaklarifikasi" class="form-control border-left-primary shadow" id="tglbaklarifikasi" required>                                                 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -331,7 +332,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                         <label>Lam.BA.Klar.Teknis Dan Negosiasi</label>
                                                         <select style="height: 30px; font-size: 13px;" type="text" name="lambaklarifikasi" class="form-control" id="lambaklarifikasi" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['lambaklarifikasi']; ?>"><?php echo $row['lambaklarifikasi']; ?></option>
                                                              <option value="027/04/BAHP/LNEGO/I/2025">027/04/BAHP/LNEGO/I/2025</option>
                                                              <option value="027/04/BAHP/LNEGO/II/2025">027/04/BAHP/LNEGO/II/2025</option>
                                                              <option value="027/04/BAHP/LNEGO/III/2025">027/04/BAHP/LNEGO/III/2025</option>
@@ -350,7 +351,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tgllambaklarifikasi" class="form-control border-left-primary shadow" id="tgllambaklarifikasi" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tgllambaklarifikasi']; ?>" type="date" name="tgllambaklarifikasi" class="form-control border-left-primary shadow" id="tgllambaklarifikasi" required>                                               
                                                         </div>
                                                     </div>
                                                 </div>
@@ -364,7 +365,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label class="labeldata">BA.Hasil Pengadaan Langsung</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="bahasildasung" class="form-control" id="bahasildasung" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['bahasildasung']; ?>"><?php echo $row['bahasildasung']; ?></option>
                                                              <option value="027/05/BAHP/PCTL/I/2025">027/05/BAHP/PCTL/I/2025</option>
                                                              <option value="027/05/BAHP/PCTL/II/2025">027/05/BAHP/PCTL/II/2025</option>
                                                              <option value="027/05/BAHP/PCTL/III/2025">027/05/BAHP/PCTL/III/2025</option>
@@ -383,7 +384,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglbahasildasung" 
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglbahasildasung']; ?>" type="date" name="tglbahasildasung" 
                                                             class="form-control border-left-warning shadow" id="tglbahasildasung" required>                                               
                                                         </div>
                                                     </div>
@@ -394,7 +395,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label class="labeldata">Penetapan Penyedia</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="penetapanpenyedia" class="form-control" id="penetapanpenyedia" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['penetapanpenyedia']; ?>"><?php echo $row['penetapanpenyedia']; ?></option>
                                                              <option value="027/06/BAHP/BJRS/I/2025">027/06/BAHP/BJRS/I/2025</option>
                                                              <option value="027/06/BAHP/BJRS/II/2025">027/06/BAHP/BJRS/II/2025</option>
                                                              <option value="027/06/BAHP/BJRS/III/2025">027/06/BAHP/BJRS/III/2025</option>
@@ -413,7 +414,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglpenetapanpenyedia" class="form-control border-left-warning shadow" id="tglpenetapanpenyedia" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglpenetapanpenyedia']; ?>" type="date" name="tglpenetapanpenyedia" class="form-control border-left-warning shadow" id="tglpenetapanpenyedia" required>                                               
                                                         </div>
                                                     </div>
                                                 </div>
@@ -423,7 +424,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label class="labeldata">Pengumuman Penyedia</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="pengumumanpenyedia" class="form-control" id="pengumumanpenyedia" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['pengumumanpenyedia']; ?>"><?php echo $row['pengumumanpenyedia']; ?></option>
                                                              <option value="027/07/BAHP/BJRS/I/2025">027/07/BAHP/BJRS/I/2025</option>
                                                              <option value="027/07/BAHP/BJRS/II/2025">027/07/BAHP/BJRS/II/2025</option>
                                                              <option value="027/07/BAHP/BJRS/III/2025">027/07/BAHP/BJRS/III/2025</option>
@@ -442,7 +443,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglpengumumanpenyedia" class="form-control border-left-warning shadow" id="tglpengumumanpenyedia" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglpengumumanpenyedia']; ?>" type="date" name="tglpengumumanpenyedia" class="form-control border-left-warning shadow" id="tglpengumumanpenyedia" required>                                               
                                                         </div>
                                                     </div>
                                                 </div>
@@ -452,7 +453,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label>Laporan Proses Dan Hasil Pengadaan</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="lapproseshasilpengadaan" class="form-control" id="lapproseshasilpengadaan" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['lapproseshasilpengadaan']; ?>"><?php echo $row['lapproseshasilpengadaan']; ?></option>
                                                              <option value="027/09/BAHP/BJRS/I/2025">027/09/BAHP/BJRS/I/2025</option>
                                                              <option value="027/09/BAHP/BJRS/II/2025">027/09/BAHP/BJRS/II/2025</option>
                                                              <option value="027/09/BAHP/BJRS/III/2025">027/09/BAHP/BJRS/III/2025</option>
@@ -471,7 +472,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tgllapproseshasilpengadaan" class="form-control border-left-warning shadow" id="tgllapproseshasilpengadaan" required>                                                 
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tgllapproseshasilpengadaan']; ?>" type="date" name="tgllapproseshasilpengadaan" class="form-control border-left-warning shadow" id="tgllapproseshasilpengadaan" required>                                                 
                                                         </div>
                                                     </div>
                                                     
@@ -481,7 +482,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label>Nota Dinas</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="notadinas" class="form-control" id="notadinas" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['notadinas']; ?>"><?php echo $row['notadinas']; ?></option>
                                                              <option value="027/08/BAHP/ND/I/2025">027/08/BAHP/ND/I/2025</option>
                                                              <option value="027/08/BAHP/ND/II/2025">027/08/BAHP/ND/II/2025</option>
                                                              <option value="027/08/BAHP/ND/III/2025">027/08/BAHP/ND/III/2025</option>
@@ -500,7 +501,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                         <label class="labeldata" >*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglnotadinas" class="form-control border-left-warning shadow" id="tglnotadinas" required>                                                 
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglnotadinas']; ?>" type="date" name="tglnotadinas" class="form-control border-left-warning shadow" id="tglnotadinas" required>                                                 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -510,7 +511,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label>SPPBJ</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="sppbj" class="form-control" id="sppbj" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['sppbj']; ?>"><?php echo $row['sppbj']; ?></option>
                                                              <option value="027/05/BAHP/SPPBJ/I/2025">027/05/BAHP/SPPBJ/I/2025</option>
                                                              <option value="027/05/BAHP/SPPBJ/II/2025">027/05/BAHP/SPPBJ/II/2025</option>
                                                              <option value="027/05/BAHP/SPPBJ/III/2025">027/05/BAHP/SPPBJ/III/2025</option>
@@ -529,7 +530,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglsppbj" class="form-control border-left-success shadow" id="tglsppbj" required>                                                 
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglsppbj']; ?>" type="date" name="tglsppbj" class="form-control border-left-success shadow" id="tglsppbj" required>                                                 
                                                         </div>
                                                     </div>
                                                 </div>
@@ -538,7 +539,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label>Surat Pesanan</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" name="suratpesanan" class="form-control" id="suratpesanan" required>
-                                                             <option value="-">--Pilih--</option>
+                                                             <option value="<?php echo $row['suratpesanan']; ?>"><?php echo $row['suratpesanan']; ?></option>
                                                              <option value="027/07/BAHP/SPB/I/2025">027/07/BAHP/SPB/I/2025</option>
                                                              <option value="027/07/BAHP/SPB/II/2025">027/07/BAHP/SPB/II/2025</option>
                                                              <option value="027/07/BAHP/SPB/III/2025">027/07/BAHP/SPB/III/2025</option>
@@ -557,12 +558,12 @@ if($_SESSION['role']==""){
                                                     <div class="col-5">
                                                         <div class="form-floating">
                                                         <label class="labeldata" >*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglsuratpesanan" class="form-control border-left-success shadow" id="tglsuratpesanan" required>                                                 
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tglsuratpesanan']; ?>" type="date" name="tglsuratpesanan" class="form-control border-left-success shadow" id="tglsuratpesanan" required>                                                 
                                                         </div>
                                                     </div>
                                                 </div>
                                     </div>
-                                </div>
+                                    </div>
                                 <!-- Akhir kolom 1 -->
 
                                 <!-- Kolom 2 -->
@@ -575,7 +576,7 @@ if($_SESSION['role']==""){
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
-                                                    include "../../koneksi.php";
+                                                    include "../../../koneksi.php";
                                                         
                                                     // Check connection
                                                     if (mysqli_connect_error()){
@@ -586,7 +587,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label class="labeldata">Pekerjaan</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="pekerjaan" id="pekerjaan" onchange="detailpptk()" required>
-                                                                <option value="">--Pilih--</option>
+                                                                <option value="<?php echo $row['pekerjaan'] ?>"><?php echo $row['pekerjaan']; ?></option>
                                                                 <?php
                                                                 $pptk = mysqli_query($koneksi,"select * from pptk");
                                                                 while($f = mysqli_fetch_array($pptk)){
@@ -604,7 +605,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-12">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Sub Kegiatan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="subkegiatan"  class="form-control" id="subkegiatan" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['subkegiatan']; ?>" type="text" name="subkegiatan"  class="form-control" id="subkegiatan" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -612,7 +613,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-12">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Kegiatan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="kegiatan" class="form-control" id="kegiatan" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['kegiatan']; ?>" type="text" name="kegiatan" class="form-control" id="kegiatan" readonly>                                               
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -620,13 +621,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nomor Rekening Sub Kegiatan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="noreksubkegiatan" class="form-control" id="noreksubkegiatan" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['noreksubkegiatan']; ?>" type="text" name="noreksubkegiatan" class="form-control" id="noreksubkegiatan" readonly>                                               
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nama Rekening Sub Kegiatan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="namarekening" class="form-control" id="namarekening" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['namarekening']; ?>" type="text" name="namarekening" class="form-control" id="namarekening" readonly>                                               
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -634,15 +635,15 @@ if($_SESSION['role']==""){
                                                 <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Kode Rekening</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="koderekeningkegiatan" class="form-control" id="koderekeningkegiatan" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['koderekeningkegiatan']; ?>" type="text" name="koderekeningkegiatan" class="form-control" id="koderekeningkegiatan" readonly>                                               
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div> 
                                                 <br>
                                                 <br>
                                                 <div class="row g-2">
                                                     <?php	
-                                                    include "../../koneksi.php";
+                                                    include "../../../koneksi.php";
                                                         
                                                     // Check connection
                                                     if (mysqli_connect_error()){
@@ -653,12 +654,12 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label class="labeldata">Pejabat pemeriksa</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" class="form-control" onchange="detailpemeriksa()" name="namapejabatpemeriksa" id="namapejabatpemeriksa" required>
-                                                                <option value="">--Pilih--</option>
+                                                                <option value="<?php echo $row['namapejabatpemeriksa'] ?>"><?php echo $row['namapejabatpemeriksa']; ?></option>
                                                                 <?php
                                                                 $pemeriksa = mysqli_query($koneksi,"select * from pemeriksa");
-                                                                while($r = mysqli_fetch_array($pemeriksa)){
+                                                                while($m = mysqli_fetch_array($pemeriksa)){
                                                                 ?>
-                                                                    <option value="<?php echo $r['namapejabatpemeriksa'] ?>"><?php echo $r['namapejabatpemeriksa']; ?></option>
+                                                                    <option value="<?php echo $m['namapejabatpemeriksa'] ?>"><?php echo $m['namapejabatpemeriksa']; ?></option>
                                                                 <?php
                                                                 }
                                                                 ?>
@@ -668,7 +669,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                                 <div class="form-floating">
                                                                     <label class="labeldata">NIP</label>
-                                                                    <input style="height: 30px; font-size: 13px;" type="text" name="nippejabatpemeriksa" class="form-control" id="nippejabatpemeriksa" readonly>                                               
+                                                                    <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nippejabatpemeriksa']; ?>" name="nippejabatpemeriksa" class="form-control" id="nippejabatpemeriksa" readonly>                                               
                                                                 </div>
                                                     </div>
                                                 </div>
@@ -676,16 +677,16 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                                 <div class="form-floating">
                                                                     <label class="labeldata">Nomor SK</label>
-                                                                    <input style="height: 30px; font-size: 13px;" type="text" name="nomorskpejabatpemeriksa" class="form-control" id="nomorskpejabatpemeriksa" readonly>                                               
+                                                                    <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nomorskpejabatpemeriksa']; ?>" name="nomorskpejabatpemeriksa" class="form-control" id="nomorskpejabatpemeriksa" readonly>                                               
                                                                 </div>
                                                     </div>
                                                     <div class="col-6">
                                                                 <div class="form-floating">
                                                                     <label class="labeldata">Tanggal SK</label>
-                                                                    <input style="height: 30px; font-size: 13px;" type="date" name="tglskpejabatpemeriksa" class="form-control" id="tglskpejabatpemeriksa" readonly>                                               
+                                                                    <input style="height: 30px; font-size: 13px;" type="date" value="<?php echo $row['tglskpejabatpemeriksa']; ?>" name="tglskpejabatpemeriksa" class="form-control" id="tglskpejabatpemeriksa" readonly>                                               
                                                                 </div>
                                                     </div>
-                                                </div> 
+                                                </div>
                                                 <!-- Baris 5 -->
                                         </div>
                                         <div class="col-sm-6">
@@ -693,13 +694,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nama PPTK</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="namapptk" class="form-control" id="namapptk" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['namapptk']; ?>" type="text" name="namapptk" class="form-control" id="namapptk" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">NIP</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nippptk" class="form-control" id="nippptk" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['nippptk']; ?>" type="text" name="nippptk" class="form-control" id="nippptk" readonly>                                               
                                                         </div>
                                                     </div>
                                                 </div>
@@ -708,13 +709,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nomor SK</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nomorskpptk"  class="form-control" id="nomorskpptk" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['nomorskpptk']; ?>" type="text" name="nomorskpptk"  class="form-control" id="nomorskpptk" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Tanggal SK</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglskpptk" class="form-control" id="tglskpptk" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['tglskpptk']; ?>" type="date" name="tglskpptk" class="form-control" id="tglskpptk" readonly>                                               
                                                         </div>
                                                     </div>
                                                 </div>
@@ -723,18 +724,18 @@ if($_SESSION['role']==""){
                                                     <div class="col-12">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Jabatan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="jabatanpptk"  class="form-control" id="jabatanpptk" readonly>
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['jabatanpptk']; ?>" type="text" name="jabatanpptk"  class="form-control" id="jabatanpptk" readonly>
                                                         </div>
                                                     </div>
 
                                                 </div>
                                                 
+                                                </div>
                                         </div>
                                     </div>
                                 </div>
-                                        
                                 <!-- Akhir Kolom 2 -->
-
+                                <br>
                                 <!-- Kolom 3 -->
                                 <hr class="sidebar-divider">
                                 <hr class="sidebar-divider">
@@ -746,13 +747,13 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nilai HPS</label>
                                                             <!-- <input style="height: 30px; font-size: 13px;" type="float" name="nilaihps"  class="form-control" id="input style="height: 30px; font-size: 13px;"kua" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" required> -->
-                                                            <input style="height: 30px; font-size: 13px;" type="number"  name="nilaihps" class="form-control" id="nilaihps" required>
+                                                            <input style="height: 30px; font-size: 13px;" type="number" value="<?php echo $row['nilaihps']; ?>" name="nilaihps" class="form-control" id="nilaihps" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Terbilang</label>
-                                                            <textarea style="font-size: 13px;" type="text" name="terbilanghps" class="form-control" id="terbilanghps" readonly></textarea>                                            
+                                                            <textarea style="font-size: 13px;" type="text" name="terbilanghps" class="form-control" id="terbilanghps" readonly><?php echo $row['terbilanghps']; ?></textarea>                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -761,13 +762,13 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nilai PPN HPS</label>
                                                             <!-- <input style="height: 30px; font-size: 13px;" type="text" name="nilainego"  class="form-control" id="input style="height: 30px; font-size: 13px;"kub" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" required> -->
-                                                            <input style="font-size: 13px;" type="number" name="nilaippnhps" class="form-control" id="nilaippnhps" required>
+                                                            <input style="font-size: 13px;" type="number" value="<?php echo $row['nilaippnhps']; ?>" name="nilaippnhps" class="form-control" id="nilaippnhps" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Terbilang</label>
-                                                            <textarea style="font-size: 13px;" type="text" name="terbilangppnhps" class="form-control" id="terbilangppnhps" readonly></textarea>                                            
+                                                            <textarea style="font-size: 13px;" type="text" name="terbilangppnhps" class="form-control" id="terbilangppnhps" readonly><?php echo $row['terbilangppnhps']; ?></textarea>                                            
                                                         </div>
                                                     </div>
                                                 
@@ -776,13 +777,13 @@ if($_SESSION['role']==""){
                                                         <div class="col-4">
                                                             <div class="form-floating">
                                                                 <label class="labeldata">Total HPS</label>
-                                                                <input style="font-size: 13px;" type="number" name="nilaitotalhps" class="form-control" id="nilaitotalhps" required>                                       
+                                                                <input style="font-size: 13px;" type="number" value="<?php echo $row['nilaitotalhps']; ?>" name="nilaitotalhps" class="form-control" id="nilaitotalhps" required>                                       
                                                             </div>
                                                         </div>
                                                         <div class="col-8">
                                                             <div class="form-floating">
                                                                 <label class="labeldata">Terbilang</label>
-                                                                <textarea style="font-size: 13px;" type="text" name="terbilangtotalhps"  class="form-control" id="terbilangtotalhps" readonly></textarea>                                            
+                                                                <textarea style="font-size: 13px;" type="text" name="terbilangtotalhps"  class="form-control" id="terbilangtotalhps" readonly><?php echo $row['terbilangtotalhps']; ?></textarea>                                            
                                                             </div>
                                                         </div>
                                                 </div>
@@ -793,13 +794,13 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nilai Nego</label>
                                                             <!-- <input style="height: 30px; font-size: 13px;" type="float" name="nilaihps"  class="form-control" id="input style="height: 30px; font-size: 13px;"kua" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" required> -->
-                                                            <input style="height: 30px; font-size: 13px;" type="number"  name="nilainego" class="form-control" id="nilainego" required>
+                                                            <input style="height: 30px; font-size: 13px;" type="number" value="<?php echo $row['nilainego']; ?>" name="nilainego" class="form-control" id="nilainego" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Terbilang</label>
-                                                            <textarea style="font-size: 13px;" type="text" name="terbilangnego" class="form-control" id="terbilangnego" readonly></textarea>                                            
+                                                            <textarea style="font-size: 13px;" type="text" name="terbilangnego" class="form-control" id="terbilangnego" readonly><?php echo $row['terbilangnego']; ?></textarea>                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -808,27 +809,28 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nilai PPN Nego</label>
                                                             <!-- <input style="height: 30px; font-size: 13px;" type="text" name="nilainego"  class="form-control" id="input style="height: 30px; font-size: 13px;"kub" onkeydown="return numbersonly(this, event);" onkeyup="javascript:tandaPemisahTitik(this);" required> -->
-                                                            <input style="font-size: 13px;" type="number" name="nilaippnnego" class="form-control" id="nilaippnnego" required>
+                                                            <input style="font-size: 13px;" type="number" value="<?php echo $row['nilaippnnego']; ?>" name="nilaippnnego" class="form-control" id="nilaippnnego" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Terbilang</label>
-                                                            <textarea style="font-size: 13px;" type="text" name="terbilangppnnego" class="form-control" id="terbilangppnnego" readonly></textarea>                                            
+                                                            <textarea style="font-size: 13px;" type="text" name="terbilangppnnego" class="form-control" id="terbilangppnnego" readonly><?php echo $row['terbilangppnnego']; ?></textarea>                                            
                                                         </div>
                                                     </div>
+                                                    
                                                 </div>
                                                 <div class="row g-2">
                                                         <div class="col-4">
                                                             <div class="form-floating">
                                                                 <label class="labeldata">Total Nego</label>
-                                                                <input style="font-size: 13px;" type="number" name="nilaitotalnego" class="form-control" id="nilaitotalnego" required>                                       
+                                                                <input style="font-size: 13px;" type="number" value="<?php echo $row['nilaitotalnego']; ?>" name="nilaitotalnego" class="form-control" id="nilaitotalnego" required>                                       
                                                             </div>
                                                         </div>
                                                         <div class="col-8">
                                                             <div class="form-floating">
                                                                 <label class="labeldata">Terbilang</label>
-                                                                <textarea style="font-size: 13px;" type="text" name="terbilangtotalnego"  class="form-control" id="terbilangtotalnego" readonly></textarea>                                            
+                                                                <textarea style="font-size: 13px;" type="text" name="terbilangtotalnego"  class="form-control" id="terbilangtotalnego" readonly><?php echo $row['terbilangtotalnego']; ?></textarea>                                            
                                                             </div>
                                                         </div>
                                                 </div>
@@ -836,13 +838,13 @@ if($_SESSION['role']==""){
                                                 <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nilai PPH (BAP)</label>
-                                                            <input style="font-size: 13px;" type="number" name="nilaipph" class="form-control" id="nilaipph" required>                                       
+                                                            <input style="font-size: 13px;" type="number" value="<?php echo $row['nilaipph']; ?>" name="nilaipph" class="form-control" id="nilaipph" required>                                       
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Terbilang</label>
-                                                            <textarea style="font-size: 13px;" type="text" name="terbilangpph" class="form-control" id="terbilangpph" readonly></textarea>                                            
+                                                            <textarea style="font-size: 13px;" type="text" name="terbilangpph" class="form-control" id="terbilangpph" readonly><?php echo $row['terbilangpph']; ?></textarea>                                            
                                                         </div>
                                                     </div>
                                                 </div>
@@ -860,7 +862,7 @@ if($_SESSION['role']==""){
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
-                                                    include "../../koneksi.php";
+                                                    include "../../../koneksi.php";
                                                         
                                                     // Check connection
                                                     if (mysqli_connect_error()){
@@ -870,8 +872,8 @@ if($_SESSION['role']==""){
                                                     <div class="col-12">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nama Pejabat Barjas</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="namapejabatbarjas" onchange="detailpejabatbarjas()" id="namapejabatbarjas" required>
-                                                                <option value="">--Pilih--</option>
+                                                            <select style="height: 30px; font-size: 13px;"value="<?php echo $row['namapejabatbarjas']; ?>" type="text" class="form-control" name="namapejabatbarjas" onchange="detailpejabatbarjas()" id="namapejabatbarjas" required>
+                                                                <option value="<?php echo $row['namapejabatbarjas'] ?>"><?php echo $row['namapejabatbarjas']; ?></option>
                                                                 <?php
                                                                 $pejabat = mysqli_query($koneksi,"select * from pejabat");
                                                                 while($h = mysqli_fetch_array($pejabat)){
@@ -889,13 +891,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">NIP</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nippejabatbarjas"  class="form-control" id="nippejabatbarjas" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['nippejabatbarjas']; ?>" type="text" name="nippejabatbarjas"  class="form-control" id="nippejabatbarjas" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nomor SK</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nomorskpejabatbarjas" class="form-control" id="nomorskpejabatbarjas" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['nomorskpejabatbarjas']; ?>" type="text" name="nomorskpejabatbarjas" class="form-control" id="nomorskpejabatbarjas" readonly>                                               
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -904,19 +906,19 @@ if($_SESSION['role']==""){
                                                     <!-- <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Jabatan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="namajabatanbarjas" class="form-control" id="namajabatanbarjas" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['subkegiatan']; ?>" type="text" name="namajabatanbarjas" class="form-control" id="namajabatanbarjas" readonly>
                                                         </div>
                                                     </div> -->
                                                     <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Tanggal SK</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglskpejabatbarjas" class="form-control" id="tglskpejabatbarjas" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['tglskpejabatbarjas']; ?>" type="date" name="tglskpejabatbarjas" class="form-control" id="tglskpejabatbarjas" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Jabatan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="jabatanpejabatbarjas" class="form-control" id="jabatanpejabatbarjas" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['jabatanpejabatbarjas']; ?>" type="text" name="jabatanpejabatbarjas" class="form-control" id="jabatanpejabatbarjas" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -925,7 +927,7 @@ if($_SESSION['role']==""){
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
-                                                    include "../../koneksi.php";
+                                                    include "../../../koneksi.php";
                                                         
                                                     // Check connection
                                                     if (mysqli_connect_error()){
@@ -935,8 +937,8 @@ if($_SESSION['role']==""){
                                                     <div class="col-12">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nama PPK</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="namappk" onchange="detailppk()" id="namappk" required>
-                                                                <option value="">--Pilih--</option>
+                                                            <select style="height: 30px; font-size: 13px;"value="<?php echo $row['namappk']; ?>" type="text" class="form-control" name="namappk" onchange="detailppk()" id="namappk" required>
+                                                                <option value="<?php echo $row['namappk'] ?>"><?php echo $row['namappk']; ?></option>
                                                                 <?php
                                                                 $ppk = mysqli_query($koneksi,"select * from ppk");
                                                                 while($g = mysqli_fetch_array($ppk)){
@@ -954,13 +956,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">NIP</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nipppk"  class="form-control" id="nipppk" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['nipppk']; ?>" type="text" name="nipppk"  class="form-control" id="nipppk" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nomor SK</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nomorskppk" class="form-control" id="nomorskppk" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['nomorskppk']; ?>" type="text" name="nomorskppk" class="form-control" id="nomorskppk" readonly>                                               
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -969,13 +971,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Tanggal SK</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglskppk" class="form-control" id="tglskppk" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['tglskppk']; ?>" type="date" name="tglskppk" class="form-control" id="tglskppk" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Jabatan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="jabatanppk" class="form-control" id="jabatanppk" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['jabatanppk']; ?>" type="text" name="jabatanppk" class="form-control" id="jabatanppk" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -993,7 +995,7 @@ if($_SESSION['role']==""){
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
-                                                    include "../../koneksi.php";
+                                                    include "../../../koneksi.php";
                                                         
                                                     // Check connection
                                                     if (mysqli_connect_error()){
@@ -1003,8 +1005,8 @@ if($_SESSION['role']==""){
                                                     <div class="col-12">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nama Perusahaan</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="namaperusahaan" onchange="detailpenyedia()" id="namaperusahaan" required>
-                                                                <option value="">--Pilih--</option>
+                                                            <select style="height: 30px; font-size: 13px;"value="<?php echo $row['namaperusahaan']; ?>" type="text" class="form-control" name="namaperusahaan" onchange="detailpenyedia()" id="namaperusahaan" required>
+                                                                <option value="<?php echo $row['namaperusahaan'] ?>"><?php echo $row['namaperusahaan']; ?></option>
                                                                 <?php
                                                                 $penyedia = mysqli_query($koneksi,"select * from penyedia");
                                                                 while($i = mysqli_fetch_array($penyedia)){
@@ -1022,13 +1024,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nama Pimpinan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="namapimpinan"  class="form-control" id="namapimpinan" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['namapimpinan']; ?>" type="text" name="namapimpinan"  class="form-control" id="namapimpinan" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Jabatan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="jabatan" class="form-control" id="jabatan" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['jabatan']; ?>" type="text" name="jabatan" class="form-control" id="jabatan" readonly>                                               
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -1037,13 +1039,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nomor Rekening</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="norekening"  class="form-control" id="norekening" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['norekening']; ?>" type="text" name="norekening"  class="form-control" id="norekening" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Bank</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="namabank" class="form-control" id="namabank" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['namabank']; ?>" type="text" name="namabank" class="form-control" id="namabank" readonly>                                               
                                                         </div>
                                                     </div>
                                                 </div> 
@@ -1052,30 +1054,28 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Rekening Atas Nama</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="namarekbank" class="form-control" id="namarekbank" readonly>
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['namarekbank']; ?>" type="text" name="namarekbank" class="form-control" id="namarekbank" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">NPWP</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="npwp" class="form-control" id="npwp" readonly>
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['npwp']; ?>" type="text" name="npwp" class="form-control" id="npwp" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Baris 3 -->
                                                 <div class="row g-2">
-                                                    <div class="col-12">
+                                                    <div class="col-9">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Alamat</label>
-                                                            <textarea style="font-size: 13px;"a type="text" name="alamat" class="form-control" id="alamat" readonly></textarea>
+                                                            <input style="font-size: 13px;"a type="text" value="<?php echo $row['alamat']; ?>" name="alamat" class="form-control" id="alamat" readonly>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="row g-2">
-                                                    <div class="col-12">
+                                                    <div class="col-3">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Kota</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="kota" class="form-control" id="kota" readonly>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['kota']; ?>" type="text" name="kota" class="form-control" id="kota" readonly>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -1087,87 +1087,86 @@ if($_SESSION['role']==""){
                                                     <div class="col-12">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. Penawaran</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nopenawaran" class="form-control" id="nopenawaran" required>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['nopenawaran']; ?>" type="text" name="nopenawaran" class="form-control" id="nopenawaran" required>
                                                             
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Baris 2 -->
                                                 <div class="row g-2">
-                                                    <div class="col-8">
+                                                    <div class="col-7">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. Permohonan Pemeriksaan</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nopemeriksaan"  class="form-control" id="nopemeriksaan" required>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['nopemeriksaan']; ?>" type="text" name="nopemeriksaan"  class="form-control" id="nopemeriksaan" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglpemeriksaan" class="form-control" id="tglpemeriksaan" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['tglpemeriksaan']; ?>" type="date" name="tglpemeriksaan" class="form-control" id="tglpemeriksaan" required>                                               
                                                         </div>
                                                     </div>
                                                 </div> 
                                                 <!-- Baris 2 -->
                                                 <div class="row g-2">
-                                                    <div class="col-8">
+                                                    <div class="col-7">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. Permohonan Pembayaran</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nopembayaran"  class="form-control" id="nopembayaran" required>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['nopembayaran']; ?>" type="text" name="nopembayaran"  class="form-control" id="nopembayaran" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglpembayaran" class="form-control" id="tglpembayaran" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['tglpembayaran']; ?>" type="date" name="tglpembayaran" class="form-control" id="tglpembayaran" required>                                               
                                                         </div>
                                                     </div>
                                                 </div> 
                                                 <!-- Baris 3 -->
                                                 <div class="row g-2">
-                                                    <div class="col-8">
+                                                    <div class="col-7">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nomor Undangan Pemeriksaan PPK</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="noundanganppk" class="form-control" id="noundanganppk" required>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['noundanganppk']; ?>" type="text" name="noundanganppk" class="form-control" id="noundanganppk" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglundanganppk" class="form-control" id="tglundanganppk" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['tglundanganppk']; ?>" type="date" name="tglundanganppk" class="form-control" id="tglundanganppk" required>                                               
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
-                                                    <div class="col-8">
+                                                    <div class="col-7">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. BAPHP</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nobaphp" class="form-control" id="nobaphp" required>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['nobaphp']; ?>" type="text" name="nobaphp" class="form-control" id="nobaphp" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglbaphp" class="form-control" id="tglbaphp" required>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['tglbaphp']; ?>" type="date" name="tglbaphp" class="form-control" id="tglbaphp" required>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <!-- Baris 2 -->
                                                 <div class="row g-2">
-                                                    <div class="col-8">
+                                                    <div class="col-7">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. BASTB</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nobastb" class="form-control" id="nobastb" required>
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['nobastb']; ?>" type="text" name="nobastb" class="form-control" id="nobastb" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="date" name="tglbastb" class="form-control" id="tglbastb" required>
+                                                            <input style="height: 30px; font-size: 13px;"value="<?php echo $row['tglbastb']; ?>" type="date" name="tglbastb" class="form-control" id="tglbastb" required>
                                                         </div>
                                                     </div>
                                                 </div> 
-                                                
                                             
                                         </div>
                                         <div class="col-sm-4">
@@ -1182,7 +1181,7 @@ if($_SESSION['role']==""){
                                                 </div>
                                                 <!-- Baris 2 -->
                                                 <div class="row g-2">
-                                                <div class="col-8">
+                                                    <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Satuan Kerja</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="satuankerja" value="RSUD Indramayu"  class="form-control" id="satuankerja" readonly>
@@ -1192,7 +1191,7 @@ if($_SESSION['role']==""){
                                                         <div class="form-floating">
                                                             <label class="labeldata">Tahun Anggaran</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="tahunanggaran" id="tahunanggaran" required>
-                                                                <option value="">--Pilih--</option>
+                                                                <option value="<?php echo $row['tahunanggaran'] ?>"><?php echo $row['tahunanggaran']; ?></option>
                                                                 <option value="2024">2024</option>
                                                                 <option value="2025">2025</option>
                                                                 <option value="2026">2026</option>
@@ -1230,13 +1229,15 @@ if($_SESSION['role']==""){
                                     </div>
                                 </div>
                                 <!-- Akhir Kolom 4 -->
-                                <br>
                                 <!-- Footer -->
                                             <div class="modal-footer">  
                                                 <button type="submit" class="btn btn-info">Simpan</button>
                                                 <a href="spk.php" type="button" class="btn btn-default">Batal</a>
                                                 <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button> -->
                                             </div>
+                                            <?php 
+                                                        }
+                                            ?>
                                 </form>
                             </div>
                     
@@ -1265,27 +1266,27 @@ if($_SESSION['role']==""){
         <i class="fas fa-angle-up"></i>
     </a>
 
-   <!-- Logout Modal-->
-   <?php
+    <!-- Logout Modal-->
+    <?php
     include "logoutmodal.php"; 
     ?>
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../../js/sb-admin-2.min.js"></script>
+    <script src="../../../js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script src="../../../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../../js/demo/datatables-demo.js"></script>
+    <script src="../../../js/demo/datatables-demo.js"></script>
 
 <!-- Waktu Pelaksanaan -->
 <script type="text/javascript">
@@ -1462,20 +1463,6 @@ if($_SESSION['role']==""){
  
 </script>
 
-<!-- Total Otomatis -->
-<!-- <script>
-$(document).ready(function() {
- $("#nilainego, #nilaippn, #nilaipph").keyup(function() {
-     var nego  = $("#nilainego").val();
-     var ppn = $("#nilaippn").val();
-     var pph = $("#nilaipph").val();
-     // var jumlah = parseIfloat(ppn) + parsefloat(pph);
-     var total = parseFloat(nego) - (parseFloat(ppn) + parseFloat(pph));
-     $("#nilaitotal").val(total);
- });
-});
-</script> -->
-
 
 <!--PPTK -->
 <script>
@@ -1576,6 +1563,7 @@ $(document).ready(function() {
 }
 </script>
 
+<!-- pejabat Pemeriksa -->
 <script>
     function detailpemeriksa(){
     // alert ("ok");
@@ -1594,7 +1582,6 @@ $(document).ready(function() {
     })
 }
 </script>
-
 <!-- Waktu Pelaksanaan Otomatis -->
 <script>
     $(document).ready(function() {

@@ -48,9 +48,13 @@ if($_SESSION['role']==""){
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
+    <!-- <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="../#collapseOnestylesheet">
+        rel="../#collapseOnestylesheet"> -->
+
+        <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../css/sb-admin-2.min.css" rel="stylesheet">
@@ -61,8 +65,10 @@ if($_SESSION['role']==""){
     <link href="../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css"/> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
 
-</head>
+
     <?php	
        include "../koneksi.php";
          
@@ -73,7 +79,6 @@ if($_SESSION['role']==""){
         
     ?>
 <body id="page-top">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
     <!-- Page Wrapper -->
     <div id="wrapper">
 
@@ -111,7 +116,7 @@ if($_SESSION['role']==""){
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px;">
+                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -130,7 +135,7 @@ if($_SESSION['role']==""){
                                         $manual = mysqli_query($koneksi,"select * from kontrak");
                                         while($d = mysqli_fetch_array($manual)){
                                     ?>
-                                    <tbody style="font-size: 12px;">
+                                    <!-- <tbody style="font-size: 12px;"> -->
                                         <tr>
                                             <td><?php echo $d['id']; ?></td> 
                                             <td><?php echo $d['nomorkontrak']; ?></td> 
@@ -146,7 +151,7 @@ if($_SESSION['role']==""){
                                             </td> -->
                                         </tr>
                                         
-                                    </tbody>
+                                    <!-- </tbody> -->
                                     <?php
                                         }
                                     ?>
@@ -198,6 +203,7 @@ if($_SESSION['role']==""){
 
     <!-- Page level custom scripts -->
     <script src="../js/demo/datatables-demo.js"></script>
+    <!-- <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script> -->
 
 </body>
 

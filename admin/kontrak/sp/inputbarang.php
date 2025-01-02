@@ -73,10 +73,10 @@ if($_SESSION['role']==""){
                 <div class="container-fluid" >
                     <div class="card-body">
 
-                    <form action="proses.php" method="POST" enctype="multipart/form-data">
+                    <!-- <form action="proses.php" method="POST" enctype="multipart/form-data">
                         Pilih File Excel : <input type="file" name="userfile">
                         <input type="submit" value="Import"> 
-                    </form>
+                    </form> -->
 
                     <?php 
                             if(isset($_GET['id'])) {

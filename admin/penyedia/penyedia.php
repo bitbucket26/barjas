@@ -83,7 +83,7 @@ if($_SESSION['role']==""){
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px;">
+                                <table class="table table-bordered " id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 14px;">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -101,7 +101,7 @@ if($_SESSION['role']==""){
                                         $penyedia = mysqli_query($koneksi,"select * from penyedia");
                                         while($d = mysqli_fetch_array($penyedia)){
                                     ?>
-                                    <tbody style="font-size: 14px;">
+                                    <!-- <tbody style="font-size: 14px;"> -->
                                         <tr>
                                             <td><?php echo $d['id']; ?></td>
                                             <td><?php echo $d['namaperusahaan']; ?></td>
@@ -112,14 +112,14 @@ if($_SESSION['role']==""){
                                             <!-- <td><?php echo $d['kop']; ?></td> -->
                                             <td class="text-center">
                                                 <a href="updatepenyedia.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm text-start" data-target="#myModaledit<?php echo $d['id']; ?>">
-                                                <i class="fa fa-edit fa-md"></i>
+                                                <i class="fa fa-edit fa-sm"></i>
                                                 </a>
                                             </td>
                                         </tr>
                                         <?php
                                             include "modaleditpenyedia.php";
                                         ?>
-                                    </tbody>
+                                    <!-- </tbody> -->
                                     <?php
                                         }
                                     ?>

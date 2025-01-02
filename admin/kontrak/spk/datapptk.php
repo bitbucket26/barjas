@@ -1,5 +1,5 @@
 <?php 
-include "../../koneksi.php";
+include "../../../koneksi.php";
 
 $pekerjaan = $_POST['pekerjaan'];
 $query = mysqli_query($koneksi,"select * from pptk where pekerjaan= '$pekerjaan'");

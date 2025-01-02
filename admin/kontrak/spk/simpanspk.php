@@ -1,6 +1,6 @@
 <?php
 // <!-- tampilkan data dari database -->
-include "../../koneksi.php";
+include "../../../koneksi.php";
 
 // Check connection
 if (mysqli_connect_error()){
@@ -45,7 +45,6 @@ if (mysqli_connect_error()){
   $tglnotadinas= $_POST['tglnotadinas'];
   $waktupelaksanaan= $_POST['waktupelaksanaan'];
   $terbilangwaktupelaksanaan= $_POST['terbilangwaktupelaksanaan'];
-
   $pekerjaan= $_POST['pekerjaan'];
   $subkegiatan= $_POST['subkegiatan'];
   $kegiatan= $_POST['kegiatan'];
@@ -57,14 +56,12 @@ if (mysqli_connect_error()){
   $nomorskpptk= $_POST['nomorskpptk'];
   $tglskpptk= $_POST['tglskpptk'];
   $jabatanpptk= $_POST['jabatanpptk'];
-
   $nilaihps= $_POST['nilaihps'];
   $terbilanghps= $_POST['terbilanghps'];
   $nilaippnhps= $_POST['nilaippnhps'];
   $terbilangppnhps= $_POST['terbilangppnhps'];
   $nilaitotalhps= $_POST['nilaitotalhps'];
   $terbilangtotalhps= $_POST['terbilangtotalhps'];
-
   $nilainego= $_POST['nilainego'];
   $terbilangnego= $_POST['terbilangnego'];
   $nilaippnnego= $_POST['nilaippnnego'];
@@ -73,7 +70,6 @@ if (mysqli_connect_error()){
   $terbilangpph= $_POST['terbilangpph'];
   $nilaitotalnego= $_POST['nilaitotalnego'];
   $terbilangtotalnego= $_POST['terbilangtotalnego'];
-
   $namapejabatbarjas= $_POST['namapejabatbarjas'];
   $nippejabatbarjas= $_POST['nippejabatbarjas'];
   $nomorskpejabatbarjas= $_POST['nomorskpejabatbarjas'];
@@ -84,7 +80,6 @@ if (mysqli_connect_error()){
   $nomorskppk= $_POST['nomorskppk'];
   $tglskppk= $_POST['tglskppk'];
   $jabatanppk= $_POST['jabatanppk'];
-
   $namaperusahaan= $_POST['namaperusahaan'];
   $namapimpinan= $_POST['namapimpinan'];
   $jabatan= $_POST['jabatan'];
@@ -100,7 +95,6 @@ if (mysqli_connect_error()){
   $sumberdana= $_POST['sumberdana'];
   $nomortlp= $_POST['nomortlp'];
   $alamatsatker= $_POST['alamatsatker'];
-
   $nopenawaran= $_POST['nopenawaran'];
   $nopemeriksaan= $_POST['nopemeriksaan'];
   $tglpemeriksaan= $_POST['tglpemeriksaan'];
@@ -116,10 +110,27 @@ if (mysqli_connect_error()){
   $nippejabatpemeriksa= $_POST['nippejabatpemeriksa'];
   $nomorskpejabatpemeriksa= $_POST['nomorskpejabatpemeriksa'];
   $tglskpejabatpemeriksa= $_POST['tglskpejabatpemeriksa'];
+  $namapejabatpemeriksa1= $_POST['namapejabatpemeriksa1'];
+  $nippejabatpemeriksa1= $_POST['nippejabatpemeriksa1'];
+  $nomorskpejabatpemeriksa1= $_POST['nomorskpejabatpemeriksa1'];
+  $tglskpejabatpemeriksa1= $_POST['tglskpejabatpemeriksa1'];
+  $namapejabatpemeriksa2= $_POST['namapejabatpemeriksa2'];
+  $nippejabatpemeriksa2= $_POST['nippejabatpemeriksa2'];
+  $nomorskpejabatpemeriksa2= $_POST['nomorskpejabatpemeriksa2'];
+  $tglskpejabatpemeriksa2= $_POST['tglskpejabatpemeriksa2'];
+  $namapejabatpemeriksa3= $_POST['namapejabatpemeriksa3'];
+  $nippejabatpemeriksa3= $_POST['nippejabatpemeriksa3'];
+  $nomorskpejabatpemeriksa3= $_POST['nomorskpejabatpemeriksa3'];
+  $tglskpejabatpemeriksa3= $_POST['tglskpejabatpemeriksa3'];
+  $nomordpa= $_POST['nomordpa'];
+  $tgldpa= $_POST['tgldpa'];
+  $user= $_POST['user'];
+  $totalbap= $_POST['totalbap'];
+  $terbilangbap= $_POST['terbilangbap'];
   
   
 
-  $sql = "INSERT INTO spk VALUES(     '$id',
+  $sql = "INSERT INTO kontrak VALUES( '$id',
                                       '$tglproses',
                                       '$tglmulaikontrak',
                                       '$tglselesaikontrak',
@@ -129,6 +140,7 @@ if (mysqli_connect_error()){
                                       '$hps',
                                       '$tglhps',
                                       '$undanganpejabatbarjas',
+
                                       '$tglundanganpejabatbarjas',
                                       '$pembukaan',
                                       '$tglpembukaan',
@@ -139,6 +151,7 @@ if (mysqli_connect_error()){
                                       '$baklarifikasi',
                                       '$tglbaklarifikasi',
                                       '$lambaklarifikasi',
+
                                       '$tgllambaklarifikasi',
                                       '$bahasildasung',
                                       '$tglbahasildasung',
@@ -149,6 +162,7 @@ if (mysqli_connect_error()){
                                       '$lapproseshasilpengadaan',
                                       '$tgllapproseshasilpengadaan',
                                       '$sppbj',
+
                                       '$tglsppbj',
                                       '$suratpesanan',
                                       '$tglsuratpesanan',
@@ -156,10 +170,10 @@ if (mysqli_connect_error()){
                                       '$tglnotadinas',
                                       '$waktupelaksanaan',
                                       '$terbilangwaktupelaksanaan',
-
                                       '$pekerjaan',
                                       '$subkegiatan',
                                       '$kegiatan',
+
                                       '$noreksubkegiatan',
                                       '$namarekening',
                                       '$koderekeningkegiatan',
@@ -168,24 +182,22 @@ if (mysqli_connect_error()){
                                       '$nomorskpptk',
                                       '$tglskpptk',
                                       '$jabatanpptk',
-
                                       '$nilaihps',
                                       '$terbilanghps',
+
                                       '$nilaippnhps',
                                       '$terbilangppnhps',
                                       '$nilaitotalhps',
                                       '$terbilangtotalhps',
-
                                       '$nilainego',
                                       '$terbilangnego',
                                       '$nilaippnnego',
                                       '$terbilangppnnego',
                                       '$nilaipph',
                                       '$terbilangpph',
+
                                       '$nilaitotalnego',
                                       '$terbilangtotalnego',
-
-
                                       '$namapejabatbarjas',
                                       '$nippejabatbarjas',
                                       '$nomorskpejabatbarjas',
@@ -194,9 +206,9 @@ if (mysqli_connect_error()){
                                       '$namappk',
                                       '$nipppk',
                                       '$nomorskppk',
+
                                       '$tglskppk',
                                       '$jabatanppk',
-
                                       '$namaperusahaan',
                                       '$namapimpinan',
                                       '$jabatan',
@@ -205,6 +217,7 @@ if (mysqli_connect_error()){
                                       '$namabank',
                                       '$namarekbank',
                                       '$alamat',
+
                                       '$kota',
                                       '$kldi',
                                       '$satuankerja',
@@ -212,10 +225,10 @@ if (mysqli_connect_error()){
                                       '$sumberdana',
                                       '$nomortlp',
                                       '$alamatsatker',
-
                                       '$nopenawaran',
                                       '$nopemeriksaan',
                                       '$tglpemeriksaan',
+
                                       '$nopembayaran',
                                       '$tglpembayaran',
                                       '$noundanganppk',
@@ -226,10 +239,31 @@ if (mysqli_connect_error()){
                                       '$tglbastb',
                                       '$namapejabatpemeriksa',
                                       '$nippejabatpemeriksa',
+
                                       '$nomorskpejabatpemeriksa',
-                                      '$tglskpejabatpemeriksa')";
+                                      '$tglskpejabatpemeriksa',
+                                      '$namapejabatpemeriksa1',
+                                      '$nippejabatpemeriksa1',
+                                      '$nomorskpejabatpemeriksa1',
+                                      '$tglskpejabatpemeriksa1',
+                                      '$namapejabatpemeriksa2',
+                                      '$nippejabatpemeriksa2',
+                                      '$nomorskpejabatpemeriksa2',
+                                      '$tglskpejabatpemeriksa2',
+                                      
+                                      '$namapejabatpemeriksa3',
+                                      '$nippejabatpemeriksa3',
+                                      '$nomorskpejabatpemeriksa3',
+                                      '$tglskpejabatpemeriksa3',
+                                      '$nomordpa',
+                                      '$tgldpa',
+                                      '$user',
+                                      '$totalbap',
+                                      '$terbilangbap'
+                                      )";
 
   mysqli_query($koneksi, $sql);
+  // mysqli_query($koneksi, $kontrak);
 
   header ("location: spk.php");
   

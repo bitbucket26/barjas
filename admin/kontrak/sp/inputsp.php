@@ -896,71 +896,9 @@ if($_SESSION['role']==""){
                                                         </div>
                                             </div>
                                             <hr class="sidebar-divider">
-                                            <hr class="sidebar-divider">
+                                            <!-- <hr class="sidebar-divider"> -->
 
-                                            <!-- Baris 1 -->
-                                            <div class="row g-2">
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">K/L/D/I</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="kldi" value="Pemerintah Kabupaten Indramayu"  class="form-control" id="kldi" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Baris 2 -->
-                                                <div class="row g-2">
-                                                <div class="col-8">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Satuan Kerja</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="satuankerja" value="RSUD Indramayu"  class="form-control" id="satuankerja" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Tahun Anggaran</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="tahunanggaran" id="tahunanggaran" required>
-                                                                <option value="">--Pilih--</option>
-                                                                <option value="2024">2024</option>
-                                                                <option value="2025">2025</option>
-                                                                <option value="2026">2026</option>
-                                                                <option value="2027">2027</option>
-                                                                <option value="2028">2028</option>
-                                                            </select>
-                                                            <!-- <input style="height: 30px; font-size: 13px;" type="text" name="tahunanggaran"  class="form-control" id="satuankerja" readonly> -->
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <!-- Baris 3 -->
-                                                <div class="row g-2">
-                                                    <div class="col-6">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Sumber Dana</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="sumberdana" value="BLUD RSUD Indramayu Tahun 2025" class="form-control" id="sumberdana" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Nomor Telpon</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nomortlp" value="(0234) 275 330"  class="form-control" id="nomortlp" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row g-2">
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Alamat</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="alamatsatker" value="Jl. Murah Nara No.7 Sindang - Indramayu"  class="form-control" id="alamatsatker" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <div class="row g-2">
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">User</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="user" value="<?php echo $_SESSION['username']; ?>"  class="form-control" id="user" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div>     
+                                                     
                                         </div>
                                         <div class="col-sm-6">
                                             <h4>NILAI KONTRAK > 300 JUTA</h4>
@@ -1253,7 +1191,7 @@ if($_SESSION['role']==""){
                                 <hr class="sidebar-divider">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -1344,7 +1282,7 @@ if($_SESSION['role']==""){
                                                     </div>
                                                 </div>
                                         </div>
-                                        <div class="col-sm-6">
+                                        <div class="col-sm-4">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     
@@ -1433,6 +1371,71 @@ if($_SESSION['role']==""){
                                                 </div> 
                                                 
                                             
+                                        </div>
+                                        <div class="COL-4">
+<!-- Baris 1 -->
+<div class="row g-2">
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">K/L/D/I</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="kldi" value="Pemerintah Kabupaten Indramayu"  class="form-control" id="kldi" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Baris 2 -->
+                                                <div class="row g-2">
+                                                <div class="col-8">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Satuan Kerja</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="satuankerja" value="RSUD Indramayu"  class="form-control" id="satuankerja" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Tahun Anggaran</label>
+                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="tahunanggaran" id="tahunanggaran" required>
+                                                                <option value="">--Pilih--</option>
+                                                                <option value="2024">2024</option>
+                                                                <option value="2025">2025</option>
+                                                                <option value="2026">2026</option>
+                                                                <option value="2027">2027</option>
+                                                                <option value="2028">2028</option>
+                                                            </select>
+                                                            <!-- <input style="height: 30px; font-size: 13px;" type="text" name="tahunanggaran"  class="form-control" id="satuankerja" readonly> -->
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <!-- Baris 3 -->
+                                                <div class="row g-2">
+                                                    <div class="col-6">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Sumber Dana</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="sumberdana" value="BLUD RSUD Indramayu Tahun 2025" class="form-control" id="sumberdana" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Nomor Telpon</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nomortlp" value="(0234) 275 330"  class="form-control" id="nomortlp" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2">
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Alamat</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="alamatsatker" value="Jl. Murah Nara No.7 Sindang - Indramayu"  class="form-control" id="alamatsatker" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <div class="row g-2">
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata" hidden>User</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="user" value="<?php echo $_SESSION['username']; ?>"  class="form-control" id="user" hidden  >
+                                                        </div>
+                                                    </div>
+                                                </div>
                                         </div>
                                     </div>
                                 </div>

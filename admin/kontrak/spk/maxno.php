@@ -7,7 +7,7 @@
                                         echo "Koneksi database gagal : " . mysqli_connect_error();
                                     }
                                     $id = $_GET['id'];
-                                    $sql = mysqli_query($koneksi, "select max(no) as maxID from barangspk where id='$id'");
+                                    $sql = mysqli_query($koneksi, "select max(no) as maxID from barang where id='$id'");
                                     $data = mysqli_fetch_array($sql) or die( mysqli_error($data));
                                     $kode = $data['maxID'];
                                     $kode++;

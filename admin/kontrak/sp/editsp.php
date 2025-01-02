@@ -847,6 +847,9 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
+<h4>NILAI KONTRAK <=300 JUTA</h3>
+
+                                <hr class="sidebar-divider">
                                         <div class="row g-2">
                                                     <?php	
                                                     include "../../../koneksi.php";
@@ -894,47 +897,43 @@ if($_SESSION['role']==""){
                                                     </div>
                                                 </div>
                                         </div>
-                                        </div>
-                                </div>
+                                        <div class="col-6">
+<h4>NILAI KONTRAK >300 JUTA</h4>
 
                                 <hr class="sidebar-divider">
-                                <hr class="sidebar-divider">
-                                <!-- <hr class="sidebar-divider border-success"> -->
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-sm-4">
+
                                         <div class="row g-2">
-                                                    <?php	
-                                                    include "../../../koneksi.php";
-                                                        
-                                                    // Check connection
-                                                    if (mysqli_connect_error()){
-                                                        echo "Koneksi database gagal : " . mysqli_connect_error();
-                                                    }
-                                                    ?>
-                                                    <div class="col-6">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Ketua Pejabat pemeriksa</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" onchange="detailpemeriksa1()" name="namapejabatpemeriksa1" id="namapejabatpemeriksa1" required>
-                                                                <option value="<?php echo $row['namapejabatpemeriksa1'] ?>"><?php echo $row['namapejabatpemeriksa1']; ?></option>
-                                                                <?php
-                                                                $pemeriksa2 = mysqli_query($koneksi,"select * from pemeriksa2");
-                                                                while($m = mysqli_fetch_array($pemeriksa2)){
-                                                                ?>
-                                                                    <option value="<?php echo $m['namapejabatpemeriksa'] ?>"><?php echo $m['namapejabatpemeriksa']; ?></option>
-                                                                <?php
-                                                                }
-                                                                ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
+                                                            <?php	
+                                                            include "../../../koneksi.php";
+                                                                
+                                                            // Check connection
+                                                            if (mysqli_connect_error()){
+                                                                echo "Koneksi database gagal : " . mysqli_connect_error();
+                                                            }
+                                                            ?>
+                                                            <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">NIP</label>
-                                                                    <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nippejabatpemeriksa1']; ?>" name="nippejabatpemeriksa1" class="form-control" id="nippejabatpemeriksa1" readonly>                                               
+                                                                    <label class="labeldata">Ketua Pejabat pemeriksa</label>
+                                                                    <select style="height: 30px; font-size: 13px;" type="text" class="form-control" onchange="detailpemeriksa1()" name="namapejabatpemeriksa1" id="namapejabatpemeriksa1" required>
+                                                                        <option value="<?php echo $row['namapejabatpemeriksa1'] ?>"><?php echo $row['namapejabatpemeriksa1']; ?></option>
+                                                                        <?php
+                                                                        $pemeriksa2 = mysqli_query($koneksi,"select * from pemeriksa2");
+                                                                        while($m = mysqli_fetch_array($pemeriksa2)){
+                                                                        ?>
+                                                                            <option value="<?php echo $m['namapejabatpemeriksa'] ?>"><?php echo $m['namapejabatpemeriksa']; ?></option>
+                                                                        <?php
+                                                                        }
+                                                                        ?>
+                                                                    </select>
                                                                 </div>
-                                                    </div>
-                                        </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                        <div class="form-floating">
+                                                                            <label class="labeldata">NIP</label>
+                                                                            <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nippejabatpemeriksa1']; ?>" name="nippejabatpemeriksa1" class="form-control" id="nippejabatpemeriksa1" readonly>                                               
+                                                                        </div>
+                                                            </div>
+                                                </div>
                                                 <div class="row g-2">
                                                     <div class="col-6">
                                                                 <div class="form-floating">
@@ -949,9 +948,10 @@ if($_SESSION['role']==""){
                                                                 </div>
                                                     </div>
                                                 </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                        <div class="row g-2">
+                                <hr class="sidebar-divider">
+                                        
+                                        
+                                                <div class="row g-2">
                                                     <?php	
                                                     include "../../../koneksi.php";
                                                         
@@ -997,39 +997,40 @@ if($_SESSION['role']==""){
                                                                 </div>
                                                     </div>
                                                 </div>
-                                        </div>
-                                        <div class="col-sm-4">
-                                        <div class="row g-2">
-                                                    <?php	
-                                                    include "../../../koneksi.php";
-                                                        
-                                                    // Check connection
-                                                    if (mysqli_connect_error()){
-                                                        echo "Koneksi database gagal : " . mysqli_connect_error();
-                                                    }
-                                                    ?>
-                                                    <div class="col-6">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Anggota Pejabat pemeriksa</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" onchange="detailpemeriksa3()" name="namapejabatpemeriksa3" id="namapejabatpemeriksa3" required>
-                                                                <option value="<?php echo $row['namapejabatpemeriksa3'] ?>"><?php echo $row['namapejabatpemeriksa3']; ?></option>
-                                                                <?php
-                                                                $pemeriksa3 = mysqli_query($koneksi,"select * from pemeriksa2");
-                                                                while($o = mysqli_fetch_array($pemeriksa3)){
-                                                                ?>
-                                                                    <option value="<?php echo $o['namapejabatpemeriksa'] ?>"><?php echo $o['namapejabatpemeriksa']; ?></option>
-                                                                <?php
-                                                                }
-                                                                ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
+                                        
+                                <hr class="sidebar-divider">
+                                                
+                                                <div class="row g-2">
+                                                            <?php	
+                                                            include "../../../koneksi.php";
+                                                                
+                                                            // Check connection
+                                                            if (mysqli_connect_error()){
+                                                                echo "Koneksi database gagal : " . mysqli_connect_error();
+                                                            }
+                                                            ?>
+                                                            <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">NIP</label>
-                                                                    <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nippejabatpemeriksa3'] ?>" name="nippejabatpemeriksa3" class="form-control" id="nippejabatpemeriksa3" readonly>                                               
+                                                                    <label class="labeldata">Anggota Pejabat pemeriksa</label>
+                                                                    <select style="height: 30px; font-size: 13px;" type="text" class="form-control" onchange="detailpemeriksa3()" name="namapejabatpemeriksa3" id="namapejabatpemeriksa3" required>
+                                                                        <option value="<?php echo $row['namapejabatpemeriksa3'] ?>"><?php echo $row['namapejabatpemeriksa3']; ?></option>
+                                                                        <?php
+                                                                        $pemeriksa3 = mysqli_query($koneksi,"select * from pemeriksa2");
+                                                                        while($o = mysqli_fetch_array($pemeriksa3)){
+                                                                        ?>
+                                                                            <option value="<?php echo $o['namapejabatpemeriksa'] ?>"><?php echo $o['namapejabatpemeriksa']; ?></option>
+                                                                        <?php
+                                                                        }
+                                                                        ?>
+                                                                    </select>
                                                                 </div>
-                                                    </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                        <div class="form-floating">
+                                                                            <label class="labeldata">NIP</label>
+                                                                            <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nippejabatpemeriksa3'] ?>" name="nippejabatpemeriksa3" class="form-control" id="nippejabatpemeriksa3" readonly>                                               
+                                                                        </div>
+                                                            </div>
                                                 </div>
                                                 <div class="row g-2">
                                                     <div class="col-6">

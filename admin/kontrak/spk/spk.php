@@ -114,7 +114,7 @@ if($_SESSION['role']==""){
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px;">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -128,10 +128,10 @@ if($_SESSION['role']==""){
                                         </tr>
                                     </thead>
                                     <?php
-                                        $spk = mysqli_query($koneksi,"select * from spk");
-                                        while($d = mysqli_fetch_array($spk)){
+                                        $kontrak = mysqli_query($koneksi,"select * from kontrak where jeniskontrak='SPK'");
+                                        while($d = mysqli_fetch_array($kontrak)){
                                     ?>
-                                    <tbody style="font-size: 12px;">
+                                    <!-- <tbody style="font-size: 12px;"> -->
                                         <tr>
                                             <td><?php echo $d['id']; ?></td> 
                                             <td><?php echo $d['namaperusahaan']; ?></td> 
@@ -181,18 +181,18 @@ if($_SESSION['role']==""){
                                                 <!-- <a type="button" class="btn btn-danger btn-sm text-start" data-bs-toggle="modal" data-bs-target="#hapusModalspk<?php echo $d['id']; ?>">
                                                 <i class="fa fa-trash fa-md"></i>
                                                 </a> -->
-                                                <a href="hapus.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-danger btn-sm text-start">
+                                                <!-- <a href="hapus.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-danger btn-sm text-start">
                                                 <i class="fa fa-trash fa-md"></i>
-                                                </a>
+                                                </a> -->
                                                 <!-- <a href="inputbarang2.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-info btn-sm text-start">
                                                 <i class="fa fa-cubes fa-md"></i>
                                                 </a> -->
-                                                <a href="inputbarang.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-info btn-sm text-start">
+                                                <!-- <a href="inputbarang.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-info btn-sm text-start">
                                                 <i class="fa fa-cubes fa-md"></i>
-                                                </a>
+                                                </a> -->
                                             </td>
                                         </tr>
-                                    </tbody>
+                                    <!-- </tbody> -->
                                     <?php
                                         }
                                     ?>

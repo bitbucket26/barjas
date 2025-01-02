@@ -116,7 +116,7 @@ if($_SESSION['role']==""){
                         </div>
                         <div class="card-body">
                             <div class="table-responsive" >
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px;">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 10px;">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -133,7 +133,7 @@ if($_SESSION['role']==""){
                                         $ekatalog = mysqli_query($koneksi,"select * from ekatalog");
                                         while($d = mysqli_fetch_array($ekatalog)){
                                     ?>
-                                    <tbody style="font-size: 12px;">
+                                    <!-- <tbody style="font-size: 12px;"> -->
                                         <tr>
                                             <td><?php echo $d['id']; ?></td> 
                                             <td><?php echo $d['namaperusahaan']; ?></td> 
@@ -172,7 +172,7 @@ if($_SESSION['role']==""){
                                                 </a>
                                             </td>
                                         </tr>
-                                    </tbody>
+                                    <!-- </tbody> -->
                                     <?php
                                         }
                                     ?>

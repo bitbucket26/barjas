@@ -1,6 +1,6 @@
 
 <?php 
-include "../../koneksi.php";
+include "../../../koneksi.php";
 
 
   $id = $_POST['id'];
@@ -13,8 +13,9 @@ include "../../koneksi.php";
   $volumenego = $_POST['volumenego'];
   $hargasatuannego   = $_POST['hargasatuannego'];
   $jumlahnego   = $_POST['jumlahnego'];
+  $user   = $_POST['user'];
  
-  $sql = "INSERT INTO barangspk VALUES(
+  $sql = "INSERT INTO barang VALUES(
                                                                             '$id',
                                                                             '$no',
                                                                             '$namaproduk',
@@ -24,9 +25,11 @@ include "../../koneksi.php";
                                                                             '$jumlahhps',
                                                                             '$volumenego',
                                                                             '$hargasatuannego',
-                                                                            '$jumlahnego')";
+                                                                            '$jumlahnego',
+                                                                            '$user'
+                                                                            )";
 
 mysqli_query($koneksi, $sql);
-// header ("location: inputbarang4.php");
+// header ("location: inputbarang.php");
 ?>
 

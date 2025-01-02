@@ -133,7 +133,7 @@ if($_SESSION['role']==""){
                                         $ekatalog2 = mysqli_query($koneksi,"select * from ekatalog2");
                                         while($d = mysqli_fetch_array($ekatalog2)){
                                     ?>
-                                    <tbody style="font-size: 12px;">
+                                    <!-- <tbody style="font-size: 12px;"> -->
                                         <tr>
                                             <td><?php echo $d['id']; ?></td> 
                                             <td><?php echo $d['namaperusahaan']; ?></td> 
@@ -168,7 +168,7 @@ if($_SESSION['role']==""){
                                                 </a>
                                             </td>
                                         </tr>
-                                    </tbody>
+                                    <!-- </tbody> -->
                                     <?php
                                         }
                                     ?>

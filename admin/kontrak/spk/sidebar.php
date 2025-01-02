@@ -5,7 +5,7 @@
                 <div class="sidebar-brand-icon rotate-n-15">
                     <!-- <i class="fas fa-laugh-wink"></i> -->
                     <img class="img-profile rounded-circle"
-                                    src="../../img/logorsud.jpg" style="max-width:40px;">
+                                    src="../../../img/logorsud.jpg" style="max-width:40px;">
                 </div>
                 <div class="sidebar-brand-text mx-2">BARJAS <sup></sup></div>
             </a>

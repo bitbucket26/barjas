@@ -106,7 +106,7 @@ if($_SESSION['role']==""){
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px;">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 14px;">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
@@ -122,7 +122,7 @@ if($_SESSION['role']==""){
                                         $pejabat = mysqli_query($koneksi,"select * from pejabat");
                                         while($d = mysqli_fetch_array($pejabat)){
                                     ?>
-                                    <tbody style="font-size: 14px;">
+                                    <!-- <tbody style="font-size: 14px;"> -->
                                         <tr>
                                             <td><?php echo $d['id']; ?></td> 
                                             <td><?php echo $d['namapejabatbarjas']; ?></td> 
@@ -138,7 +138,7 @@ if($_SESSION['role']==""){
                                         <?php
                                             include "modaleditpejabat.php";
                                         ?>
-                                    </tbody>
+                                    <!-- </tbody> -->
                                     <?php
                                         }
                                     ?>

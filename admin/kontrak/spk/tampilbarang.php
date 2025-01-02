@@ -1,6 +1,6 @@
 <!-- <div class="tampil_data" id="tampil_data"> -->
 <?php 
-                include "../../koneksi.php";
+                include "../../../koneksi.php";
                             if(isset($_GET['id'])) {
                                     $row = mysqli_real_escape_string($koneksi, $_GET['id']);
 
@@ -23,7 +23,7 @@
                                 </tr>
                                 <?php
                                 $no=1;
-                                 $data = mysqli_query($koneksi,"select * from barangspk where id='$_GET[id]'");
+                                 $data = mysqli_query($koneksi,"select * from barang where id='$_GET[id]'");
                                  while($d = mysqli_fetch_array($data)){
                                 ?>
                                 <t
