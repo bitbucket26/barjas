@@ -27,9 +27,10 @@
     </script> -->
 </head>
 
-<body class="bg-gradient-info">
+<body style="background: url('img/bg.png'); no-repeat center fixed; background-size: cover;">
 
     <div class="container">
+    <!-- <img src="img/bgbg.jpg"> -->
     <?php 
 	if(isset($_GET['pesan'])){
 		if($_GET['pesan']=="gagal"){
@@ -47,15 +48,16 @@
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
-                            <!-- <div class="col-lg-6 d-none d-lg-block bg-login-image">
-                                <div class="p-5">
-                                    <img src="img/logobuku.png" class="col-lg-6" >
-                                </div>
-                            </div> -->
+                            <div class="col-lg-12 d-none d-lg-block">
+                                <!-- <div class="p-1">
+                                    <img src="img/logorsud.jpg" class="col-7 rounded mx-auto d-block">
+                                </div> -->
+                            </div>
                             <div class="col-lg-12">
-                                <div class="p-5">
+                            <div class="p-5">
+                                
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Selamat Datang !</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Hello !</h1>
                                     </div>
                                         <form action="ceklogin.php" method="POST" class="user">
                                             <div class="form-group">

@@ -33,6 +33,7 @@ if($_SESSION['role']==""){
     <!-- Custom styles for this page -->
     <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 </head>
     <?php	
@@ -71,7 +72,7 @@ if($_SESSION['role']==""){
                 <div class="container-fluid">
                     <div class="">
                     <button type="button" data-toggle="modal" class="btn btn-info btn-md" data-target="#myModaltambahpptk" style="border-radius: 30px;">
-                        <i class="fa fa-plus">  Tambah</i>
+                        <i class="bi bi-plus-circle"></i> Tambah
                     </button>
                     </div>
                 
@@ -79,12 +80,12 @@ if($_SESSION['role']==""){
                 <br>
                 <div class="card shadow mb-4" style="border-radius: 30px;">
                         <div class="card-header py-3" style="border-radius: 30px;">
-                            <h6 class="m-0 font-weight-bold text-primary">Data PPTK</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">PPTK</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 14px;">
-                                    <thead>
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
+                                    <thead style="font-size: 15px;">
                                         <tr>
                                             <th>ID</th>
                                             <th>Nama</th>
@@ -108,7 +109,7 @@ if($_SESSION['role']==""){
                                             <td><?php echo $d['pekerjaan']; ?></td>
                                             <td class="text-center">
                                                 <a href="updatepptk.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm text-start" data-target="#myModaleditpptk<?php echo $d['id']; ?>">
-                                                <i class="fa fa-edit fa-md"></i>
+                                                <i class="fa fa-edit fa-sm"></i>
                                                 </a>
                                             </td>
                                         </tr>

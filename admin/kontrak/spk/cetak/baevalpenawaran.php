@@ -14,7 +14,7 @@
   }
 }
 </style>
-<body style="background-color: white; line-height: 20px; font-size: tahoma;">
+<body style="background-color: white; line-height: 20px; font-family: tahoma;">
 <?php
         
         include "../../../../koneksi.php";
@@ -107,7 +107,7 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:15px;">
+<section class="sheet padding-10mm" style="font-size: 15px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">

@@ -14,7 +14,7 @@
   }
 }
 </style>
-<body style="background-color: white; line-height: 22px; font-size: tahoma;">
+<body style="background-color: white; line-height: 22px; font-family: tahoma;">
 <?php
         
         include "../../../../koneksi.php";

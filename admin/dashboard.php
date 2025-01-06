@@ -44,7 +44,7 @@ if($_SESSION['role']==""){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SURAT PERJANJIAN</title>
+    <title>KONTRAK</title>
 
     <!-- Custom fonts for this template -->
     <link href="../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -67,6 +67,7 @@ if($_SESSION['role']==""){
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <!-- <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css"/> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 
     <?php	
@@ -112,12 +113,12 @@ if($_SESSION['role']==""){
                 <br>
                 <div class="card shadow mb-4" style="border-radius: 30px;">
                         <div class="card-header py-3" style="border-radius: 30px;">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Kontrak</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Semua Kontrak</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
-                                    <thead>
+                            <table class="table table-hover table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
+                                    <thead style="font-size: 15px;">
                                         <tr>
                                             <th>ID</th>
                                             <th>No. Kontrak</th>
@@ -137,11 +138,11 @@ if($_SESSION['role']==""){
                                     ?>
                                     <!-- <tbody style="font-size: 12px;"> -->
                                         <tr>
-                                            <td><?php echo $d['id']; ?></td> 
+                                            <td class="text-center"><?php echo $d['id']; ?></td> 
                                             <td><?php echo $d['nomorkontrak']; ?></td> 
                                             <td><?php echo $d['namaperusahaan']; ?></td> 
                                             <td>Rp. <?php echo number_format($d['nilaitotalnego']); ?></td>
-                                            <td><?php echo tglindo($d['tglskppk']); ?></td>
+                                            <td><?php echo tglindo($d['tglmulaikontrak']); ?></td>
                                             <td><?php echo $d['pekerjaan']; ?></td>
                                             <td><?php echo $d['user']; ?></td>
                                             <!-- <td class="text-center">

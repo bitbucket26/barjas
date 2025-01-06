@@ -799,6 +799,9 @@ if($_SESSION['role']==""){
                                                             </div>
                                                         </div>
                                                 </div>
+                                <hr class="sidebar-divider">
+                                <hr class="sidebar-divider">
+                                                
                                                 <div class="row">
                                                     <div class="col-4">
                                                         <div class="form-floating">
@@ -1296,13 +1299,13 @@ if($_SESSION['role']==""){
                                                 </div>
                                                 <!-- Baris 2 -->
                                                 <div class="row g-2">
-                                                    <div class="col-8">
+                                                    <div class="col-7">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. Permohonan Pemeriksaan</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="nopemeriksaan"  class="form-control" id="nopemeriksaan" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
                                                             <input style="height: 30px; font-size: 13px;" type="date" name="tglpemeriksaan" class="form-control" id="tglpemeriksaan" required>                                               
@@ -1311,13 +1314,13 @@ if($_SESSION['role']==""){
                                                 </div> 
                                                 <!-- Baris 2 -->
                                                 <div class="row g-2">
-                                                    <div class="col-8">
+                                                    <div class="col-7">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. Permohonan Pembayaran</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="nopembayaran"  class="form-control" id="nopembayaran" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
                                                             <input style="height: 30px; font-size: 13px;" type="date" name="tglpembayaran" class="form-control" id="tglpembayaran" required>                                               
@@ -1326,13 +1329,13 @@ if($_SESSION['role']==""){
                                                 </div> 
                                                 <!-- Baris 3 -->
                                                 <div class="row g-2">
-                                                    <div class="col-8">
+                                                    <div class="col-7">
                                                         <div class="form-floating">
-                                                            <label class="labeldata">Nomor Undangan Pemeriksaan PPK</label>
+                                                            <label class="labeldata">No. Undangan Pemeriksaan PPK</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="noundanganppk" class="form-control" id="noundanganppk" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
                                                             <input style="height: 30px; font-size: 13px;" type="date" name="tglundanganppk" class="form-control" id="tglundanganppk" required>                                               
@@ -1341,13 +1344,13 @@ if($_SESSION['role']==""){
                                                 </div>
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
-                                                    <div class="col-8">
+                                                    <div class="col-7">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. BAPHP</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="nobaphp" class="form-control" id="nobaphp" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
                                                             <input style="height: 30px; font-size: 13px;" type="date" name="tglbaphp" class="form-control" id="tglbaphp" required>
@@ -1356,13 +1359,13 @@ if($_SESSION['role']==""){
                                                 </div>
                                                 <!-- Baris 2 -->
                                                 <div class="row g-2">
-                                                    <div class="col-8">
+                                                    <div class="col-7">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. BASTB</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="nobastb" class="form-control" id="nobastb" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-4">
+                                                    <div class="col-5">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
                                                             <input style="height: 30px; font-size: 13px;" type="date" name="tglbastb" class="form-control" id="tglbastb" required>

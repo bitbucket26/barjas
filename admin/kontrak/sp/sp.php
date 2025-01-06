@@ -34,6 +34,7 @@ if($_SESSION['role']==""){
     <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 </head>
     <?php	
@@ -100,7 +101,7 @@ if($_SESSION['role']==""){
                         <i class="fa fa-plus">  Tambah Kontrak (SP)</i>
                     </button> -->
                     <div class="">
-                    <a href="inputsp.php" type="button" class="btn btn-info btn-md" style="border-radius: 30px;">+ Tambah</a>
+                    <a href="inputsp.php" type="button" class="btn btn-info btn-md" style="border-radius: 30px;"><i class="bi bi-plus-circle"></i> Tambah</a>
                     </div>
                
                 <br>
@@ -113,8 +114,8 @@ if($_SESSION['role']==""){
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
-                                    <thead>
+                                <table class="table table-bordered table-sm" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
+                                    <thead style="font-size: 15px;">
                                         <tr>
                                             <th>ID</th>
                                             <th>Nama Perusahaan</th>
@@ -132,7 +133,7 @@ if($_SESSION['role']==""){
                                     ?>
                                     <!-- <tbody style="font-size: 12px;"> -->
                                         <tr>
-                                            <td><?php echo $d['id']; ?></td> 
+                                            <td class="text-center"><?php echo $d['id']; ?></td> 
                                             <td><?php echo $d['namaperusahaan']; ?></td> 
                                             <td><?php echo $d['nomorkontrak']; ?></td>
                                             <td><?php echo tglindo($d['tglmulaikontrak']); ?></td>
@@ -177,7 +178,7 @@ if($_SESSION['role']==""){
                                                         <li><a class="dropdown-item" href="cetak/kwitansi.php?id=<?php echo $d['id']; ?>" target="_blank">30. Kwitansi (2 rangkap, Materai penyedia)</a></li>
                                                     </ul>
                                                 <a href="editsp.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-warning btn-sm text-start">
-                                                <i class="fa fa-edit fa-md"></i>
+                                                <i class="fa fa-edit fa-sm"></i>
                                                 </a>
                                                 <!-- <a type="button" class="btn btn-danger btn-sm text-start" data-bs-toggle="modal" data-bs-target="#hapusModalsp<?php echo $d['id']; ?>">
                                                 <i class="fa fa-trash fa-md"></i>
