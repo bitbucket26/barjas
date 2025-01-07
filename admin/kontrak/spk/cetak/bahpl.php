@@ -95,7 +95,7 @@
 		return $hasil;
 	}
  
-        $tglbastb= $row['tglbahasildasung'];
+        $tglbastb= $row['tglbahpl'];
         $hari = array("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
         $tanggal = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", 
                             "Sebelas", "Dua Belas", "tiga Belas", "Empat Belas", "Lima Belas", "Enam Belas", "Tujuh Belas", "Delapan Belas", "Sembilan Belas", 

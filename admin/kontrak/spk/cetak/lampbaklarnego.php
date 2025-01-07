@@ -231,11 +231,11 @@
                     <td class="col-3 text-start text-uppercase"><?php echo $d['namaproduk'];?></td>
                     <td class="col-1 text-center text-uppercase"><?php echo $d['volumehps'];?></td>
                     <td class="col-1 text-center"><?php echo $d['satuan'];?></td>
-                    <td class="col-1 text-end"><?php echo number_format($d['hargasatuanhps']);?></td>
+                    <td class="col-1 text-end"><?php echo number_format($d['hargasatuanhps'],2);?></td>
                     <td class="col-1 text-end"><?php echo number_format($d['jumlahhps']);?></td>
-                    <td class="col-1 text-end"><?php echo number_format($d['hargasatuanhps']);?></td>
+                    <td class="col-1 text-end"><?php echo number_format($d['hargasatuanhps'],2);?></td>
                     <td class="col-1 text-end"><?php echo number_format($d['jumlahhps']);?></td>
-                    <td class="col-1 text-end"><?php echo number_format($d['hargasatuannego']);?></td>
+                    <td class="col-1 text-end"><?php echo number_format($d['hargasatuannego'],2);?></td>
                     <td class="col-1 text-end"><?php echo number_format($d['jumlahnego']);?></td>
                 </tr>
             </tbody>

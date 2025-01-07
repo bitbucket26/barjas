@@ -140,7 +140,7 @@ if($_SESSION['role']==""){
                                             <td>Rp. <?php echo number_format($d['nilaitotalnego']); ?>,-</td>
                                             <td><?php echo $d['pekerjaan']; ?></td>
                                             <td class="text-center">
-                                                <a class="btn btn-success btn-sm dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <a class="btn btn-success btn-sm dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px;">
                                                     <i class="fa fa-print fa-sm"></i>    
                                                 </a>
                                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
@@ -177,7 +177,7 @@ if($_SESSION['role']==""){
                                                         <li><a class="dropdown-item" href="cetak/ringkasan.php?id=<?php echo $d['id']; ?>" target="_blank">29.Ringkasan</a></li>
                                                         <li><a class="dropdown-item" href="cetak/kwitansi.php?id=<?php echo $d['id']; ?>" target="_blank">30. Kwitansi (2 rangkap, Materai penyedia)</a></li>
                                                     </ul>
-                                                <a href="editsp.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-warning btn-sm text-start">
+                                                <a href="editsp.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-warning btn-sm text-start" style="border-radius: 10px;">
                                                 <i class="fa fa-edit fa-sm"></i>
                                                 </a>
                                                 <!-- <a type="button" class="btn btn-danger btn-sm text-start" data-bs-toggle="modal" data-bs-target="#hapusModalsp<?php echo $d['id']; ?>">

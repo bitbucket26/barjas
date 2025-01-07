@@ -29,36 +29,16 @@
             </div>
             <!-- Menu KOntrak -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne"
-                    aria-expanded="true" aria-controls="collapseOne">
-                    <!-- <i class="fa fa-book"></i> -->
-                    <i class="bi bi-journal-plus"></i>
-
-                    <span>MANUAL</span>
-                </a>
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Kategori</h6>
-                        <a class="collapse-item" href="../kontrak/spk/spk.php">SPK (Nilai <= 200)</a>
-                        <a class="collapse-item" href="../kontrak/sp/sp.php">SP (Nilai > 200)</a>
-                    </div>
-                </div>
+                <a class="nav-link" href="../kontrak/spk/spk.php">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
+                    <i class="bi bi-journal-text"></i>
+                    <span>MANUAL</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne2"
-                    aria-expanded="true" aria-controls="collapseOne1">
-                    <!-- <i class="fa fa-book"></i> -->
+                <a class="nav-link" href="../kontrak/ekatalog/ekatalog.php">
+                    <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
                     <i class="bi bi-cart4"></i>
-
-                    <span>E-KATALOG</span>
-                </a>
-                <div id="collapseOne2" class="collapse" aria-labelledby="headingOne" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <!-- <h6 class="collapse-header">Kategori</h6> -->
-                        <a class="collapse-item" href="../kontrak/ekatalog/ekatalog.php">Dashboard E-Catalogue</a>
-                        <!-- <a class="collapse-item" href="../kontrak/ekatalog2/ekatalog.php">Nilai > 200 Jt</a> -->
-                    </div>
-                </div>
+                    <span>E-KATALOG</span></a>
             </li>
                         <!-- Divider -->
                         <hr class="sidebar-divider">

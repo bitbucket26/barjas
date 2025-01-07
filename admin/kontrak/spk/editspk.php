@@ -18,7 +18,7 @@ if($_SESSION['role']==""){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PEJABAT PELAKSANA TEKNIS KEGIATAN</title>
+    <title>EDIT KONTRAK</title>
 
     <!-- Custom fonts for this template -->
     <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -81,17 +81,17 @@ if($_SESSION['role']==""){
                     <!-- Input Data -->
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                 <a href="inputbarang.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-success me-md-2" style="border-radius: 30px;">
-                                <i class="fa fa-plus fa-sm"> Barang</i>
-                                </a>_
+                                <i class="bi bi-plus-circle"></i> Barang</i>
+                                </a>.
                                 <a href="hapus.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-danger" style="border-radius: 30px;">
-                                <i class="fa fa-trash fa-sm"> Hapus</i>    
+                                <i class="bi bi-trash"></i> Hapus</i>    
                                 </a>
                             </div>
                             <br>
 
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Edit (SPK)</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Edit Kontrak</h6>
                             </div>
 
                             <form action="updatespk.php" method="GET">
@@ -695,13 +695,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nomor DPA / DPPA</label>
-                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['nomordpa']; ?>" type="text" name="nomordpa"  class="form-control" id="nomordpa" readonly>
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['nomordpa']; ?>" type="text" name="nomordpa"  class="form-control" id="nomordpa" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Tanggal DPA / DPPA</label>
-                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tgldpa']; ?>" type="date" name="tgldpa"  class="form-control" id="tgldpa" readonly>
+                                                            <input style="height: 30px; font-size: 13px;" value="<?php echo $row['tgldpa']; ?>" type="date" name="tgldpa"  class="form-control" id="tgldpa" required>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -849,62 +849,9 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
-<h4>NILAI KONTRAK <=300 JUTA</h3>
-
-                                <hr class="sidebar-divider">
-                                        <div class="row g-2">
-                                                    <?php	
-                                                    include "../../../koneksi.php";
-                                                        
-                                                    // Check connection
-                                                    if (mysqli_connect_error()){
-                                                        echo "Koneksi database gagal : " . mysqli_connect_error();
-                                                    }
-                                                    ?>
-                                                    <div class="col-6">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Ketua Pejabat pemeriksa</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" onchange="detailpemeriksa()" name="namapejabatpemeriksa" id="namapejabatpemeriksa" required>
-                                                                <option value="<?php echo $row['namapejabatpemeriksa'] ?>"><?php echo $row['namapejabatpemeriksa']; ?></option>
-                                                                <?php
-                                                                $pemeriksa = mysqli_query($koneksi,"select * from pemeriksa");
-                                                                while($r = mysqli_fetch_array($pemeriksa)){
-                                                                ?>
-                                                                    <option value="<?php echo $r['namapejabatpemeriksa'] ?>"><?php echo $r['namapejabatpemeriksa']; ?></option>
-                                                                <?php
-                                                                }
-                                                                ?>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                                <div class="form-floating">
-                                                                    <label class="labeldata">NIP</label>
-                                                                    <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nippejabatpemeriksa']; ?>" name="nippejabatpemeriksa" class="form-control" id="nippejabatpemeriksa" readonly>                                               
-                                                                </div>
-                                                    </div>
-                                        </div>
+                                                <h4>PEJABAT PEMERIKSA HASIL PEKERJAAN</h3>
+                                                <hr class="sidebar-divider">
                                                 <div class="row g-2">
-                                                    <div class="col-6">
-                                                                <div class="form-floating">
-                                                                    <label class="labeldata">Nomor SK</label>
-                                                                    <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nomorskpejabatpemeriksa']; ?>" name="nomorskpejabatpemeriksa" class="form-control" id="nomorskpejabatpemeriksa" readonly>                                               
-                                                                </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                                <div class="form-floating">
-                                                                    <label class="labeldata">Tanggal SK</label>
-                                                                    <input style="height: 30px; font-size: 13px;" type="date" value="<?php echo $row['tglskpejabatpemeriksa']; ?>" name="tglskpejabatpemeriksa" class="form-control" id="tglskpejabatpemeriksa" readonly>                                               
-                                                                </div>
-                                                    </div>
-                                                </div>
-                                        </div>
-                                        <div class="col-6">
-<h4>NILAI KONTRAK >300 JUTA</h4>
-
-                                <hr class="sidebar-divider">
-
-                                        <div class="row g-2">
                                                             <?php	
                                                             include "../../../koneksi.php";
                                                                 
@@ -915,7 +862,55 @@ if($_SESSION['role']==""){
                                                             ?>
                                                             <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">Ketua Pejabat pemeriksa</label>
+                                                                    <label class="labeldata" id="aa">Ketua Pejabat pemeriksa</label>
+                                                                    <select style="height: 30px; font-size: 13px;" type="text" class="form-control" onchange="detailpemeriksa()" name="namapejabatpemeriksa" id="namapejabatpemeriksa" required>
+                                                                        <option value="<?php echo $row['namapejabatpemeriksa'] ?>"><?php echo $row['namapejabatpemeriksa']; ?></option>
+                                                                        <?php
+                                                                        $pemeriksa = mysqli_query($koneksi,"select * from pemeriksa");
+                                                                        while($r = mysqli_fetch_array($pemeriksa)){
+                                                                        ?>
+                                                                            <option value="<?php echo $r['namapejabatpemeriksa'] ?>"><?php echo $r['namapejabatpemeriksa']; ?></option>
+                                                                        <?php
+                                                                        }
+                                                                        ?>
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                        <div class="form-floating">
+                                                                            <label class="labeldata" id="bb">NIP</label>
+                                                                            <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nippejabatpemeriksa']; ?>" name="nippejabatpemeriksa" class="form-control" id="nippejabatpemeriksa" readonly>                                               
+                                                                        </div>
+                                                            </div>
+                                                </div>
+                                                <div class="row g-2">
+                                                    <div class="col-6">
+                                                                <div class="form-floating">
+                                                                    <label class="labeldata" id="cc">Nomor SK</label>
+                                                                    <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nomorskpejabatpemeriksa']; ?>" name="nomorskpejabatpemeriksa" class="form-control" id="nomorskpejabatpemeriksa" readonly>                                               
+                                                                </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                                <div class="form-floating">
+                                                                    <label class="labeldata" id="dd">Tanggal SK</label>
+                                                                    <input style="height: 30px; font-size: 13px;" type="date" value="<?php echo $row['tglskpejabatpemeriksa']; ?>" name="tglskpejabatpemeriksa" class="form-control" id="tglskpejabatpemeriksa" readonly>                                               
+                                                                </div>
+                                                    </div>
+                                                </div>
+                                                <hr class="sidebar-divider">
+                                                <hr class="sidebar-divider">
+                                                <div class="row g-2">
+                                                            <?php	
+                                                            include "../../../koneksi.php";
+                                                                
+                                                            // Check connection
+                                                            if (mysqli_connect_error()){
+                                                                echo "Koneksi database gagal : " . mysqli_connect_error();
+                                                            }
+                                                            ?>
+                                                            <div class="col-6">
+                                                                <div class="form-floating">
+                                                                    <label class="labeldata" id="a1">Ketua Pejabat pemeriksa</label>
                                                                     <select style="height: 30px; font-size: 13px;" type="text" class="form-control" onchange="detailpemeriksa1()" name="namapejabatpemeriksa1" id="namapejabatpemeriksa1" required>
                                                                         <option value="<?php echo $row['namapejabatpemeriksa1'] ?>"><?php echo $row['namapejabatpemeriksa1']; ?></option>
                                                                         <?php
@@ -931,7 +926,7 @@ if($_SESSION['role']==""){
                                                             </div>
                                                             <div class="col-6">
                                                                         <div class="form-floating">
-                                                                            <label class="labeldata">NIP</label>
+                                                                            <label class="labeldata" id="b1">NIP</label>
                                                                             <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nippejabatpemeriksa1']; ?>" name="nippejabatpemeriksa1" class="form-control" id="nippejabatpemeriksa1" readonly>                                               
                                                                         </div>
                                                             </div>
@@ -939,19 +934,19 @@ if($_SESSION['role']==""){
                                                 <div class="row g-2">
                                                     <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">Nomor SK</label>
+                                                                    <label class="labeldata" id="c1">Nomor SK</label>
                                                                     <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nomorskpejabatpemeriksa1']; ?>" name="nomorskpejabatpemeriksa1" class="form-control" id="nomorskpejabatpemeriksa1" readonly>                                               
                                                                 </div>
                                                     </div>
                                                     <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">Tanggal SK</label>
+                                                                    <label class="labeldata" id="d1">Tanggal SK</label>
                                                                     <input style="height: 30px; font-size: 13px;" type="date" value="<?php echo $row['tglskpejabatpemeriksa1']; ?>" name="tglskpejabatpemeriksa1" class="form-control" id="tglskpejabatpemeriksa1" readonly>                                               
                                                                 </div>
                                                     </div>
                                                 </div>
-                                <hr class="sidebar-divider">
-                                        
+                                                <hr class="sidebar-divider">
+                                                <hr class="sidebar-divider">
                                         
                                                 <div class="row g-2">
                                                     <?php	
@@ -964,7 +959,7 @@ if($_SESSION['role']==""){
                                                     ?>
                                                     <div class="col-6">
                                                         <div class="form-floating">
-                                                            <label class="labeldata">Anggota Pejabat pemeriksa</label>
+                                                            <label class="labeldata" id="a2">Anggota Pejabat pemeriksa</label>
                                                             <select style="height: 30px; font-size: 13px;" type="text" class="form-control" onchange="detailpemeriksa2()" name="namapejabatpemeriksa2" id="namapejabatpemeriksa2" required>
                                                                 <option value="<?php echo $row['namapejabatpemeriksa2'] ?>"><?php echo $row['namapejabatpemeriksa2']; ?></option>
                                                                 <?php
@@ -980,7 +975,7 @@ if($_SESSION['role']==""){
                                                     </div>
                                                     <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">NIP</label>
+                                                                    <label class="labeldata" id="b2">NIP</label>
                                                                     <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nippejabatpemeriksa2']; ?>" name="nippejabatpemeriksa2" class="form-control" id="nippejabatpemeriksa2" readonly>                                               
                                                                 </div>
                                                     </div>
@@ -988,19 +983,20 @@ if($_SESSION['role']==""){
                                                 <div class="row g-2">
                                                     <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">Nomor SK</label>
+                                                                    <label class="labeldata" id="c2">Nomor SK</label>
                                                                     <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nomorskpejabatpemeriksa2']; ?>" name="nomorskpejabatpemeriksa2" class="form-control" id="nomorskpejabatpemeriksa2" readonly>                                               
                                                                 </div>
                                                     </div>
                                                     <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">Tanggal SK</label>
+                                                                    <label class="labeldata" id="d2">Tanggal SK</label>
                                                                     <input style="height: 30px; font-size: 13px;" type="date" value="<?php echo $row['tglskpejabatpemeriksa2']; ?>" name="tglskpejabatpemeriksa2" class="form-control" id="tglskpejabatpemeriksa2" readonly>                                               
                                                                 </div>
                                                     </div>
                                                 </div>
                                         
-                                <hr class="sidebar-divider">
+                                                <hr class="sidebar-divider">
+                                                <hr class="sidebar-divider">
                                                 
                                                 <div class="row g-2">
                                                             <?php	
@@ -1013,7 +1009,7 @@ if($_SESSION['role']==""){
                                                             ?>
                                                             <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">Anggota Pejabat pemeriksa</label>
+                                                                    <label class="labeldata" id="a3">Anggota Pejabat pemeriksa</label>
                                                                     <select style="height: 30px; font-size: 13px;" type="text" class="form-control" onchange="detailpemeriksa3()" name="namapejabatpemeriksa3" id="namapejabatpemeriksa3" required>
                                                                         <option value="<?php echo $row['namapejabatpemeriksa3'] ?>"><?php echo $row['namapejabatpemeriksa3']; ?></option>
                                                                         <?php
@@ -1029,7 +1025,7 @@ if($_SESSION['role']==""){
                                                             </div>
                                                             <div class="col-6">
                                                                         <div class="form-floating">
-                                                                            <label class="labeldata">NIP</label>
+                                                                            <label class="labeldata" id="b3">NIP</label>
                                                                             <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nippejabatpemeriksa3'] ?>" name="nippejabatpemeriksa3" class="form-control" id="nippejabatpemeriksa3" readonly>                                               
                                                                         </div>
                                                             </div>
@@ -1037,17 +1033,90 @@ if($_SESSION['role']==""){
                                                 <div class="row g-2">
                                                     <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">Nomor SK</label>
+                                                                    <label class="labeldata" id="c3">Nomor SK</label>
                                                                     <input style="height: 30px; font-size: 13px;" type="text" value="<?php echo $row['nomorskpejabatpemeriksa3'] ?>" name="nomorskpejabatpemeriksa3" class="form-control" id="nomorskpejabatpemeriksa3" readonly>                                               
                                                                 </div>
                                                     </div>
                                                     <div class="col-6">
                                                                 <div class="form-floating">
-                                                                    <label class="labeldata">Tanggal SK</label>
+                                                                    <label class="labeldata" id="d3">Tanggal SK</label>
                                                                     <input style="height: 30px; font-size: 13px;" type="date" value="<?php echo $row['tglskpejabatpemeriksa3'] ?>" name="tglskpejabatpemeriksa3" class="form-control" id="tglskpejabatpemeriksa3" readonly>                                               
                                                                 </div>
                                                     </div>
                                                 </div>
+
+                                        </div>
+                                        <div class="col-6">
+                                            <h4>SATUAN KERJA</h4>
+                                        <hr class="sidebar-divider">
+
+
+                                                <!-- Baris 1 -->
+                                                <div class="row g-2">
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">K/L/D/I</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="kldi" value="Pemerintah Kabupaten Indramayu"  class="form-control" id="kldi" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Baris 2 -->
+                                                <div class="row g-2">
+                                                <div class="col-8">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Satuan Kerja</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="satuankerja" value="RSUD Indramayu"  class="form-control" id="satuankerja" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Tahun Anggaran</label>
+                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="tahunanggaran" id="tahunanggaran" required>
+                                                                <option value="<?php echo $row['tahunanggaran'] ?>"><?php echo $row['tahunanggaran']; ?></option>
+                                                                <option value="2024">2024</option>
+                                                                <option value="2025">2025</option>
+                                                                <option value="2026">2026</option>
+                                                                <option value="2027">2027</option>
+                                                                <option value="2028">2028</option>
+                                                            </select>
+                                                            <!-- <input style="height: 30px; font-size: 13px;" type="text" name="tahunanggaran"  class="form-control" id="satuankerja" readonly> -->
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <!-- Baris 3 -->
+                                                <div class="row g-2">
+                                                    <div class="col-6">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Sumber Dana</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="sumberdana" value="BLUD RSUD Indramayu Tahun 2025" class="form-control" id="sumberdana" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Nomor Telpon</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nomortlp" value="(0234) 275 330"  class="form-control" id="nomortlp" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2">
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Alamat</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="alamatsatker" value="Jl. Murah Nara No.7 Sindang - Indramayu"  class="form-control" id="alamatsatker" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <div class="row g-2">
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <!-- <label class="labeldata">User</label> -->
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="user" value="<?php echo $_SESSION['username']; ?>"  class="form-control" id="user" hidden>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -1190,7 +1259,7 @@ if($_SESSION['role']==""){
                                 <hr class="sidebar-divider">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -1281,7 +1350,7 @@ if($_SESSION['role']==""){
                                                     </div>
                                                 </div>
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     
@@ -1371,71 +1440,7 @@ if($_SESSION['role']==""){
                                                 
                                             
                                         </div>
-                                        <div class="col-sm-4">
-                                                <!-- Baris 1 -->
-                                                <div class="row g-2">
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">K/L/D/I</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="kldi" value="Pemerintah Kabupaten Indramayu"  class="form-control" id="kldi" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Baris 2 -->
-                                                <div class="row g-2">
-                                                <div class="col-8">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Satuan Kerja</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="satuankerja" value="RSUD Indramayu"  class="form-control" id="satuankerja" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Tahun Anggaran</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="tahunanggaran" id="tahunanggaran" required>
-                                                                <option value="<?php echo $row['tahunanggaran'] ?>"><?php echo $row['tahunanggaran']; ?></option>
-                                                                <option value="2024">2024</option>
-                                                                <option value="2025">2025</option>
-                                                                <option value="2026">2026</option>
-                                                                <option value="2027">2027</option>
-                                                                <option value="2028">2028</option>
-                                                            </select>
-                                                            <!-- <input style="height: 30px; font-size: 13px;" type="text" name="tahunanggaran"  class="form-control" id="satuankerja" readonly> -->
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <!-- Baris 3 -->
-                                                <div class="row g-2">
-                                                    <div class="col-6">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Sumber Dana</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="sumberdana" value="BLUD RSUD Indramayu Tahun 2025" class="form-control" id="sumberdana" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Nomor Telpon</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nomortlp" value="(0234) 275 330"  class="form-control" id="nomortlp" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row g-2">
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Alamat</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="alamatsatker" value="Jl. Murah Nara No.7 Sindang - Indramayu"  class="form-control" id="alamatsatker" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <div class="row g-2">
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                            <!-- <label class="labeldata">User</label> -->
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="user" value="<?php echo $_SESSION['username']; ?>"  class="form-control" id="user" hidden>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <!-- Akhir Kolom 4 -->
@@ -1700,7 +1705,170 @@ $(document).ready(function() {
  });
 });
 </script> -->
+<script>
+$(document).ready(function() {
+//  $("#nilaitotalnego").keyup(function() {
+     var nilai  = $("#nilaitotalnego").val();
+     if ( nilai <= 300000000){
+            $("#namapejabatpemeriksa").show();
+            $("#nippejabatpemeriksa").show();
+            $("#nomorskpejabatpemeriksa").show();
+            $("#tglskpejabatpemeriksa").show();
+            $("#aa").show();
+            $("#bb").show();
+            $("#cc").show();
+            $("#dd").show();
+            $("#namapejabatpemeriksa1").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa1").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa1").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa1").val("2024-01-02").hide();
+            $("#a1").hide();
+            $("#b1").hide();
+            $("#c1").hide();
+            $("#d1").hide();
+            $("#namapejabatpemeriksa2").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa2").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa2").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa2").val("2024-01-02").hide();
+            $("#a2").hide();
+            $("#b2").hide();
+            $("#c2").hide();
+            $("#d2").hide();
+            $("#namapejabatpemeriksa3").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa3").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa3").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa3").val("2024-01-02").hide();
+            $("#a3").hide();
+            $("#b3").hide();
+            $("#c3").hide();
+            $("#d3").hide();
+        } else {
+            $("#namapejabatpemeriksa1").show();
+            $("#nippejabatpemeriksa1").show();
+            $("#nomorskpejabatpemeriksa1").show();
+            $("#tglskpejabatpemeriksa1").show();
+            $("#a1").show();
+            $("#b1").show();
+            $("#c1").show();
+            $("#d1").show();
+            $("#namapejabatpemeriksa2").show();
+            $("#nippejabatpemeriksa2").show();
+            $("#nomorskpejabatpemeriksa2").show();
+            $("#tglskpejabatpemeriksa2").show();
+            $("#a2").show();
+            $("#b2").show();
+            $("#c2").show();
+            $("#d2").show();
+            $("#namapejabatpemeriksa3").show();
+            $("#nippejabatpemeriksa3").show();
+            $("#nomorskpejabatpemeriksa3").show();
+            $("#tglskpejabatpemeriksa3").show();
+            $("#a3").show();
+            $("#b3").show();
+            $("#c3").show();
+            $("#d3").show();
+            $("#namapejabatpemeriksa").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa").val("2024-01-02").hide();
+            $("#aa").hide();
+            $("#bb").hide();
+            $("#cc").hide();
+            $("#dd").hide();
+     }
+ });
+// });
+</script>
+<script>
+$(document).ready(function() {
+ $("#nilaitotalnego").keyup(function() {
+     var nilai  = $("#nilaitotalnego").val();
+     if ( nilai <= 300000000){
+            $("#namapejabatpemeriksa").show();
+            $("#nippejabatpemeriksa").show();
+            $("#nomorskpejabatpemeriksa").show();
+            $("#tglskpejabatpemeriksa").show();
+            $("#aa").show();
+            $("#bb").show();
+            $("#cc").show();
+            $("#dd").show();
+            $("#namapejabatpemeriksa1").hide();
+            $("#nippejabatpemeriksa1").hide();
+            $("#nomorskpejabatpemeriksa1").hide();
+            $("#tglskpejabatpemeriksa1").hide();
+            $("#a1").hide();
+            $("#b1").hide();
+            $("#c1").hide();
+            $("#d1").hide();
+            $("#namapejabatpemeriksa2").hide();
+            $("#nippejabatpemeriksa2").hide();
+            $("#nomorskpejabatpemeriksa2").hide();
+            $("#tglskpejabatpemeriksa2").hide();
+            $("#a2").hide();
+            $("#b2").hide();
+            $("#c2").hide();
+            $("#d2").hide();
+            $("#namapejabatpemeriksa3").hide();
+            $("#nippejabatpemeriksa3").hide();
+            $("#nomorskpejabatpemeriksa3").hide();
+            $("#tglskpejabatpemeriksa3").hide();
+            $("#a3").hide();
+            $("#b3").hide();
+            $("#c3").hide();
+            $("#d3").hide();
+        } else {
+            $("#namapejabatpemeriksa1").show();
+            $("#nippejabatpemeriksa1").show();
+            $("#nomorskpejabatpemeriksa1").show();
+            $("#tglskpejabatpemeriksa1").show();
+            $("#a1").show();
+            $("#b1").show();
+            $("#c1").show();
+            $("#d1").show();
+            $("#namapejabatpemeriksa2").show();
+            $("#nippejabatpemeriksa2").show();
+            $("#nomorskpejabatpemeriksa2").show();
+            $("#tglskpejabatpemeriksa2").show();
+            $("#a2").show();
+            $("#b2").show();
+            $("#c2").show();
+            $("#d2").show();
+            $("#namapejabatpemeriksa3").show();
+            $("#nippejabatpemeriksa3").show();
+            $("#nomorskpejabatpemeriksa3").show();
+            $("#tglskpejabatpemeriksa3").show();
+            $("#a3").show();
+            $("#b3").show();
+            $("#c3").show();
+            $("#d3").show();
+            $("#namapejabatpemeriksa").hide();
+            $("#nippejabatpemeriksa").hide();
+            $("#nomorskpejabatpemeriksa").hide();
+            $("#tglskpejabatpemeriksa").hide();
+            $("#aa").hide();
+            $("#bb").hide();
+            $("#cc").hide();
+            $("#dd").hide();
+     }
+ });
+});
+</script>
 
+
+<script>
+    $(document).ready(function() {
+    $("#nilaitotalnego").keyup(function() {
+     var nilaitot  = $("#nilaitotalnego").val();
+     if ( nilaitot <= 200000000){
+        $('#jeniskontrak').val("SPK");
+        $('#bilangjeniskontrak').val("Surat Perintah Kerja");
+     } else {
+        $('#jeniskontrak').val("SP");
+        $('#bilangjeniskontrak').val("Surat Perjanjian");
+     }
+    });
+});
+</script>
 
 <!--PPTK -->
 <script>

@@ -51,7 +51,7 @@
                                             
                                             <div class="modal-footer">  
                                                 <button type="submit" class="btn btn-info">Simpan</button>
-                                                <a href="hapus.php?id=<?php echo $d['id']; ?>" Onclick="alert('Data Berhasil Dihapus !')" class="btn btn-danger">Hapus</a>
+                                                <a href="hapus2.php?id=<?php echo $d['id']; ?>" class="btn btn-danger">Hapus</a>
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
                                             </div>
                                             <?php 

@@ -125,13 +125,13 @@ if($_SESSION['role']==""){
                                     ?>
                                     <!-- <tbody style="font-size: 14px;"> -->
                                         <tr>
-                                            <td><?php echo $d['id']; ?></td> 
-                                            <td><?php echo $d['namapejabatbarjas']; ?></td> 
-                                            <td><?php echo $d['nippejabatbarjas']; ?></td>
-                                            <td><?php echo $d['nomorskpejabatbarjas']; ?></td>
-                                            <td><?php echo tglindo($d['tglskpejabatbarjas']); ?></td>
+                                        <td class="text-center align-middle"><?php echo $d['id']; ?></td> 
+                                            <td class="align-middle"><?php echo $d['namapejabatbarjas']; ?></td> 
+                                            <td class="align-middle"><?php echo $d['nippejabatbarjas']; ?></td>
+                                            <td class="align-middle"><?php echo $d['nomorskpejabatbarjas']; ?></td>
+                                            <td class="align-middle"><?php echo tglindo($d['tglskpejabatbarjas']); ?></td>
                                             <td class="text-center">
-                                                <a href="updatepejabat.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm text-start" data-target="#myModaleditpejabat<?php echo $d['id']; ?>">
+                                                <a href="updatepejabat.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm" data-target="#myModaleditpejabat<?php echo $d['id']; ?>" style="border-radius: 10px;">
                                                 <i class="fa fa-edit fa-sm"></i>
                                                 </a>
                                             </td>

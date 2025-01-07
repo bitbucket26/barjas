@@ -9,7 +9,7 @@
                                         $e=mysqli_fetch_array($sql);
 
 
-                                    if($e['nilaitotalnego']>=300000000){
+                                    if($e['nilaitotalnego']>300000000){
                                         header('location:cetak/undanganppk+.php?id=' .$e['id']);
                                     } else {
                                         header('location:cetak/undanganppk-.php?id=' .$e['id']);

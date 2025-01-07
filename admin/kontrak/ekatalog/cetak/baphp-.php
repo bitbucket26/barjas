@@ -10,7 +10,7 @@
 <style>
 @media print {
   @page {
-    size: A4 portrait;
+    size: F4 portrait;
   }
 }
 </style>

@@ -125,14 +125,14 @@ if($_SESSION['role']==""){
                                     ?>
                                     <!-- <tbody style="font-size: 14px;"> -->
                                         <tr>
-                                            <td><?php echo $d['id']; ?></td> 
-                                            <td><?php echo $d['namapejabatpemeriksa']; ?></td> 
-                                            <td><?php echo $d['nippejabatpemeriksa']; ?></td>
-                                            <td><?php echo $d['nomorskpejabatpemeriksa']; ?></td>
-                                            <td><?php echo tglindo($d['tglskpejabatpemeriksa']); ?></td>
+                                        <td class="text-center align-middle"><?php echo $d['id']; ?></td> 
+                                            <td class="align-middle"><?php echo $d['namapejabatpemeriksa']; ?></td> 
+                                            <td class="align-middle"><?php echo $d['nippejabatpemeriksa']; ?></td>
+                                            <td class="align-middle"><?php echo $d['nomorskpejabatpemeriksa']; ?></td>
+                                            <td class="align-middle"><?php echo tglindo($d['tglskpejabatpemeriksa']); ?></td>
                                             <!-- <td><?php echo $d['jabatan']; ?></td> -->
                                             <td class="text-center">
-                                                <a href="updatepemeriksa2.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm text-start" data-target="#myModaleditpemeriksa2<?php echo $d['id']; ?>">
+                                                <a href="updatepemeriksa2.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm text-start" data-target="#myModaleditpemeriksa2<?php echo $d['id']; ?>" style="border-radius: 10px;">
                                                 <i class="fa fa-edit fa-sm"></i>
                                                 </a>
                                             </td>

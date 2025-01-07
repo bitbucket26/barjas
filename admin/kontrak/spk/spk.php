@@ -111,11 +111,11 @@ if($_SESSION['role']==""){
                 ?>
                 <div class="card shadow mb-4" style="border-radius: 30px;">
                         <div class="card-header py-3" style="border-radius: 30px;">
-                            <h6 class="m-0 font-weight-bold text-primary">Data Kontrak (SPK)</h6>
+                            <h6 class="m-0 font-weight-bold text-primary">Kontrak</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered table-sm" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
                                     <thead style="font-size: 15px;">
                                         <tr>
                                             <th>ID</th>
@@ -129,68 +129,27 @@ if($_SESSION['role']==""){
                                         </tr>
                                     </thead>
                                     <?php
-                                        $kontrak = mysqli_query($koneksi,"select * from kontrak where jeniskontrak='SPK'");
+                                        $kontrak = mysqli_query($koneksi,"SELECT * from kontrak WHERE jeniskontrak='SPK' OR jeniskontrak='SP'");
                                         while($d = mysqli_fetch_array($kontrak)){
                                     ?>
                                     <!-- <tbody style="font-size: 12px;"> -->
                                         <tr>
-                                            <td class="text-center"><?php echo $d['id']; ?></td> 
-                                            <td><?php echo $d['namaperusahaan']; ?></td> 
-                                            <td><?php echo $d['nomorkontrak']; ?></td>
-                                            <td><?php echo tglindo($d['tglmulaikontrak']); ?></td>
-                                            <td>Rp. <?php echo number_format($d['nilaitotalnego']); ?>,-</td>
-                                            <td><?php echo $d['pekerjaan']; ?></td>
-                                            <td class="text-center">
-                                                <a class="btn btn-success btn-sm dropdown-toggle" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-                                                    <i class="fa fa-print fa-sm"></i>    
+                                            <td class="text-center align-middle"><?php echo $d['id']; ?></td> 
+                                            <td class="align-middle"><?php echo $d['namaperusahaan']; ?></td> 
+                                            <td class="align-middle"><?php echo $d['nomorkontrak']; ?></td>
+                                            <td class="align-middle"><?php echo tglindo($d['tglmulaikontrak']); ?></td>
+                                            <td class="align-middle">Rp. <?php echo number_format($d['nilaitotalnego']); ?>,-</td>
+                                            <td class="align-middle"><?php echo $d['pekerjaan']; ?></td>
+                                            <td class="">
+                                                <a href="" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalcetak<?php echo $d['id']; ?>" style="border-radius: 10px;">
+                                                <i class="bi bi-printer"></i>
                                                 </a>
-                                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                        <li><a class="dropdown-item" href="cetak/permindasung.php?id=<?php echo $d['id']; ?>" target="_blank">1. Permin Dasung</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/hps.php?id=<?php echo $d['id']; ?>" target="_blank">2. HPS</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/kuantitas.php?id=<?php echo $d['id']; ?>" target="_blank">3. Kuantitas</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/pakta.php?id=<?php echo $d['id']; ?>" target="_blank">4. Pakta Integritas</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/formkualifikasi.php?id=<?php echo $d['id']; ?>" target="_blank">5. Form Kualifikasi</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/penawaran.php?id=<?php echo $d['id']; ?>" target="_blank">5. Penawaran</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/undangan.php?id=<?php echo $d['id']; ?>" target="_blank">7. Undangan</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/pembukaan.php?id=<?php echo $d['id']; ?>" target="_blank">8. Pembukaan</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/lampevalpenawaran.php?id=<?php echo $d['id']; ?>" target="_blank">9. Lamp. Eval. Penawaran</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/lampbaklarnego.php?id=<?php echo $d['id']; ?>" target="_blank">10. Lampiran BA.Klar Nego</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/baevalpenawaran.php?id=<?php echo $d['id']; ?>" target="_blank">11. BA.Eval.Penawaran</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/baklarnego.php?id=<?php echo $d['id']; ?>" target="_blank">12. BA.Klar.Nego</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/bahpl.php?id=<?php echo $d['id']; ?>" target="_blank">13. BAHPL</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/bapenpemenang.php?id=<?php echo $d['id']; ?>" target="_blank">14. BA.Pen.Pemenang</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/pengumuman.php?id=<?php echo $d['id']; ?>" target="_blank">15. Pengumuman</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/nota.php?id=<?php echo $d['id']; ?>" target="_blank">16. NOTA</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/sppbj.php?id=<?php echo $d['id']; ?>" target="_blank">17. SPPBJ</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/sp.php?id=<?php echo $d['id']; ?>" target="_blank">18. SP (Barang)</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/suspk.php?id=<?php echo $d['id']; ?>" target="_blank">19. SU-SPK</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/spk.php?id=<?php echo $d['id']; ?>" target="_blank">20. SPK (3 rangkap, Materai silang)</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/cover.php?id=<?php echo $d['id']; ?>" target="_blank">21. Cover</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/undanganpt.php?id=<?php echo $d['id']; ?>" target="_blank">22. Undangan PT</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/undanganppk-.php?id=<?php echo $d['id']; ?>" target="_blank">23. Undangan PPK</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/baphp-.php?id=<?php echo $d['id']; ?>" target="_blank">24.BAPHP</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/bastb.php?id=<?php echo $d['id']; ?>" target="_blank">25. BASTB</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/ppembayaran.php?id=<?php echo $d['id']; ?>" target="_blank">26. Pembayaran</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/bap.php?id=<?php echo $d['id']; ?>" target="_blank">27. BAP (3 rangkap, Materai silang)</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/sptjm.php?id=<?php echo $d['id']; ?>" target="_blank">28. SPTJM</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/ringkasan.php?id=<?php echo $d['id']; ?>" target="_blank">29.Ringkasan</a></li>
-                                                        <li><a class="dropdown-item" href="cetak/kwitansi.php?id=<?php echo $d['id']; ?>" target="_blank">30. Kwitansi (2 rangkap, Materai penyedia)</a></li>
-                                                    </ul>
-                                                <a href="editspk.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-warning btn-sm text-start">
+                                                <?php 
+                                                include "modalcetak.php";
+                                                ?>
+                                                <a href="editspk.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-warning btn-sm text-start" style="border-radius: 10px;">
                                                 <i class="fa fa-edit fa-sm"></i>
                                                 </a>
-                                                <!-- <a type="button" class="btn btn-danger btn-sm text-start" data-bs-toggle="modal" data-bs-target="#hapusModalspk<?php echo $d['id']; ?>">
-                                                <i class="fa fa-trash fa-md"></i>
-                                                </a> -->
-                                                <!-- <a href="hapus.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-danger btn-sm text-start">
-                                                <i class="fa fa-trash fa-md"></i>
-                                                </a> -->
-                                                <!-- <a href="inputbarang2.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-info btn-sm text-start">
-                                                <i class="fa fa-cubes fa-md"></i>
-                                                </a> -->
-                                                <!-- <a href="inputbarang.php?id=<?php echo $d['id']; ?>" type="button" class="btn btn-info btn-sm text-start">
-                                                <i class="fa fa-cubes fa-md"></i>
-                                                </a> -->
                                             </td>
                                         </tr>
                                     <!-- </tbody> -->

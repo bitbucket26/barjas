@@ -139,7 +139,7 @@
 
         <br>
 
-        <table class="table table-bordered border-dark text-center table-sm" style="font-size: 15px;">
+        <table class="table table-bordered border-dark text-center table-sm" style="font-size: 13px;">
             <thead>
                 <tr class="align-middle">
                     <th class="col-1">No.</th>
@@ -161,7 +161,7 @@
                     <td class="col-5 text-start text-uppercase"><?php echo $d['namaproduk'];?></td>
                     <td class="col-1"><?php echo $d['volumehps'];?></td>
                     <td class="col-1"><?php echo $d['satuan'];?></td>
-                    <td class="col-2 text-end"><?php echo number_format($d['hargasatuanhps']);?></td> 
+                    <td class="col-2 text-end"><?php echo number_format($d['hargasatuanhps'],2);?></td> 
                     <td class="col-2 text-end"><?php echo number_format($d['jumlahhps']);?></td>
                 </tr>
             </tbody>

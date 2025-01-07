@@ -56,7 +56,7 @@
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
-            <img src="../../../img/kop3.png">
+            <img src="../../../../img/kop3.png">
         </div>
             <br>
         <!-- Judul Nota -->

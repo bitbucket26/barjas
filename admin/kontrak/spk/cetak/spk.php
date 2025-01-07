@@ -210,7 +210,7 @@
                    <td class="col-5" text-center><?php echo $d['namaproduk'];?></td>
                    <td class="col-1  text-center" text-center><?php echo $d['volumenego'];?></td>
                    <td class="col-1  text-center" text-center><?php echo $d['satuan'];?></td>
-                   <td class="col-2  text-end" text-center><?php echo number_format($d['hargasatuannego']);?></td>
+                   <td class="col-2  text-end" text-center><?php echo number_format($d['hargasatuannego'],2);?></td>
                    <td class="col-2  text-end" text-center><?php echo number_format($d['jumlahnego']);?></td>
                 </tr>
             </tbody>

@@ -82,7 +82,7 @@ if($_SESSION['role']==""){
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                 <a href="inputbarang.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-success me-md-2" style="border-radius: 30px;">
                                 <i class="bi bi-plus-circle"></i> Barang</i>
-                                </a>
+                                </a>.
                                 <a href="hapus.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-danger" style="border-radius: 30px;">
                                 <i class="bi bi-trash"></i> Hapus</i>    
                                 </a>
@@ -1525,12 +1525,87 @@ if($_SESSION['role']==""){
  
 </script>
 
+
 <script>
 $(document).ready(function() {
-//  $("#nilainego").keyup(function() {
+//  $("#nilaitotalnego").keyup(function() {
      var nilai  = $("#nilaitotalnego").val();
      if ( nilai <= 300000000){
-        $("#namapejabatpemeriksa").show();
+            $("#namapejabatpemeriksa").show();
+            $("#nippejabatpemeriksa").show();
+            $("#nomorskpejabatpemeriksa").show();
+            $("#tglskpejabatpemeriksa").show();
+            $("#aa").show();
+            $("#bb").show();
+            $("#cc").show();
+            $("#dd").show();
+            $("#namapejabatpemeriksa1").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa1").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa1").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa1").val("2024-01-02").hide();
+            $("#a1").hide();
+            $("#b1").hide();
+            $("#c1").hide();
+            $("#d1").hide();
+            $("#namapejabatpemeriksa2").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa2").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa2").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa2").val("2024-01-02").hide();
+            $("#a2").hide();
+            $("#b2").hide();
+            $("#c2").hide();
+            $("#d2").hide();
+            $("#namapejabatpemeriksa3").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa3").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa3").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa3").val("2024-01-02").hide();
+            $("#a3").hide();
+            $("#b3").hide();
+            $("#c3").hide();
+            $("#d3").hide();
+        } else {
+            $("#namapejabatpemeriksa1").show();
+            $("#nippejabatpemeriksa1").show();
+            $("#nomorskpejabatpemeriksa1").show();
+            $("#tglskpejabatpemeriksa1").show();
+            $("#a1").show();
+            $("#b1").show();
+            $("#c1").show();
+            $("#d1").show();
+            $("#namapejabatpemeriksa2").show();
+            $("#nippejabatpemeriksa2").show();
+            $("#nomorskpejabatpemeriksa2").show();
+            $("#tglskpejabatpemeriksa2").show();
+            $("#a2").show();
+            $("#b2").show();
+            $("#c2").show();
+            $("#d2").show();
+            $("#namapejabatpemeriksa3").show();
+            $("#nippejabatpemeriksa3").show();
+            $("#nomorskpejabatpemeriksa3").show();
+            $("#tglskpejabatpemeriksa3").show();
+            $("#a3").show();
+            $("#b3").show();
+            $("#c3").show();
+            $("#d3").show();
+            $("#namapejabatpemeriksa").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa").val("2024-01-02").hide();
+            $("#aa").hide();
+            $("#bb").hide();
+            $("#cc").hide();
+            $("#dd").hide();
+     }
+ });
+// });
+</script>
+<script>
+$(document).ready(function() {
+ $("#nilaitotalnego").keyup(function() {
+     var nilai  = $("#nilaitotalnego").val();
+     if ( nilai <= 300000000){
+            $("#namapejabatpemeriksa").show().val;
             $("#nippejabatpemeriksa").show();
             $("#nomorskpejabatpemeriksa").show();
             $("#tglskpejabatpemeriksa").show();
@@ -1597,7 +1672,7 @@ $(document).ready(function() {
             $("#dd").hide();
      }
  });
-// });
+});
 </script>
 
 

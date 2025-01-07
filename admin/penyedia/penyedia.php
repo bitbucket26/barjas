@@ -93,9 +93,7 @@ if($_SESSION['role']==""){
                                             <th>NPWP</th>
                                             <th>No.Rekening</th>
                                             <th>Nama Bank</th>
-                                            <!-- <th>Kop</th> -->
                                             <th>Aksi</th>
-                                           
                                         </tr>
                                     </thead>
                                     <?php
@@ -104,15 +102,14 @@ if($_SESSION['role']==""){
                                     ?>
                                     <!-- <tbody style="font-size: 14px;"> -->
                                         <tr>
-                                            <td><?php echo $d['id']; ?></td>
-                                            <td><?php echo $d['namaperusahaan']; ?></td>
-                                            <td><?php echo $d['kota']; ?></td>
-                                            <td><?php echo $d['npwp']; ?></td>
-                                            <td><?php echo $d['norekening']; ?></td>
-                                            <td><?php echo $d['namabank']; ?></td>
-                                            <!-- <td><?php echo $d['kop']; ?></td> -->
+                                        <td class="text-center align-middle"><?php echo $d['id']; ?></td>
+                                            <td class="align-middle"><?php echo $d['namaperusahaan']; ?></td>
+                                            <td class="align-middle"><?php echo $d['kota']; ?></td>
+                                            <td class="align-middle"><?php echo $d['npwp']; ?></td>
+                                            <td class="align-middle"><?php echo $d['norekening']; ?></td>
+                                            <td class="align-middle"><?php echo $d['namabank']; ?></td>
                                             <td class="text-center">
-                                                <a href="updatepenyedia.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm text-start" data-target="#myModaledit<?php echo $d['id']; ?>">
+                                                <a href="updatepenyedia.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm" data-target="#myModaledit<?php echo $d['id']; ?>" style="border-radius: 10px;">
                                                 <i class="fa fa-edit fa-sm"></i>
                                                 </a>
                                             </td>

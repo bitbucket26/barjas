@@ -169,7 +169,7 @@
                     <td class="col-5 text-start text-uppercase"><?php echo $d['namaproduk'];?></td>
                     <td class="col-1"><?php echo $d['volumehps'];?></td>
                     <td class="col-1"><?php echo $d['satuan'];?></td>
-                    <td class="col-2 text-end"><?php echo number_format($d['hargasatuanhps']);?></td> 
+                    <td class="col-2 text-end"><?php echo number_format($d['hargasatuanhps'],2);?></td> 
                     <td class="col-2 text-end"><?php echo number_format($d['jumlahhps']);?></td>
                 </tr>
             </tbody>

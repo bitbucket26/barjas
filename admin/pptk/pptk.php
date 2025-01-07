@@ -102,13 +102,13 @@ if($_SESSION['role']==""){
                                     ?>
                                     <!-- <tbody style="font-size: 14px;"> -->
                                         <tr>
-                                            <td><?php echo $d['id']; ?></td> 
-                                            <td><?php echo $d['namapptk']; ?></td> 
-                                            <td><?php echo $d['kegiatan']; ?></td>
-                                            <td><?php echo $d['subkegiatan']; ?></td>
-                                            <td><?php echo $d['pekerjaan']; ?></td>
+                                        <td class="text-center align-middle"><?php echo $d['id']; ?></td> 
+                                            <td class="align-middle"><?php echo $d['namapptk']; ?></td> 
+                                            <td class="align-middle"><?php echo $d['kegiatan']; ?></td>
+                                            <td class="align-middle"><?php echo $d['subkegiatan']; ?></td>
+                                            <td class="align-middle"><?php echo $d['pekerjaan']; ?></td>
                                             <td class="text-center">
-                                                <a href="updatepptk.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm text-start" data-target="#myModaleditpptk<?php echo $d['id']; ?>">
+                                                <a href="updatepptk.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm" data-target="#myModaleditpptk<?php echo $d['id']; ?>" style="border-radius: 10px;">
                                                 <i class="fa fa-edit fa-sm"></i>
                                                 </a>
                                             </td>

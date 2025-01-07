@@ -112,11 +112,11 @@ if($_SESSION['role']==""){
                                         <div class="row">
                                                         <div class="col-2" style="padding-top: 10px;">
                                                             <label class="labeldata">Volume HPS</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="number" name="volumehps" class="form-control"  id="volumehps" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" type="number" name="volumehps" class="form-control" step="0.01"  id="volumehps" required>                                               
                                                         </div>
                                                         <div class="col-2" style="padding-top: 10px;">
                                                             <label class="labeldata">Harga Satuan HPS</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="number" name="hargasatuanhps" class="form-control"  id="hargasatuanhps" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="hargasatuanhps" class="form-control"  id="hargasatuanhps" required>                                               
                                                         </div>
                                                         <div class="col-2" style="padding-top: 10px;">
                                                             <label class="labeldata">Jumlah HPS</label>
@@ -128,7 +128,7 @@ if($_SESSION['role']==""){
                                                         </div>
                                                         <div class="col-2" style="padding-top: 10px;">
                                                             <label class="labeldata">Harga Satuan Nego</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="number" name="hargasatuannego" class="form-control"  id="hargasatuannego" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="hargasatuannego" class="form-control"  id="hargasatuannego" required>                                               
                                                         </div>
                                                         <div class="col-2" style="padding-top: 10px;">
                                                             <label class="labeldata">Jumlah Nego</label>

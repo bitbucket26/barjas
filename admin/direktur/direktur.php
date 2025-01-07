@@ -123,13 +123,13 @@ if($_SESSION['role']==""){
                                     ?>
                                     <!-- <tbody style="font-size: 14px;"> -->
                                         <tr>
-                                            <td><?php echo $d['id']; ?></td> 
-                                            <td><?php echo $d['namadirektur']; ?></td> 
-                                            <td><?php echo $d['nipdirektur']; ?></td>
-                                            <td><?php echo $d['nomorskdirektur']; ?></td>
-                                            <td><?php echo tglindo($d['tglskdirektur']); ?></td>
+                                        <td class="text-center align-middle"><?php echo $d['id']; ?></td> 
+                                            <td class="align-middle"><?php echo $d['namadirektur']; ?></td> 
+                                            <td class="align-middle"><?php echo $d['nipdirektur']; ?></td>
+                                            <td class="align-middle"><?php echo $d['nomorskdirektur']; ?></td>
+                                            <td class="align-middle"><?php echo tglindo($d['tglskdirektur']); ?></td>
                                             <td class="text-center">
-                                                <a href="updatedirektur.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm text-start" data-target="#myModaleditdirektur<?php echo $d['id']; ?>">
+                                                <a href="updatedirektur.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm" data-target="#myModaleditdirektur<?php echo $d['id']; ?>" style="border-radius: 10px;">
                                                 <i class="fa fa-edit fa-sm"></i>
                                                 </a>
                                             </td>

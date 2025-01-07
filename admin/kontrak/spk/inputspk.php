@@ -18,7 +18,7 @@ if($_SESSION['role']==""){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>PEJABAT PELAKSANA TEKNIS KEGIATAN</title>
+    <title>INPUT KONTRAK</title>
 
     <!-- Custom fonts for this template -->
     <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -75,7 +75,7 @@ if($_SESSION['role']==""){
 
                         <div class="card shadow mb-4">
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Input Kontrak (SPK)</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Input Kontrak</h6>
                             </div>
 
 
@@ -122,13 +122,13 @@ if($_SESSION['role']==""){
                                                     <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Kategori Kontrak</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="jeniskontrak" value="SPK" class="form-control" id="jeniskontrak" readonly>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="jeniskontrak" class="form-control" id="jeniskontrak" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="bilangjeniskontrak" value="Surat Perintah Kerja" class="form-control" id="bilangjeniskontrak" readonly>                                               
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="bilangjeniskontrak" class="form-control" id="bilangjeniskontrak" readonly>                                               
                                                         </div>
                                                     </div>
                                                 </div>
@@ -754,7 +754,7 @@ if($_SESSION['role']==""){
                                                 </div>
                                         </div>
                                         <div class="col-sm-6">
-                                        <div class="row g-2">
+                                                <div class="row g-2">
                                                     <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Nilai Nego</label>
@@ -841,16 +841,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
-                                            <!-- <div class="form-floating">
-                                                            <label>Nilai Kontrak</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" name="nilai" class="form-control" id="nilai" required>
-                                                             <option>--Pilih--</option>
-                                                             <option value="<300">< 300 jt</option>
-                                                             <option value=">=300">>= 300 jt</option>
-                                                            </select>
-                                            </div> -->
-                                            <h4>NILAI KONTRAK <= 300 JUTA</h4>
-
+                                            
+                                            <h4>PEJABAT PEMERIKSA PEKERJAAN</h4>
                                             <hr class="sidebar-divider">
                                             <div class="row g-2">
                                                         <?php	
@@ -899,16 +891,8 @@ if($_SESSION['role']==""){
                                                         </div>
                                             </div>
                                             <hr class="sidebar-divider">
-                                            <!-- <hr class="sidebar-divider"> -->
-
-                                                     
-                                        </div>
-                                        <div class="col-sm-6">
-                                            <h4>NILAI KONTRAK > 300 JUTA</h4>
-                                        <hr class="sidebar-divider">
-                                        <!-- <hr class="sidebar-divider"> -->
-
-                                        <div class="row g-2">
+                                            <hr class="sidebar-divider">
+                                            <div class="row g-2">
                                                             <?php	
                                                             include "../../../koneksi.php";
                                                                 
@@ -1050,8 +1034,80 @@ if($_SESSION['role']==""){
                                                                 </div>
                                                     </div>
                                                 </div>
-                                                
-                                        
+
+                                                     
+                                        </div>
+                                        <div class="col-sm-6">
+                                        <h4>SATUAN KERJA</h4>
+                                        <hr class="sidebar-divider">
+
+                                        <!-- Baris 1 -->
+                                        <div class="row g-2">
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">K/L/D/I</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="kldi" value="Pemerintah Kabupaten Indramayu"  class="form-control" id="kldi" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- Baris 2 -->
+                                                <div class="row g-2">
+                                                <div class="col-8">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Satuan Kerja</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="satuankerja" value="RSUD Indramayu"  class="form-control" id="satuankerja" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-4">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Tahun Anggaran</label>
+                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="tahunanggaran" id="tahunanggaran" required>
+                                                                <option value="">--Pilih--</option>
+                                                                <option value="2024">2024</option>
+                                                                <option value="2025">2025</option>
+                                                                <option value="2026">2026</option>
+                                                                <option value="2027">2027</option>
+                                                                <option value="2028">2028</option>
+                                                            </select>
+                                                            <!-- <input style="height: 30px; font-size: 13px;" type="text" name="tahunanggaran"  class="form-control" id="satuankerja" readonly> -->
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <!-- Baris 3 -->
+                                                <div class="row g-2">
+                                                    <div class="col-6">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Sumber Dana</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="sumberdana" value="BLUD RSUD Indramayu Tahun 2025" class="form-control" id="sumberdana" readonly>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Nomor Telpon</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nomortlp" value="(0234) 275 330"  class="form-control" id="nomortlp" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row g-2">
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata">Alamat</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="alamatsatker" value="Jl. Murah Nara No.7 Sindang - Indramayu"  class="form-control" id="alamatsatker" readonly>
+                                                        </div>
+                                                    </div>
+                                                </div> 
+                                                <div class="row g-2">
+                                                    <div class="col-12">
+                                                        <div class="form-floating">
+                                                            <label class="labeldata" hidden>User</label>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="user" value="<?php echo $_SESSION['username']; ?>"  class="form-control" id="user" hidden  >
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+
+
                                         </div>
                                     </div>
                                 </div>
@@ -1194,7 +1250,7 @@ if($_SESSION['role']==""){
                                 <hr class="sidebar-divider">
                                 <div class="card-body">
                                     <div class="row">
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -1285,7 +1341,7 @@ if($_SESSION['role']==""){
                                                     </div>
                                                 </div>
                                         </div>
-                                        <div class="col-sm-4">
+                                        <div class="col-sm-6">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     
@@ -1299,13 +1355,13 @@ if($_SESSION['role']==""){
                                                 </div>
                                                 <!-- Baris 2 -->
                                                 <div class="row g-2">
-                                                    <div class="col-7">
+                                                    <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. Permohonan Pemeriksaan</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="nopemeriksaan"  class="form-control" id="nopemeriksaan" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-5">
+                                                    <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
                                                             <input style="height: 30px; font-size: 13px;" type="date" name="tglpemeriksaan" class="form-control" id="tglpemeriksaan" required>                                               
@@ -1314,13 +1370,13 @@ if($_SESSION['role']==""){
                                                 </div> 
                                                 <!-- Baris 2 -->
                                                 <div class="row g-2">
-                                                    <div class="col-7">
+                                                    <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. Permohonan Pembayaran</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="nopembayaran"  class="form-control" id="nopembayaran" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-5">
+                                                    <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
                                                             <input style="height: 30px; font-size: 13px;" type="date" name="tglpembayaran" class="form-control" id="tglpembayaran" required>                                               
@@ -1329,13 +1385,13 @@ if($_SESSION['role']==""){
                                                 </div> 
                                                 <!-- Baris 3 -->
                                                 <div class="row g-2">
-                                                    <div class="col-7">
+                                                    <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. Undangan Pemeriksaan PPK</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="noundanganppk" class="form-control" id="noundanganppk" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-5">
+                                                    <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
                                                             <input style="height: 30px; font-size: 13px;" type="date" name="tglundanganppk" class="form-control" id="tglundanganppk" required>                                               
@@ -1344,13 +1400,13 @@ if($_SESSION['role']==""){
                                                 </div>
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
-                                                    <div class="col-7">
+                                                    <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. BAPHP</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="nobaphp" class="form-control" id="nobaphp" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-5">
+                                                    <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
                                                             <input style="height: 30px; font-size: 13px;" type="date" name="tglbaphp" class="form-control" id="tglbaphp" required>
@@ -1359,13 +1415,13 @@ if($_SESSION['role']==""){
                                                 </div>
                                                 <!-- Baris 2 -->
                                                 <div class="row g-2">
-                                                    <div class="col-7">
+                                                    <div class="col-8">
                                                         <div class="form-floating">
                                                             <label class="labeldata">No. BASTB</label>
                                                             <input style="height: 30px; font-size: 13px;" type="text" name="nobastb" class="form-control" id="nobastb" required>
                                                         </div>
                                                     </div>
-                                                    <div class="col-5">
+                                                    <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">*</label>
                                                             <input style="height: 30px; font-size: 13px;" type="date" name="tglbastb" class="form-control" id="tglbastb" required>
@@ -1374,71 +1430,6 @@ if($_SESSION['role']==""){
                                                 </div> 
                                                 
                                             
-                                        </div>
-                                        <div class="COL-4">
-<!-- Baris 1 -->
-<div class="row g-2">
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">K/L/D/I</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="kldi" value="Pemerintah Kabupaten Indramayu"  class="form-control" id="kldi" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- Baris 2 -->
-                                                <div class="row g-2">
-                                                <div class="col-8">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Satuan Kerja</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="satuankerja" value="RSUD Indramayu"  class="form-control" id="satuankerja" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-4">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Tahun Anggaran</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="tahunanggaran" id="tahunanggaran" required>
-                                                                <option value="">--Pilih--</option>
-                                                                <option value="2024">2024</option>
-                                                                <option value="2025">2025</option>
-                                                                <option value="2026">2026</option>
-                                                                <option value="2027">2027</option>
-                                                                <option value="2028">2028</option>
-                                                            </select>
-                                                            <!-- <input style="height: 30px; font-size: 13px;" type="text" name="tahunanggaran"  class="form-control" id="satuankerja" readonly> -->
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <!-- Baris 3 -->
-                                                <div class="row g-2">
-                                                    <div class="col-6">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Sumber Dana</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="sumberdana" value="BLUD RSUD Indramayu Tahun 2025" class="form-control" id="sumberdana" readonly>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-6">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Nomor Telpon</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="nomortlp" value="(0234) 275 330"  class="form-control" id="nomortlp" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="row g-2">
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata">Alamat</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="alamatsatker" value="Jl. Murah Nara No.7 Sindang - Indramayu"  class="form-control" id="alamatsatker" readonly>
-                                                        </div>
-                                                    </div>
-                                                </div> 
-                                                <div class="row g-2">
-                                                    <div class="col-12">
-                                                        <div class="form-floating">
-                                                            <label class="labeldata" hidden>User</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="user" value="<?php echo $_SESSION['username']; ?>"  class="form-control" id="user" hidden  >
-                                                        </div>
-                                                    </div>
-                                                </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1889,113 +1880,96 @@ $(document).ready(function() {
     });
 });
 </script>
-<!-- <script>
-    $(document).ready(function(){
-            $("#namapejabatpemeriksa").hide();
-            $("#nippejabatpemeriksa").hide();
-            $("#nomorskpejabatpemeriksa").hide();
-            $("#tglskpejabatpemeriksa").hide();
-            $("#aa").hide();
-            $("#bb").hide();
-            $("#cc").hide();
-            $("#dd").hide();
-            $("#namapejabatpemeriksa1").hide();
-            $("#nippejabatpemeriksa1").hide();
-            $("#nomorskpejabatpemeriksa1").hide();
-            $("#tglskpejabatpemeriksa1").hide();
-            $("#a1").hide();
-            $("#b1").hide();
-            $("#c1").hide();
-            $("#d1").hide();
-            $("#namapejabatpemeriksa2").hide();
-            $("#nippejabatpemeriksa2").hide();
-            $("#nomorskpejabatpemeriksa2").hide();
-            $("#tglskpejabatpemeriksa2").hide();
-            $("#a2").hide();
-            $("#b2").hide();
-            $("#c2").hide();
-            $("#d2").hide();
-            $("#namapejabatpemeriksa3").hide();
-            $("#nippejabatpemeriksa3").hide();
-            $("#nomorskpejabatpemeriksa3").hide();
-            $("#tglskpejabatpemeriksa3").hide();
-            $("#a3").hide();
-            $("#b3").hide();
-            $("#c3").hide();
-            $("#d3").hide();
-});
-</script>
+<!-- Tampil Otomatis -->
 <script>
-    $("#nilai").click(function(){
-        var ab = document.getElementById("nilai").value;
-        if ( ab == "<300"){
-            $("#namapejabatpemeriksa").show();
-            $("#nippejabatpemeriksa").show();
-            $("#nomorskpejabatpemeriksa").show();
-            $("#tglskpejabatpemeriksa").show();
-            $("#aa").show();
-            $("#bb").show();
-            $("#cc").show();
-            $("#dd").show();
-            $("#namapejabatpemeriksa1").val("-").hide();
-            $("#nippejabatpemeriksa1").val("-").hide();
-            $("#nomorskpejabatpemeriksa1").val("-").hide();
-            $("#tglskpejabatpemeriksa1").val("2000-02-02").hide();
+$(document).ready(function() {
+ $("#nilaitotalnego").keyup(function() {
+     var nilai  = $("#nilaitotalnego").val();
+     if ( nilai <= 300000000){
+        $("#namapejabatpemeriksa").show().val("-");
+            $("#nippejabatpemeriksa").show().val("-");
+            $("#nomorskpejabatpemeriksa").show().val("-");
+            $("#tglskpejabatpemeriksa").show().val("-");
+            $("#aa").show().val("-");
+            $("#bb").show().val("-");
+            $("#cc").show().val("-");
+            $("#dd").show().val("-");
+            $("#namapejabatpemeriksa1").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa1").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa1").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa1").val("2024-01-02").hide();
             $("#a1").hide();
             $("#b1").hide();
             $("#c1").hide();
             $("#d1").hide();
-            $("#namapejabatpemeriksa2").val("-").hide();
-            $("#nippejabatpemeriksa2").val("-").hide();
-            $("#nomorskpejabatpemeriksa2").val("-").hide();
-            $("#tglskpejabatpemeriksa2").val("2000-02-02").hide();
+            $("#namapejabatpemeriksa2").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa2").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa2").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa2").val("2024-01-02").hide();
             $("#a2").hide();
             $("#b2").hide();
             $("#c2").hide();
             $("#d2").hide();
-            $("#namapejabatpemeriksa3").val("-").hide();
-            $("#nippejabatpemeriksa3").val("-").hide();
-            $("#nomorskpejabatpemeriksa3").val("-").hide();
-            $("#tglskpejabatpemeriksa3").val("2000-02-02").hide();
+            $("#namapejabatpemeriksa3").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa3").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa3").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa3").val("2024-01-02").hide();
             $("#a3").hide();
             $("#b3").hide();
             $("#c3").hide();
             $("#d3").hide();
         } else {
-            $("#namapejabatpemeriksa1").show();
-            $("#nippejabatpemeriksa1").show();
-            $("#nomorskpejabatpemeriksa1").show();
-            $("#tglskpejabatpemeriksa1").show();
-            $("#a1").show();
-            $("#b1").show();
-            $("#c1").show();
-            $("#d1").show();
-            $("#namapejabatpemeriksa2").show();
-            $("#nippejabatpemeriksa2").show();
-            $("#nomorskpejabatpemeriksa2").show();
-            $("#tglskpejabatpemeriksa2").show();
-            $("#a2").show();
-            $("#b2").show();
-            $("#c2").show();
-            $("#d2").show();
-            $("#namapejabatpemeriksa3").show();
-            $("#nippejabatpemeriksa3").show();
-            $("#nomorskpejabatpemeriksa3").show();
-            $("#tglskpejabatpemeriksa3").show();
-            $("#a3").show();
-            $("#b3").show();
-            $("#c3").show();
-            $("#d3").show();
-            $("#namapejabatpemeriksa").val("-").hide();
-            $("#nippejabatpemeriksa").val("-").hide();
-            $("#nomorskpejabatpemeriksa").val("-").hide();
-            $("#tglskpejabatpemeriksa").val("2000-02-02").hide();
+            $("#namapejabatpemeriksa1").show().val("-");
+            $("#nippejabatpemeriksa1").show().val("-");
+            $("#nomorskpejabatpemeriksa1").show().val("-");
+            $("#tglskpejabatpemeriksa1").show().val("-");
+            $("#a1").show().val("-");
+            $("#b1").show().val("-");
+            $("#c1").show().val("-");
+            $("#d1").show().val("-");
+            $("#namapejabatpemeriksa2").show().val("-");
+            $("#nippejabatpemeriksa2").show().val("-");
+            $("#nomorskpejabatpemeriksa2").show().val("-");
+            $("#tglskpejabatpemeriksa2").show().val("-");
+            $("#a2").show().val("-");
+            $("#b2").show().val("-");
+            $("#c2").show().val("-");
+            $("#d2").show().val("-");
+            $("#namapejabatpemeriksa3").show().val("-");
+            $("#nippejabatpemeriksa3").show().val("-");
+            $("#nomorskpejabatpemeriksa3").show().val("-");
+            $("#tglskpejabatpemeriksa3").show().val("-");
+            $("#a3").show().val("-");
+            $("#b3").show().val("-");
+            $("#c3").show().val("-");
+            $("#d3").show().val("-");
+            $("#namapejabatpemeriksa").val("DESTY, Amd").hide();
+            $("#nippejabatpemeriksa").val("19850208 201001 2 003").hide();
+            $("#nomorskpejabatpemeriksa").val("800.Kep.09-PHH/2024").hide();
+            $("#tglskpejabatpemeriksa").val("2024-01-02").hide();
             $("#aa").hide();
             $("#bb").hide();
             $("#cc").hide();
             $("#dd").hide();
-        }
+     }
+ });
 });
-</script> -->
+</script>
+<script>
+    $(document).ready(function() {
+    $("#nilaitotalnego").keyup(function() {
+     var nilaitot  = $("#nilaitotalnego").val();
+     if ( nilaitot <= 200000000){
+        $('#jeniskontrak').val("SPK");
+        $('#bilangjeniskontrak').val("Surat Perintah Kerja");
+     } else {
+        $('#jeniskontrak').val("SP");
+        $('#bilangjeniskontrak').val("Surat Perjanjian");
+     }
+    });
+});
+</script>
+
+
 </body>
 </html>
