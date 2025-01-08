@@ -7,8 +7,8 @@
                                             <!-- Modal content -->
                                             <div class="modal-content" style="border-radius: 30px;">
                                             <div class="modal-header">
-                                            <h4 class="modal-title">Tambah Penyedia</h4>
-                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                <h4 class="modal-title" >Tambah Penyedia</h4>
+                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
                                             <div class="modal-body">
 
@@ -23,13 +23,13 @@
                                         $kodeauto = $ket . sprintf("%03s", $kode)
                                     ?>
                                             <div class="row g-2">
-                                                <div class="col-md">
+                                                <div class="col-6">
                                                     <div class="form-floating">
 
-                                                        <div class="form-group">
-                                                        <label class="labeldata" >Nomor</label>
-                                                        <input type="text" value="<?php echo $kodeauto;?>" name="id" class="form-control" id="id" readonly>
-                                                        </div>
+                                                        <!-- <div class="form-group"> -->
+                                                        <!-- <label class="labeldata" hidden>Nomor</label> -->
+                                                        <input type="text" value="<?php echo $kodeauto;?>" name="id" class="form-control" id="id" hidden>
+                                                        <!-- </div> -->
 
                                                         <div class="form-group">
                                                         <label>Nama Perusahaan</label>
@@ -53,30 +53,28 @@
                                                     </div>
                                                 </div>
 
-                                                <div class="col-md">
+                                                <div class="col-6">
                                                     <div class="form-floating">
-                                                    <div class="form-group">
-                                                    <label>NPWP</label>
-                                                    <input type="text" name="npwp" class="form-control" required>      
-                                                    </div> 
+                                                        <div class="form-group">
+                                                        <label>NPWP</label>
+                                                        <input type="text" name="npwp" class="form-control" required>      
+                                                        </div> 
 
-                                                    <div class="form-group">
-                                                    <label>Nomor Rekening</label>
-                                                    <input type="text" name="norekening" class="form-control" required>      
-                                                    </div> 
+                                                        <div class="form-group">
+                                                        <label>Nomor Rekening</label>
+                                                        <input type="text" name="norekening" class="form-control" required>      
+                                                        </div> 
 
-                                                    <div class="form-group">
-                                                    <label>Nama Bank</label>
-                                                    <input type="text" name="namabank" class="form-control" required>      
-                                                    </div> 
+                                                        <div class="form-group">
+                                                        <label>Nama Bank</label>
+                                                        <input type="text" name="namabank" class="form-control" required>      
+                                                        </div> 
 
-                                                    <div class="form-group">
-                                                    <label>Nama Rekening</label>
-                                                    <input type="text" name="namarekbank" class="form-control" required>      
-                                                    </div> 
+                                                        <div class="form-group">
+                                                        <label>Nama Rekening</label>
+                                                        <input type="text" name="namarekbank" class="form-control" required>      
+                                                        </div> 
                                                     </div>
-
-                                                    
                                                 </div>
                                             </div>
                                             <!-- Input File KOP -->

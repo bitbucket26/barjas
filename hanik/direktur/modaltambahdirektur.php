@@ -23,10 +23,10 @@
                                     ?>
                                             
 
-                                                        <div class="form-group">
-                                                        <label class="labeldata" >ID</label>
-                                                        <input type="text" value="<?php echo $kodeauto;?>" name="id" class="form-control" id="id" readonly>
-                                                        </div>
+                                                        <!-- <div class="form-group"> -->
+                                                        <!-- <label class="labeldata" >ID</label> -->
+                                                        <input type="text" value="<?php echo $kodeauto;?>" name="id" class="form-control" id="id" hidden>
+                                                        <!-- </div> -->
 
                                                         <div class="form-group">
                                                         <label>Nama</label>
@@ -38,16 +38,26 @@
                                                         <input type="text" name="nipdirektur" class="form-control" required>      
                                                         </div> 
 
-                                                        <div class="form-group">
-                                                        <label>Nomor SK</label>
-                                                        <input type="text" name="nomorskdirektur" class="form-control" required>      
-                                                        </div> 
-
-                                                        <div class="form-group">
-                                                        <label>Tanggal SK</label>
-                                                        <input type="date" name="tglskdirektur" class="form-control" required>      
-                                                        </div> 
-
+                                                    <div class="row g-2">
+                                                        <div class="col-7">
+                                                            <div class="form-floating">
+                                                                <div class="form-group">
+                                                                <label>Nomor SK</label>
+                                                                <input type="text" name="nomorskdirektur" class="form-control" required>      
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-5">
+                                                            <div class="form-floating">
+                                                                <div class="form-group">
+                                                                    <div class="form-group">
+                                                                    <label>Tanggal SK</label>
+                                                                    <input type="date" name="tglskdirektur" class="form-control" required>      
+                                                                    </div>      
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                         <div class="form-group">
                                                         <label>Jabatan</label>
                                                         <textarea type="text" name="jabatandirektur" class="form-control" required></textarea>      

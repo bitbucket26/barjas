@@ -20,28 +20,38 @@
                                                         while ($row = mysqli_fetch_array($query_edit)) {
                                                     ?>
                                             
-                                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                                        <input type="hidden" name="id" value="<?php echo $row['id']; ?>" hidden>
 
                                                         <div class="form-group">
                                                         <label>Nama</label>
                                                         <input type="text" name="namappk" class="form-control" value="<?php echo $row['namappk']; ?>"  required>      
-                                                        </div> 
+                                                        </div>
 
                                                         <div class="form-group">
                                                         <label>NIP</label>
                                                         <input type="text" name="nipppk" class="form-control" value="<?php echo $row['nipppk']; ?>"  required>      
                                                         </div> 
-  
-                                                        <div class="form-group">
-                                                        <label>Nomor SK</label>
-                                                        <input type="text" name="nomorskppk" class="form-control" value="<?php echo $row['nomorskppk']; ?>"  required>      
-                                                        </div> 
 
-                                                        <div class="form-group">
-                                                        <label>Tanggal SK</label>
-                                                        <input type="date" name="tglskppk" class="form-control" value="<?php echo $row['tglskppk']; ?>"  required>      
-                                                        </div> 
-
+                                                    <div class="row g-2">
+                                                        <div class="col-7">
+                                                            <div class="form-floating">
+                                                                <div class="form-group">
+                                                                <label>Nomor SK</label>
+                                                                <input type="text" name="nomorskppk" class="form-control" value="<?php echo $row['nomorskppk']; ?>"  required>      
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-5">
+                                                            <div class="form-floating">
+                                                                <div class="form-group">
+                                                                    <div class="form-group">
+                                                                    <label>Tanggal SK</label>
+                                                                    <input type="date" name="tglskppk" class="form-control" value="<?php echo $row['tglskppk']; ?>"  required>      
+                                                                    </div>      
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                         <div class="form-group">
                                                         <label>Jabatan</label>
                                                         <textarea type="text" name="jabatanppk" class="form-control"  required><?php echo $row['jabatanppk']; ?></textarea>      

@@ -20,16 +20,10 @@
                                         $ket = "";
                                         $kodeauto = $ket . sprintf("%03s", $kode)
                                     ?>
+                                                    <input type="text" value="<?php echo $kodeauto;?>" name="id" class="form-control" id="id" hidden>
                                                     <div class="row g-2">
-                                                        <div class="col-2">
-                                                            <div class="form-floating">
-                                                                <div class="form-group">
-                                                                    <label>ID</label>
-                                                                    <input type="text" value="<?php echo $kodeauto;?>" name="id" class="form-control" id="id" readonly>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-10">
+                                                        
+                                                        <div class="col-12">
                                                             <div class="form-floating">
                                                                 <div class="form-group">
                                                                     <label>Nama Pekerjaan</label>
@@ -113,14 +107,6 @@
                                                         </div>
                                                     </div>
                                                     <div class="row g-2">
-                                                        <div class="col-4">
-                                                            <div class="form-floating">
-                                                                <div class="form-group">
-                                                                    <label>Tanggal SK</label>
-                                                                    <input type="date" name="tglskpptk" class="form-control" required>      
-                                                                </div>
-                                                            </div>
-                                                        </div>
                                                         <div class="col-8">
                                                             <div class="form-floating">
                                                                 <div class="form-group">
@@ -129,6 +115,15 @@
                                                                 </div> 
                                                             </div>
                                                         </div>
+                                                        <div class="col-4">
+                                                            <div class="form-floating">
+                                                                <div class="form-group">
+                                                                    <label>Tanggal SK</label>
+                                                                    <input type="date" name="tglskpptk" class="form-control" required>      
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        
                                                     </div>
                                                     <div class="row g-2">
                                                         <div class="col-8">

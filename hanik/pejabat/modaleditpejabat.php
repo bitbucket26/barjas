@@ -7,7 +7,7 @@
                                             <!-- Modal content -->
                                             <div class="modal-content" style="border-radius: 30px;">
                                             <div class="modal-header">
-                                            <h4 class="modal-title">Edit Penyedia</h4>
+                                            <h4 class="modal-title">Edit Pejabat Pengadaan</h4>
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             </div>
                                             <div class="modal-body">
@@ -32,14 +32,33 @@
                                                         <input type="text" name="nippejabatbarjas" class="form-control" value="<?php echo $row['nippejabatbarjas']; ?>"  required>      
                                                         </div> 
   
+
+                                                    <div class="row g-2">
+                                                        <div class="col-6">
+                                                            <div class="form-floating">
+                                                                <div class="form-group">
+                                                                <label>Nomor SK</label>
+                                                                <input type="text" name="nomorskpejabatbarjas" class="form-control" value="<?php echo $row['nomorskpejabatbarjas']; ?>"  required>      
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-floating">
+                                                                <div class="form-group">
+                                                                <label>Tanggal SK</label>
+                                                                <input type="date" name="tglskpejabatbarjas" class="form-control" value="<?php echo $row['tglskpejabatbarjas']; ?>"  required>      
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
                                                         <div class="form-group">
-                                                        <label>Nomor SK</label>
-                                                        <input type="text" name="nomorskpejabatbarjas" class="form-control" value="<?php echo $row['nomorskpejabatbarjas']; ?>"  required>      
+                                                              
                                                         </div> 
 
                                                         <div class="form-group">
-                                                        <label>Tanggal SK</label>
-                                                        <input type="date" name="tglskpejabatbarjas" class="form-control" value="<?php echo $row['tglskpejabatbarjas']; ?>"  required>      
+                                                              
                                                         </div> 
 
                                                         <div class="form-group">

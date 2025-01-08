@@ -106,14 +106,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="row g-2">
-                                                        <div class="col-4">
-                                                            <div class="form-floating">
-                                                                <div class="form-group">
-                                                                    <label>Tanggal SK</label>
-                                                                    <input type="date" name="tglskpptk" class="form-control" value="<?php echo $row['tglskpptk']; ?>"  required>      
-                                                                </div>
-                                                            </div>
-                                                        </div>
+                                                        
                                                         <div class="col-8">
                                                             <div class="form-floating">
                                                                 <div class="form-group">
@@ -122,21 +115,29 @@
                                                                 </div> 
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row g-2">
                                                         <div class="col-4">
                                                             <div class="form-floating">
                                                                 <div class="form-group">
-                                                                    <label>Nomor DPA</label>
-                                                                    <input type="text" name="nomordpa" class="form-control" value="<?php echo $row['nomordpa']; ?>"  required>      
+                                                                    <label>Tanggal SK</label>
+                                                                    <input type="date" name="tglskpptk" class="form-control" value="<?php echo $row['tglskpptk']; ?>"  required>      
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                    </div>
+                                                    <div class="row g-2">
                                                         <div class="col-8">
                                                             <div class="form-floating">
                                                                 <div class="form-group">
+                                                                    <label>Nomor DPA</label>
+                                                                    <textarea type="text" name="nomordpa" class="form-control" required><?php echo $row['nomordpa']; ?></textarea>     
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="form-floating">
+                                                                <div class="form-group">
                                                                     <label>Tanggal DPA</label>
-                                                                    <textarea type="date" name="tgldpa" class="form-control" required><?php echo $row['tgldpa']; ?></textarea>      
+                                                                    <input type="date" name="tgldpa" value="<?php echo $row['tgldpa']; ?>" class="form-control" required>  
                                                                 </div> 
                                                             </div>
                                                         </div>
