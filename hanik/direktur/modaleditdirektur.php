@@ -5,7 +5,7 @@
                                             <div class="modal-dialog">
 
                                             <!-- Modal content -->
-                                            <div class="modal-content">
+                                            <div class="modal-content" style="border-radius: 30px;">
                                             <div class="modal-header">
                                             <h4 class="modal-title">Edit direktur</h4>
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
