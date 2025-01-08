@@ -129,7 +129,7 @@ if($_SESSION['role']==""){
                                         </tr>
                                     </thead>
                                     <?php
-                                        $kontrak = mysqli_query($koneksi,"select * from kontrak where jeniskontrak='E-Catalogue'");
+                                        $kontrak = mysqli_query($koneksi,"select * from kontrak where jeniskontrak='E-Catalogue' and user='rindiyanto'");
                                         while($d = mysqli_fetch_array($kontrak)){
                                     ?>
                                     <!-- <tbody style="font-size: 12px;"> -->

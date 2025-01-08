@@ -33,6 +33,7 @@
                                                         <a class="dropdown-item" href="cetak/ringkasan.php?id=<?php echo $d['id']; ?>" target="_blank">8.  Ringkasan Kontrak</a>
                                                         <a class="dropdown-item" href="cetak/kwitansi.php?id=<?php echo $d['id']; ?>" target="_blank"> 9. Kwitansi (2 rangkap, Materai penyedia)</a>
                                                         <a class="dropdown-item" href="cetak/cover.php?id=<?php echo $d['id']; ?>" target="_blank">10.  Cover</a>
+                                                        <a class="dropdown-item" href="sortiropnamefisik.php?id=<?php echo $d['id']; ?>" target="_blank">11.  Opname Fisik</a>
                                                     
                                                     </div>
 

@@ -31,13 +31,22 @@ if($cek > 0){
 		header("location:admin/dashboard.php");
  
 	// cek jika user login sebagai pegawai
-	}else if($data['role']=="user"){
+	}else if($data['role']=="user1"){
 		session_start();
 		// buat session login dan username
 		$_SESSION['username'] = $username;
-		$_SESSION['role'] = "user";
+		$_SESSION['role'] = "user1";
 		// alihkan ke halaman dashboard pegawai
-		header("location:user/dashboard.php");
+		header("location:hanik/dashboard.php");
+
+	// cek jika user login sebagai pegawai
+	}else if($data['role']=="user2"){
+		session_start();
+		// buat session login dan username
+		$_SESSION['username'] = $username;
+		$_SESSION['role'] = "user2";
+		// alihkan ke halaman dashboard pegawai
+		header("location:risna/dashboard.php");
  
 	// cek jika user login sebagai pengurus
 	}else if($data['role']=="vendor"){
