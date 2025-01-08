@@ -89,8 +89,8 @@ if($_SESSION['role']==""){
                             </div>
                             <br>
 
-                        <div class="card shadow mb-4">
-                            <div class="card-header py-3">
+                        <div class="card shadow mb-4" style="border-radius: 30px;">
+                            <div class="card-header py-3" style="border-radius: 30px;">
                                 <h6 class="m-0 font-weight-bold text-primary">Edit (E-Catalogue)</h6>
                             </div>
 

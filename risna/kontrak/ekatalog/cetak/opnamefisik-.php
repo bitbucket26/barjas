@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>Lampiran BA Klarifikasi & Negosiasi</title>
+    <title>Opname Fisik</title>
 </head>
 <style>
 @media print {
@@ -95,7 +95,7 @@
 		return $hasil;
 	}
  
-        $tglbastb= $row['tglpembukaan'];
+        $tglbastb= $row['tglbaphp'];
         $hari = array("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
         $tanggal = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", 
                             "Sebelas", "Dua Belas", "tiga Belas", "Empat Belas", "Lima Belas", "Enam Belas", "Tujuh Belas", "Delapan Belas", "Sembilan Belas", 
@@ -115,28 +115,20 @@
         </div> -->
             <br>
         <!-- Judul Nota -->
-         <u><h4 class="text-center">LAMPIRAN BERITA ACARA KLARIFIKASI DAN NEGOSIASI TEKNIS DAN BIAYA</h4></u>
+         <h4 class="text-center">OPNAME FISIK</h4>
         
         <br>
         <div class="row">
             <div class="col-2">
-            Nomor
+            Nama Sub Kegiatan
             </div>
             <div class="col-10">
-            : <?php echo $row['baklarifikasi'];?>
+            : <?php echo $row['subkegiatan'];?>
             </div>
         </div>
         <div class="row">
             <div class="col-2">
-            Tanggal
-            </div>
-            <div class="col-10">
-            : <?php echo tglindo($row['tglbaklarifikasi']);?>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-2">
-            Nama Pekerjaan
+            Pekerjaan
             </div>
             <div class="col-10">
             : <?php echo $row['pekerjaan'];?>
@@ -144,80 +136,46 @@
         </div>
         <div class="row">
             <div class="col-2">
-            Nilai HPS
+            No. & Tgl. SP
             </div>
             <div class="col-10">
-            : Rp. <?php echo number_format($row['nilaitotalhps']);?>,-
+            : <?php echo $row['nomorkontrak'];?> Tanggal <?php echo tglindo($row['tglmulaikontrak']);?>
             </div>
         </div>
         <div class="row">
             <div class="col-2">
-            Tahun Anggaran
+            Nilai Kontrak
             </div>
             <div class="col-10">
-            : <?php echo $row['tahunanggaran'];?>
+            : Rp. <?php echo number_format($row['nilaitotalnego']);?>,-
             </div>
         </div>
         <br>
-        <b><div class="row">
-            <div class="col-12">
-            A. KLARIFIKSAI TEKNIS
-            </div>
-        </div></b>
-        <table class="table table-bordered border-dark table-sm" style="font-size: 10px;">
-            <thead>
-                <tr class="align-middle">
-                    <th class="col-1 text-center">No</th>
-                    <th class="col-7 text-center">ASPEK TEKNIS</th>
-                    <th class="col-2 text-center">HASIL KLARIFIKASI</th>
-                    <th class="col-2 text-center">KETERANGAN</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="col-1 text-center">1</td>
-                    <td class="col-7">identitas barang (jenis, tipe dan merek)</td>
-                    <td class="col-2 text-center">LULUS</td>
-                    <td class="col-2"></td>
-                </tr>
-                <tr>
-                    <td class="col-1 text-center">2</td>
-                    <td class="col-7"> spesifikasi teknis barang</td>
-                    <td class="col-2 text-center">LULUS</td>
-                    <td class="col-2"></td>
-                </tr>
-                <tr>
-                    <td class="col-1 text-center">3</td>
-                    <td class="col-7">jadwal waktu penyerahan/pengiriman barang</td>
-                    <td class="col-2 text-center">LULUS</td>
-                    <td class="col-2"></td>
-                </tr>
-            </tbody>
-        </table>
-        <br>
-        <b><div class="row">
-            <div class="col-12">
-            B. NEGOSIASI HARGA/BIAYA
-            </div>
-        </div></b>
+
         <table class="table table-bordered border-dark table-sm" style="font-size: 10px;">
             <thead class="align-middle">
                 <tr>
-                    <th rowspan="2" class="col-1 text-center">No</th>
-                    <th rowspan="2" class="col-3 text-center">NAMA PRODUK</th>
-                    <th colspan="4" class="col-1 text-center">HARGA PENAWARAN</th>
-                    <th colspan="2" class="col-1 text-center">HARGA PERKIRAAN SENDIRI (HPS)</th>
-                    <th colspan="2" class="col-1 text-center">HASIL NEGOSIASI HARGA/BIAYA</th>
+                    <th rowspan="2" class=" text-center">No</th>
+                    <th rowspan="2" class=" text-center">NAMA PRODUK</th>
+                    <th colspan="4" class=" text-center">KONTRAK</th>
+                    <th rowspan="2" class=" text-center">BOBOT</th>
+                    <th colspan="4" class=" text-center">REALISASI</th>
+                    <th rowspan="2" class=" text-center">BOBOT</th>
+
+                    <!-- <th colspan="2" class=" text-center">HASIL NEGOSIASI HARGA/BIAYA</th> -->
                 </tr>
                 <tr>
-                    <th class="col-1 text-center">VOLUME</th>
-                    <th class="col-1 text-center">SATUAN</th>
-                    <th class="col-1 text-center">HARGA SATUAN (Rp)</th>
-                    <th class="col-1 text-center">JUMLAH HARGA (Rp)</th>
-                    <th class="col-1 text-center">HARGA SATUAN (Rp)</th>
-                    <th class="col-1 text-center">JUMLAH HARGA (Rp)</th>
-                    <th class="col-1 text-center">HARGA SATUAN (Rp)</th>
-                    <th class="col-1 text-center">JUMLAH HARGA (Rp)</th>
+                    <th class=" text-center">VOLUME</th>
+                    <th class=" text-center">SATUAN</th>
+                    <th class=" text-center">HARGA SATUAN (Rp)</th>
+                    <th class=" text-center">JUMLAH HARGA (Rp)</th>
+                    <!-- <th class=" text-center">BOBOT</th> -->
+                    <th class=" text-center">VOLUME</th>
+                    <th class=" text-center">SATUAN</th>
+                    <th class=" text-center">HARGA SATUAN (Rp)</th>
+                    <th class=" text-center">JUMLAH HARGA (Rp)</th>
+                    <!-- <th class=" text-center">BOBOT</th> -->
+
                 </tr>
             </thead>
             <?php
@@ -227,16 +185,19 @@
                                 ?>
             <tbody>
                 <tr>
-                    <td class="col-1 text-center"><?php echo $d['no'];?></td>
-                    <td class="col-3 text-start text-uppercase"><?php echo $d['namaproduk'];?></td>
-                    <td class="col-1 text-center text-uppercase"><?php echo $d['volumehps'];?></td>
-                    <td class="col-1 text-center"><?php echo $d['satuan'];?></td>
-                    <td class="col-1 text-end"><?php echo number_format($d['hargasatuanhps']);?></td>
-                    <td class="col-1 text-end"><?php echo number_format($d['jumlahhps']);?></td>
-                    <td class="col-1 text-end"><?php echo number_format($d['hargasatuanhps']);?></td>
-                    <td class="col-1 text-end"><?php echo number_format($d['jumlahhps']);?></td>
-                    <td class="col-1 text-end"><?php echo number_format($d['hargasatuannego']);?></td>
-                    <td class="col-1 text-end"><?php echo number_format($d['jumlahnego']);?></td>
+                    <td class="text-center"><?php echo $d['no'];?></td>
+                    <td class="text-start text-uppercase"><?php echo $d['namaproduk'];?></td>
+                    <td class="text-center text-uppercase"><?php echo $d['volumehps'];?></td>
+                    <td class="text-center"><?php echo $d['satuan'];?></td>
+                    <td class="text-end"><?php echo number_format($d['hargasatuanhps'], 2);?></td>
+                    <td class="text-end"><?php echo number_format($d['jumlahhps']);?></td>
+                    <td class="text-center">100 %</td>
+                    <td class="text-center"><?php echo number_format($d['volumehps']);?></td>
+                    <td class="text-center text-uppercase"><?php echo $d['satuan'];?></td>
+                    <td class="text-end"><?php echo number_format($d['hargasatuannego'], 2);?></td>
+                    <td class="text-end"><?php echo number_format($d['jumlahnego']);?></td>
+                    <td class="text-center">100 %</td>
+
                 </tr>
             </tbody>
             <?php 
@@ -249,56 +210,206 @@
                                 ?>
             <tfoot>
                 <tr>
-                    <td colspan="4" class="fw-bold">Jumlah</td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaihps']);?></td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaihps']);?></td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilainego']);?></td>
-                </tr>
-                
-                <tr>
-                    <td colspan="4" class="fw-bold">PPN 11%</td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaippnhps']);?></td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaippnhps']);?></td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaippnnego']);?></td>
-                </tr>
-                <tr>
-                    <td colspan="4" class="fw-bold">Total</td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaitotalhps']);?></td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaitotalhps']);?></td>
-                    <td colspan="2" class="fw-bold text-end"><?php echo number_format($d['nilaitotalnego']);?></td>
-                </tr>
-                <tr>
-                    <td colspan="4"></td>
-                    <td colspan="2" class="" style="text-align: justify;"><i><?php echo $d['terbilangtotalhps'];?></i></td>
-                    <td colspan="2" class="" style="text-align: justify;"><i><?php echo $d['terbilangtotalhps'];?></i></td>
-                    <td colspan="2" class="" style="text-align: justify;"><i><?php echo $d['terbilangtotalnego'];?></i></td>
+                    <td colspan="5" class="fw-bold text-center">TOTAL NILAI</td>
+                    <td class="fw-bold text-end"><?php echo number_format($d['nilaitotalnego']);?></td>
+                    <td class="fw-bold text-end"></td>
+                    <td colspan="3" class="fw-bold text-end"></td>
+                    <td class="fw-bold text-end"><?php echo number_format($d['nilaitotalnego']);?></td>
+                    <td class="fw-bold text-end"></td>
                 </tr>
             </tfoot>
         </table>
+
+        <div class="col-12" style="font-size: xx-small;"><i>Harga sudah termasuk PPN 11%</i></div>
+        <br>
+        
+        <div class="row">
+            <div class="col-4 text-center">
+            
+            </div>
+            <div class="col-4 text-center">
+            
+            </div>
+            <div class="col-4 text-center">
+            Indramayu, <?php echo tglindo($d['tglbaphp']);?>
+            </div>
+        </div>
         <br>
         <div class="row">
-            <div class="col-3 text-center">Calon Penyedia</div>
-            <div class="col-6"></div>
-            <div class="col-3 text-center">Pejabat Pengadaan Barang/Jasa</div>
+            <div class="col-4 text-center">
+            Pejabat Pembuat Komitmen
+            </div>
+            <div class="col-4 text-center">
+            Pejabat Pemeriksa Hasil Pekerjaan
+            </div>
+            <div class="col-4 text-center">
+            <?php echo $d['namaperusahaan'];?>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-4 text-center">
+            
+            </div>
+            <div class="col-2 text-start fw-bold">
+            <?php echo $d['namapejabatpemeriksa'];?>
+            </div>
+            <div class="col-2 text-start">
+            ...................................................
+            </div>
+            <div class="col-4 text-center">
+            
+            </div>
         </div>
         <div class="row">
-            <div class="col-3 text-center"></div>
-            <div class="col-6"></div>
-            <div class="col-3 text-center">RSUD Indramayu</div>
+            <div class="col-4 text-center">
+            
+            </div>
+            <div class="col-2 text-start">
+            NIP. <?php echo $d['nippejabatpemeriksa'];?>
+            </div>
+            <div class="col-2 text-start">
+            
+            </div>
+            <div class="col-4 text-center">
+            
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-4 text-center">
+            
+            </div>
+            <div class="col-2 text-start fw-bold">
+            <!-- <?php echo $d['namapejabatpemeriksa2'];?> -->
+            </div>
+            <div class="col-2 text-start">
+            <!-- 2.................................................. -->
+            </div>
+            <div class="col-4 text-center">
+            
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-center">
+            <b><u><?php echo $d['namappk'];?></u></b>
+            </div>
+            <div class="col-2 text-start">
+            <!-- NIP. <?php echo $d['nippejabatpemeriksa2'];?> -->
+            </div>
+            <div class="col-2 text-start">
+            
+            </div>
+            <div class="col-4 text-center">
+            <b><u><?php echo $d['namapimpinan'];?></u></b>
+            </div>
+        </div>
+       
+        
+        <div class="row">
+            <div class="col-4 text-center">
+            NIP. <?php echo $d['nipppk'];?>
+            </div>
+            <div class="col-2 text-start fw-bold">
+            
+            </div>
+            <div class="col-2 text-start">
+            
+            </div>
+            <div class="col-4 text-center">
+            <?php echo $d['jabatan'];?>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-center">
+            
+            </div>
+            <div class="col-2 text-start">
+            <!-- NIP. <?php echo $d['nippejabatpemeriksa3'];?> -->
+            </div>
+            <div class="col-2 text-start">
+            
+            </div>
+            <div class="col-4 text-center">
+            
+            </div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col-4 text-center">
+            <!-- NIP. <?php echo $d['nipppk'];?> -->
+            </div>
+            <div class="col-2 text-start fw-bold">
+            <!-- <?php echo $d['namapejabatpemeriksa3'];?> -->
+            </div>
+            <div class="col-2 text-start">
+            <!-- 3.................................................. -->
+            </div>
+            <div class="col-4 text-center">
+            <!-- <?php echo $d['jabatan'];?> -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-center">
+            
+            </div>
+            <div class="col-2 text-start">
+            <!-- NIP. <?php echo $d['nippejabatpemeriksa3'];?> -->
+            </div>
+            <div class="col-2 text-start">
+            
+            </div>
+            <div class="col-4 text-center">
+            
+            </div>
+        </div>
+        <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+
+        <div class="row">
+            <div class="text-center"></div>
+            <div class=""></div>
+            <div class="text-center">RSUD Indramayu</div>
         </div>
         <br><br><br><br>
         <div class="row">
-            <div class="col-3 text-center"><u><b><?php echo $row['namapimpinan'];?></b></u></div>
-            <div class="col-6"></div>
-            <div class="col-3 text-center"><u><b><?php echo $row['namapejabatbarjas'];?></b></u></div>
+            <div class="text-center"><u><b><?php echo $row['namapimpinan'];?></b></u></div>
+            <div class=""></div>
+            <div class="text-center"><u><b><?php echo $row['namapejabatbarjas'];?></b></u></div>
         </div>
         <div class="row">
-            <div class="col-3 text-center"><?php echo $row['jabatan'];?></div>
-            <div class="col-6"></div>
-            <div class="col-3 text-center">NIP. <?php echo $row['nippejabatbarjas'];?></div>
+            <div class="text-center"><?php echo $row['jabatan'];?></div>
+            <div class=""></div>
+            <div class="text-center">NIP. <?php echo $row['nippejabatbarjas'];?></div>
         </div>
 
-        
+         -->
 
 
     </div>

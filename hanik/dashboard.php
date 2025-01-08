@@ -127,7 +127,7 @@ if($_SESSION['role']==""){
                                             <!-- <th>NIP</th> -->
                                             <th>Tgl. Kontrak</th>
                                             <th>Pekerjaan</th>
-                                            <!-- <th>User</th> -->
+                                            <th>Kontrak</th>
                                             <!-- <th>Aksi</th> -->
                                            
                                         </tr>
@@ -144,7 +144,7 @@ if($_SESSION['role']==""){
                                             <td class="">Rp. <?php echo number_format($d['nilaitotalnego']); ?></td>
                                             <td class=""><?php echo tglindo($d['tglmulaikontrak']); ?></td>
                                             <td class=""><?php echo $d['pekerjaan']; ?></td>
-                                            <!-- <td class=""><?php echo $d['user']; ?></td> -->
+                                            <td class=""><?php echo $d['jeniskontrak']; ?></td>
                                             <!-- <td class="text-center">
                                                 <a href="updateppk.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm text-start" data-target="#myModaleditppk<?php echo $d['id']; ?>">
                                                 <i class="fa fa-edit fa-md"></i>
