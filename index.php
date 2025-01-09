@@ -27,8 +27,10 @@
     </script> -->
 </head>
 
-<body style="background: url('img/bgok.png'); no-repeat center fixed; background-size: cover;">
-
+<body style="background: url('img/bggn.png'); no-repeat center fixed; background-size: cover;">
+<!-- <video autoplay muted loop id="myVideo">
+  <source img src="img/rsudok.mp4" type="video/mp4">
+</video> -->
     <div class="container">
     <!-- <img src="img/bgbg.jpg"> -->
     <?php 
@@ -44,7 +46,7 @@
 
             <div class="col-xl-5 col-lg-5 col-md-5">
 
-                <div class="card o-hidden border-0 shadow-lg my-5" style="border-radius: 30px;">
+                <div class="card o-hidden border-0 shadow-lg my-5 " style="border-radius: 30px;">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
@@ -57,7 +59,7 @@
                             <div class="p-5">
                                 
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Hello !</h1>
+                                        <h1 class="h4 text-gray-900 mb-4">Hai Bro !</h1>
                                     </div>
                                         <form action="ceklogin.php" method="POST" class="user">
                                             <div class="form-group">
