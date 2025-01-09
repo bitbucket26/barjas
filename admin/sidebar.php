@@ -107,12 +107,11 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-            <li class="nav-item">
+            <!-- <li class="nav-item">
                 <a class="nav-link" href="../register.php">
-                    <!-- <i class="fa fa-plus-circle"></i> -->
                     <i class="bi bi-setting"></i>
                     <span>BUAT AKUN BARU</span></a>
-            </li>
+            </li> -->
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
