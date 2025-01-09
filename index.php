@@ -16,7 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!-- Custom styles for this template-->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
     <!-- <script type="text/javascript">
@@ -59,8 +59,12 @@
                             <div class="p-5">
                                 
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Hai Bro !</h1>
+                                        <h4 class="text-gray-900">Hallo Kawan !</h4>
+                                        <h4 class="text-gray-900">Jangan Lupa Ngopi  <i class="bi bi-cup-hot-fill"></i></h4>
+                                        <!-- <h5>Jangan Lupa Ngopi</h5>
+                                        <h5>Jangan Lupa Ngopi</h5> -->
                                     </div>
+                                    <br>
                                         <form action="ceklogin.php" method="POST" class="user">
                                             <div class="form-group">
                                                 <!-- <label>Username</label> -->
