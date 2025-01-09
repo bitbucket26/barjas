@@ -101,6 +101,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-4">
+                                        <h4>PELAKSANAAN</h4>
+                                        <hr class="sidebar-divider">
                                                 <div class="row g-2">
                                                     <div class="col-6">
                                                         <div class="form-floating">
@@ -582,6 +584,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                        <h4>PEKERJAAN</h4>
+                                        <hr class="sidebar-divider">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -652,6 +656,8 @@ if($_SESSION['role']==""){
                                                 
                                         </div>
                                         <div class="col-sm-6">
+                                        <h4>PEJABAT PELAKSANA TEKNIS KEGIATAN</h4>
+                                        <hr class="sidebar-divider">
                                                 <div class="row g-2">
                                                     <div class="col-6">
                                                         <div class="form-floating">
@@ -718,6 +724,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                        <h4>NILAI HPS</h4>
+                                        <hr class="sidebar-divider">
                                                 <div class="row g-2">
                                                     <div class="col-4">
                                                         <div class="form-floating">
@@ -765,6 +773,8 @@ if($_SESSION['role']==""){
                                                 </div>
                                         </div>
                                         <div class="col-sm-6">
+                                        <h4>NILAI NEGO</h4>
+                                        <hr class="sidebar-divider">
                                         <div class="row g-2">
                                                     <div class="col-4">
                                                         <div class="form-floating">
@@ -1127,6 +1137,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                        <h4>PEJABAT BARJAS</h4>
+                                        <hr class="sidebar-divider">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -1192,6 +1204,8 @@ if($_SESSION['role']==""){
                                                 </div>
                                         </div>
                                         <div class="col-sm-6">
+                                        <h4>PEJABAT PEMBUAT KOMITMEN</h4>
+                                        <hr class="sidebar-divider">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -1260,6 +1274,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                        <h4>VENDOR</h4>
+                                        <hr class="sidebar-divider">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -1351,6 +1367,8 @@ if($_SESSION['role']==""){
                                                 </div>
                                         </div>
                                         <div class="col-sm-6">
+                                        <h4>PENOMORAN</h4>
+                                        <hr class="sidebar-divider">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     

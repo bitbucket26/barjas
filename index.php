@@ -27,7 +27,7 @@
     </script> -->
 </head>
 
-<body style="background: url('img/bg.png'); no-repeat center fixed; background-size: cover;">
+<body style="background: url('img/bgok.png'); no-repeat center fixed; background-size: cover;">
 
     <div class="container">
     <!-- <img src="img/bgbg.jpg"> -->
@@ -93,7 +93,12 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
+    <!-- <script type="text/javascript">
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+    </script> -->
 
 </body>
 

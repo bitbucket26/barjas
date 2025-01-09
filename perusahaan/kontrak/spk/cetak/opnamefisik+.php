@@ -337,7 +337,6 @@
             </div>
         </div>
         <br>
-        <br>
         <div class="row">
             <div class="col-4 text-center">
             <!-- NIP. <?php echo $d['nipppk'];?> -->

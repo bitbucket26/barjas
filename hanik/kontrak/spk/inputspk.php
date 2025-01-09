@@ -34,6 +34,7 @@ if($_SESSION['role']==""){
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="my.js"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </style>
 </head>
     <?php	
@@ -88,6 +89,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-4">
+                                        <h4>PELAKSANAAN</h4>
+                                        <hr class="sidebar-divider">
                                                 <div class="row g-2">
                                                     <div class="col-6">
                                                         <div class="form-floating">
@@ -571,6 +574,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                        <h4>PEKERJAAN</h4>
+                                        <hr class="sidebar-divider">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -641,6 +646,8 @@ if($_SESSION['role']==""){
                                                 
                                         </div>
                                         <div class="col-sm-6">
+                                        <h4>PEJABAT PELAKSANA TEKNIS KEGIATAN</h4>
+                                        <hr class="sidebar-divider">
                                                 <div class="row g-2">
                                                     <div class="col-6">
                                                         <div class="form-floating">
@@ -707,6 +714,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                        <h4>NILAI HPS</h4>
+                                        <hr class="sidebar-divider">
                                                 <div class="row g-2">
                                                     <div class="col-4">
                                                         <div class="form-floating">
@@ -754,6 +763,8 @@ if($_SESSION['role']==""){
                                                 </div>
                                         </div>
                                         <div class="col-sm-6">
+                                        <h4>NILAI NEGO</h4>
+                                        <hr class="sidebar-divider">
                                                 <div class="row g-2">
                                                     <div class="col-4">
                                                         <div class="form-floating">
@@ -801,7 +812,7 @@ if($_SESSION['role']==""){
                                                 </div>
                                 <hr class="sidebar-divider">
                                 <hr class="sidebar-divider">
-                                                
+                                
                                                 <div class="row">
                                                     <div class="col-4">
                                                         <div class="form-floating">
@@ -1118,6 +1129,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                        <h4>PEJABAT BARJAS</h4>
+                                        <hr class="sidebar-divider">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -1183,6 +1196,8 @@ if($_SESSION['role']==""){
                                                 </div>
                                         </div>
                                         <div class="col-sm-6">
+                                        <h4>PEJABAT PEMBUAT KOMITMEN</h4>
+                                        <hr class="sidebar-divider">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -1251,6 +1266,8 @@ if($_SESSION['role']==""){
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col-sm-6">
+                                        <h4>VENDOR</h4>
+                                        <hr class="sidebar-divider">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     <?php	
@@ -1342,6 +1359,8 @@ if($_SESSION['role']==""){
                                                 </div>
                                         </div>
                                         <div class="col-sm-6">
+                                        <h4>PENOMORAN</h4>
+                                        <hr class="sidebar-divider">
                                                 <!-- Baris 1 -->
                                                 <div class="row g-2">
                                                     

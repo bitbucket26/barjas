@@ -112,7 +112,7 @@
 
        <div class="row">
                 <div class="col-12" style="text-align: justify; text-indent: 0.5in;">
-                       Menunjuk <?php echo $row['bilangjeniskontrak']; ?> (<?php echo $row['jeniskontrak']; ?>)
+                       Menunjuk <?php echo $row['bilangjeniskontrak']; ?> (<?php echo $row['jeniskontrak'];?>)
                        Nomor : <?php echo $row['nomorkontrak']; ?> 
                        Tanggal <?php echo tglindo($row['tglmulaikontrak']); ?> 
                        tentang <?php echo $row['pekerjaan']; ?> pada RSUD Indramayu

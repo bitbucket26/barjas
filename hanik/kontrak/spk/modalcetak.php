@@ -32,7 +32,7 @@
                                                         <a class="dropdown-item" href="cetak/undangan.php?id=<?php echo $d['id']; ?>" target="_blank">7. Undangan</a>
                                                         <a class="dropdown-item" href="cetak/pembukaan.php?id=<?php echo $d['id']; ?>" target="_blank">8. Pembukaan</a>
                                                         <a class="dropdown-item" href="cetak/lampevalpenawaran.php?id=<?php echo $d['id']; ?>" target="_blank">9. Lamp. Eval. Penawaran</a>
-                                                        <a class="dropdown-item" href="cetak/lampbaklarnego.php?id=<?php echo $d['id']; ?>" target="_blank">10. Lampiran BA.Klar Nego</a>
+                                                        <a class="dropdown-item" href="cetak/lampbaklarnego.php?id=<?php echo $d['id']; ?>" target="_blank">10. Lampiran BA.Klar Nego (*Landscape)</a>
                                                         <a class="dropdown-item" href="cetak/baevalpenawaran.php?id=<?php echo $d['id']; ?>" target="_blank">11. BA.Eval.Penawaran</a>
                                                         <a class="dropdown-item" href="cetak/baklarnego.php?id=<?php echo $d['id']; ?>" target="_blank">12. BA.Klar.Nego</a>
                                                         <a class="dropdown-item" href="cetak/bahpl.php?id=<?php echo $d['id']; ?>" target="_blank">13. BAHPL</a>
@@ -46,13 +46,14 @@
                                                         <a class="dropdown-item" href="cetak/cover.php?id=<?php echo $d['id']; ?>" target="_blank">21. Cover</a>
                                                         <a class="dropdown-item" href="cetak/undanganpt.php?id=<?php echo $d['id']; ?>" target="_blank">22. Undangan PT</a>
                                                         <a class="dropdown-item" href="sortirundanganppk.php?id=<?php echo $d['id']; ?>" target="_blank">23. Undangan PPK</a>
-                                                        <a class="dropdown-item" href="sortirbaphp.php?id=<?php echo $d['id']; ?>" target="_blank">24. BAPHP</a>
-                                                        <a class="dropdown-item" href="cetak/bastb.php?id=<?php echo $d['id']; ?>" target="_blank">25. BASTB</a>
-                                                        <a class="dropdown-item" href="cetak/ppembayaran.php?id=<?php echo $d['id']; ?>" target="_blank">26. Pembayaran</a>
-                                                        <a class="dropdown-item" href="cetak/bap.php?id=<?php echo $d['id']; ?>" target="_blank">27. BAP (3 rangkap, Materai silang)</a>
-                                                        <a class="dropdown-item" href="cetak/sptjm.php?id=<?php echo $d['id']; ?>" target="_blank">28. SPTJM</a>
-                                                        <a class="dropdown-item" href="cetak/ringkasan.php?id=<?php echo $d['id']; ?>" target="_blank">29. Ringkasan</a>
-                                                        <a class="dropdown-item" href="cetak/kwitansi.php?id=<?php echo $d['id']; ?>" target="_blank">30. Kwitansi (2 rangkap, Materai penyedia)</a>
+                                                        <a class="dropdown-item" href="sortiropnamefisik.php?id=<?php echo $d['id']; ?>" target="_blank">24.  Opname Fisik (*Landscape)</a>
+                                                        <a class="dropdown-item" href="sortirbaphp.php?id=<?php echo $d['id']; ?>" target="_blank">25. BAPHP</a>
+                                                        <a class="dropdown-item" href="cetak/bastb.php?id=<?php echo $d['id']; ?>" target="_blank">26. BASTB</a>
+                                                        <a class="dropdown-item" href="cetak/ppembayaran.php?id=<?php echo $d['id']; ?>" target="_blank">27. Pembayaran</a>
+                                                        <a class="dropdown-item" href="cetak/bap.php?id=<?php echo $d['id']; ?>" target="_blank">28. BAP (3 rangkap, Materai silang)</a>
+                                                        <a class="dropdown-item" href="cetak/sptjm.php?id=<?php echo $d['id']; ?>" target="_blank">29. SPTJM</a>
+                                                        <a class="dropdown-item" href="cetak/ringkasan.php?id=<?php echo $d['id']; ?>" target="_blank">30. Ringkasan</a>
+                                                        <a class="dropdown-item" href="cetak/kwitansi.php?id=<?php echo $d['id']; ?>" target="_blank">31. Kwitansi (2 rangkap, Materai penyedia) (*Landscape)</a>
                                                 <!-- </ul> -->
                                                     
                                                     </div>

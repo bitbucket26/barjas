@@ -80,7 +80,7 @@
                     <i class="bi bi-person-bounding-box"></i>
                     <span>DIREKTUR</span></a>
             </li>
-            </li>
+            <!-- </li> -->
             
             <li class="nav-item">
                 <a class="nav-link" href="pejabat/pejabat.php">
@@ -88,7 +88,7 @@
                     <i class="bi bi-person-fill-add"></i>
                     <span>PEJABAT PENGADAAN</span></a>
             </li>
-            </li>
+            <!-- </li> -->
         
             <li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseOne1"
@@ -107,7 +107,12 @@
             </li>
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
-
+            <li class="nav-item">
+                <a class="nav-link" href="../register.php">
+                    <!-- <i class="fa fa-plus-circle"></i> -->
+                    <i class="bi bi-setting"></i>
+                    <span>BUAT AKUN BARU</span></a>
+            </li>
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>

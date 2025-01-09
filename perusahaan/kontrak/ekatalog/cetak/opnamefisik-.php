@@ -240,7 +240,7 @@
             Pejabat Pembuat Komitmen
             </div>
             <div class="col-4 text-center">
-            Pejabat Pemeriksa Hasil Pekerjaan
+            <!-- Pejabat Pemeriksa Hasil Pekerjaan -->
             </div>
             <div class="col-4 text-center">
             <?php echo $d['namaperusahaan'];?>
@@ -254,10 +254,10 @@
             
             </div>
             <div class="col-2 text-start fw-bold">
-            <?php echo $d['namapejabatpemeriksa'];?>
+            <!-- <?php echo $d['namapejabatpemeriksa'];?> -->
             </div>
             <div class="col-2 text-start">
-            ...................................................
+            <!-- ................................................... -->
             </div>
             <div class="col-4 text-center">
             
@@ -268,7 +268,7 @@
             
             </div>
             <div class="col-2 text-start">
-            NIP. <?php echo $d['nippejabatpemeriksa'];?>
+            
             </div>
             <div class="col-2 text-start">
             
@@ -297,12 +297,10 @@
             <div class="col-4 text-center">
             <b><u><?php echo $d['namappk'];?></u></b>
             </div>
-            <div class="col-2 text-start">
-            <!-- NIP. <?php echo $d['nippejabatpemeriksa2'];?> -->
+            <div class="col-4 text-center">
+            Pejabat Pemeriksa Hasil Pekerjaan
             </div>
-            <div class="col-2 text-start">
-            
-            </div>
+
             <div class="col-4 text-center">
             <b><u><?php echo $d['namapimpinan'];?></u></b>
             </div>
@@ -313,25 +311,31 @@
             <div class="col-4 text-center">
             NIP. <?php echo $d['nipppk'];?>
             </div>
-            <div class="col-2 text-start fw-bold">
-            
-            </div>
-            <div class="col-2 text-start">
+            <div class="col-4 text-start fw-bold">
             
             </div>
             <div class="col-4 text-center">
             <?php echo $d['jabatan'];?>
             </div>
         </div>
+        <br><br><br><br>
         <div class="row">
             <div class="col-4 text-center">
             
             </div>
-            <div class="col-2 text-start">
-            <!-- NIP. <?php echo $d['nippejabatpemeriksa3'];?> -->
+            <div class="col-4 text-center">
+            <b><u><?php echo $d['namapejabatpemeriksa'];?></u></b>
             </div>
-            <div class="col-2 text-start">
+            <div class="col-4 text-center">
             
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 text-center">
+            
+            </div>
+            <div class="col-4 text-center">
+            NIP. <?php echo $d['nippejabatpemeriksa'];?>
             </div>
             <div class="col-4 text-center">
             
