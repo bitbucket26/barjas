@@ -46,7 +46,7 @@
 
             <div class="col-xl-5 col-lg-5 col-md-5">
 
-                <div class="card o-hidden border-0 shadow-lg my-5 " style="border-radius: 30px;">
+                <div class="card o-hidden border-0 shadow-lg my-5" style="border-radius: 30px;">
                     <div class="card-body p-0">
                         <!-- Nested Row within Card Body -->
                         <div class="row">
