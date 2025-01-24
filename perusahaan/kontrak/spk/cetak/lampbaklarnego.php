@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 landscape;
+    size: F4;
+    size: landscape;
   }
 }
 </style>

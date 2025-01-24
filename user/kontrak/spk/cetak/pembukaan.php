@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -115,7 +116,7 @@
         </div>
             <br>
         <!-- Judul Nota -->
-         <h5 class="text-center"><u><b>BERITA ACARA PEMBUKAAN PENAWARAN</u></b></h5>
+         <h6 class="text-center"><u><b>BERITA ACARA PEMBUKAAN PENAWARAN</u></b></h6>
         <div class="d-flex justify-content-center">
             <label class="text-capitalize">Nomor : <?php echo $row['pembukaan'];?></label>
         </div>

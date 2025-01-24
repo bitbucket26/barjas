@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+   size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -107,7 +108,7 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size: 15px;">
+<section class="sheet padding-10mm" style="font-size: 20px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -119,8 +120,8 @@
             <img src="../../../../img/cover.png">
         </div>
 <br>
-         <h1 class="text-center text-uppercase"><b><?php echo $row['bilangjeniskontrak'];?></b></h1>
-         <h1 class="text-center"><b>( <?php echo $row['jeniskontrak'];?> )</b></h1>
+         <h2 class="text-center text-uppercase"><b><?php echo $row['bilangjeniskontrak'];?></b></h2>
+         <h2 class="text-center"><b>( <?php echo $row['jeniskontrak'];?> )</b></h2>
 
          <br>
 

@@ -10,11 +10,12 @@
 <style>
 @media print {
   @page {
-    size: F4 landscape;
+    size: F4;
+    size: landscape;
   }
 }
 </style>
-<body style="background-color: white; font-family: cambria;;">
+<body style="background-color: white; font-family: cambria;">
     <?php
         
         include "../../../../koneksi.php";
@@ -88,20 +89,20 @@
             </tr>
             <tr>
 				<td class="col-3 text-center align-top" style="border-left: 1px solid; border-right: 1px solid">RSUD Indramayu</td>
-				<td class="col-2 text-start">Sudah Terima Dari</td>
-				<td colspan="2" style="border-right: 1px solid">: Bendahara Pengeluaran RSUD Indramayu</td>
+				<td class="col-2 text-start">Sudah Terima Dari&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+				<td colspan="2" style="border-right: 1px solid">Bendahara Pengeluaran RSUD Indramayu</td>
 				<!-- <td class="col-3 text-center"></td> -->
 			</tr>
             <tr>
 				<td class="col-3 text-center" style="border-left: 1px solid; border-right: 1px solid"></td>
-				<td class="col-2 text-start">Uang Sejumlah</td>
-                <td colspan="2" style="border-right: 1px solid">: <?php echo $row['terbilangtotalnego']; ?></td>
+				<td class="col-2 text-start">Uang Sejumlah&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+                <td colspan="2" style="border-right: 1px solid"><?php echo $row['terbilangtotalnego']; ?></td>
 
 			</tr>
             <tr >
 				<td class="col-3 text-center align-bottom" style="border-left: 1px solid; border-right: 1px solid"></td>
-				<td class="col-2 text-start">Untuk Pembayaran</td>
-                <td colspan="2" style="text-align: justify; border-right: 1px solid">: <?php echo $row['pekerjaan']; ?> Kegiatan <?php echo $row['kegiatan']; ?> 
+				<td class="col-2 text-start">Untuk Pembayaran&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</td>
+                <td colspan="2" style="text-align: justify; border-right: 1px solid"><?php echo $row['pekerjaan']; ?> Kegiatan <?php echo $row['kegiatan']; ?> 
                 Sub Kegiatan <?php echo $row['subkegiatan']; ?> Sesuai dengan 
                 Surat Perjanjian (<?php echo $row['jeniskontrak']; ?>) Nomor <?php echo $row['nomorkontrak']; ?> Tanggal <?php echo tglindo($row['tglmulaikontrak']); ?></td>
 			</tr>
@@ -116,7 +117,7 @@
 				<td class="col-3 text-center" style="border-left: 1px solid; border-right: 1px solid">NIP. 19740110 200212 1 008</td>
 				<td class="col-2 text-start"></td>
 				<!-- <td class="col-3 text-start"></td> -->
-				<td colspan="2" class="text-end" style="border-right: 1px solid">Indramayu,...............................................2024</td>
+				<td colspan="2" class="text-end" style="border-right: 1px solid">Indramayu&nbsp;,...............................................2025</td>
 			</tr>
             <tr>
 				<td class="col-3 text-center" style="border-left: 1px solid; border-right: 1px solid">Meyetujui :</td>

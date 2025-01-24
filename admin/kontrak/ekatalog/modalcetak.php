@@ -19,13 +19,11 @@
                                                         $query_edit = mysqli_query($koneksi,"SELECT * FROM kontrak WHERE id='$id'");
                                                         while ($row = mysqli_fetch_array($query_edit)) {
                                                     ?>
-                                            
                                                         <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-
                                                         <div class="modal-body text-start" style="font-size: 15px;">
                                                         <a class="dropdown-item" href="cetak/undanganpt.php?id=<?php echo $d['id']; ?>" target="_blank">1.  Undangan PT</a>
                                                         <a class="dropdown-item" href="sortirundanganppk.php?id=<?php echo $d['id']; ?>" target="_blank">2.  Undangan PPK</a>
-                                                        <a class="dropdown-item" href="sortiropnamefisik.php?id=<?php echo $d['id']; ?>" target="_blank">3.  Opname Fisik (*Landscape)</a>
+                                                        <a class="dropdown-item" href="sortiropnamefisik.php?id=<?php echo $d['id']; ?>" target="_blank">3.  Opname Fisik </a>
                                                         <a class="dropdown-item" href="sortirbaphp.php?id=<?php echo $d['id']; ?>" target="_blank">4.  BAPHP</a>
                                                         <a class="dropdown-item" href="cetak/bastb.php?id=<?php echo $d['id']; ?>" target="_blank">5.  BASTB</a>
                                                         <a class="dropdown-item" href="cetak/ppembayaran.php?id=<?php echo $d['id']; ?>" target="_blank">6.  Permohonan Pembayaran</a>

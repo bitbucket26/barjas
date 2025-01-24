@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -122,7 +123,7 @@
         </div>
 <br>
     <!-- <table style="width:100%; border: 1px;"> -->
-    <table class="table table-bordered">
+    <table class="table table-bordered border-dark">
 		<thead>
             <tr class="align-middle">
 				<th class="col-1 text-center">No.</th>

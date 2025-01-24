@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -65,7 +66,7 @@
         </div>
         <div class="row">
                 <div class="col-12 text-center"><b><u>
-                <h4>SURAT PERNYATAAN TANGGUNG JAWAB MUTLAK (SPTJM)</h4></u></b>
+                <h5>SURAT PERNYATAAN TANGGUNG JAWAB MUTLAK (SPTJM)</h5></u></b>
                 </div>
         </div>
         <br>
@@ -122,7 +123,7 @@
         </div>
 <br>
     <!-- <table style="width:100%; border: 1px;"> -->
-    <table class="table table-bordered">
+    <table class="table table-bordered border-dark">
 		<thead>
             <tr class="align-middle">
 				<th class="col-1 text-center">No.</th>

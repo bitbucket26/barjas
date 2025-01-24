@@ -27,11 +27,11 @@
     </script> -->
 </head>
 
-<body style="background: url('img/bggn.png'); no-repeat center fixed; background-size: cover;">
+<body style="background: url('img/bgbg.jpeg'); no-repeat center fixed; background-size: cover;">
 <!-- <video autoplay muted loop id="myVideo">
   <source img src="img/rsudok.mp4" type="video/mp4">
 </video> -->
-    <div class="container">
+    <div class="container-fluid">
     <!-- <img src="img/bgbg.jpg"> -->
     <?php 
 	if(isset($_GET['pesan'])){
@@ -44,7 +44,7 @@
         <!-- Outer Row -->
         <div class="row justify-content-center">
 
-            <div class="col-xl-5 col-lg-5 col-md-5">
+            <div class="col-xl-4 col-lg-5 col-md-5">
 
                 <div class="card o-hidden border-0 shadow-lg my-5" style="border-radius: 30px;">
                     <div class="card-body p-0">
@@ -59,8 +59,8 @@
                             <div class="p-5">
                                 
                                     <div class="text-center">
-                                        <h4 class="text-gray-900">Hallo Kawan !</h4>
-                                        <h4 class="text-gray-900">Jangan Lupa Ngopi  <i class="bi bi-cup-hot-fill"></i></h4>
+                                        <h4 class="text-black">Hallo Kawan !</h4>
+                                        <h4 class="text-black">Jangan Lupa Ngopi  <i class="bi bi-cup-hot-fill"></i></h4>
                                         <!-- <h5>Jangan Lupa Ngopi</h5>
                                         <h5>Jangan Lupa Ngopi</h5> -->
                                     </div>

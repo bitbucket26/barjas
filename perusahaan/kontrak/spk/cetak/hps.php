@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -147,7 +148,7 @@
 
         <br>
 
-        <table class="table table-bordered text-center table-sm" style="font-size: 15px;">
+        <table class="table table-bordered text-center table-sm border-dark" style="font-size: 15px;">
             <thead>
                 <tr class="align-middle">
                     <th class="col-1">No.</th>
@@ -170,7 +171,7 @@
                     <td class="col-1"><?php echo $d['volumehps'];?></td>
                     <td class="col-1"><?php echo $d['satuan'];?></td>
                     <td class="col-2 text-end"><?php echo number_format($d['hargasatuanhps'],2);?></td> 
-                    <td class="col-2 text-end"><?php echo number_format($d['jumlahhps']);?></td>
+                    <td class="col-2 text-end"><?php echo number_format((float)$d['jumlahhps']);?></td>
                 </tr>
             </tbody>
             <?php 
@@ -188,13 +189,13 @@
                                         <td class="col-1"></td>
                                         <td class="col-5"></td>
                                         <td colspan="3">Jumlah</td>
-                                        <td class="col-2 text-end"><?php echo number_format($d['nilaihps']);?></td>
+                                        <td class="col-2 text-end"><?php echo number_format((float)$d['nilaihps']);?></td>
                                     </tr>
                                     <tr class="text-start fw-bold">
                                         <td class="col-1"></td>
                                         <td class="col-5"></td>
                                         <td colspan="3">PPN 11%</td>
-                                        <td class="col-2 text-end"><?php echo number_format($d['nilaippnhps']);?></td>
+                                        <td class="col-2 text-end"><?php echo number_format((float)$d['nilaippnhps']);?></td>
                                     </tr>
                                     <tr class="text-start fw-bold">
                                         <td class="col-1"></td>

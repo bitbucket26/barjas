@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+   size: F4;
+    size: portrait;
   }
 }
 @media print {
@@ -148,16 +149,17 @@
                 1. <?php echo $row['namappk'];?>
             </div>
             <div class="col-8" style="text-align: justify;">
-            :<?php echo $row['jabatanppk'];?> pada RSUD Indramayu Tahun Anggaran <?php echo $row['tahunanggaran'];?>  
+            <?php echo $row['jabatanppk'];?> pada RSUD Indramayu Tahun Anggaran <?php echo $row['tahunanggaran'];?>  
             yang berkedudukan di <?php echo $row['alamatsatker'];?>, selanjutnya disebut PIHAK KESATU
             </div>
         </div>
+        <br>
         <div class="row">
             <div class="col-4 fw-bold">
                 2. <?php echo $row['namapimpinan'];?>
             </div>
             <div class="col-8" style="text-align: justify;">
-            :<?php echo $row['jabatan'];?> <?php echo $row['namaperusahaan'];?> yang bertindak untuk dan atas nama <?php echo $row['namaperusahaan'];?>, yang berkedudukan di <?php echo $row['alamat'];?>,
+            <?php echo $row['jabatan'];?> <?php echo $row['namaperusahaan'];?> yang bertindak untuk dan atas nama <?php echo $row['namaperusahaan'];?>, yang berkedudukan di <?php echo $row['alamat'];?>,
              selanjutnya disebut PIHAK KEDUA
             </div>
         </div>
@@ -284,88 +286,66 @@
             <div class="col-1">
             
             </div>
-            <div class="col-1">
-            a.
-            </div>
-            <div class="col-10" style="text-align: justify;">
-            Adendum Surat Perjanjian 								
+            
+            <div class="col-11" style="text-align: justify;">
+            a. Adendum Surat Perjanjian 								
             </div>
         </div>
         <div class="row">
             <div class="col-1">
             
             </div>
-            <div class="col-1">
-            b.
-            </div>
-            <div class="col-10" style="text-align: justify;">
-            Pokok perjanjian; 								
+           
+            <div class="col-11" style="text-align: justify;">
+            b. Pokok perjanjian; 								
             </div>
         </div>
         <div class="row">
             <div class="col-1">
             
             </div>
-            <div class="col-1">
-            c.
-            </div>
-            <div class="col-10" style="text-align: justify;">
-            Surat penawaranberikut daftar kuantitas dan harga
+            <div class="col-11" style="text-align: justify;">
+            c. Surat penawaranberikut daftar kuantitas dan harga
             </div>
         </div>
         <div class="row">
             <div class="col-1">
             
             </div>
-            <div class="col-1">
-            d.
-            </div>
-            <div class="col-10" style="text-align: justify;">
-            Syarat-syarat khusus Kontrak;
+            <div class="col-11" style="text-align: justify;">
+            d. Syarat-syarat khusus Kontrak;
             </div>
         </div>
         <div class="row">
             <div class="col-1">
             
             </div>
-            <div class="col-1">
-            e.
-            </div>
-            <div class="col-10" style="text-align: justify;">
-            Syarat-syarat umum Kontrak;
+            <div class="col-11" style="text-align: justify;">
+            e. Syarat-syarat umum Kontrak;
             </div>
         </div>
         <div class="row">
             <div class="col-1">
             
             </div>
-            <div class="col-1">
-            f.
-            </div>
-            <div class="col-10" style="text-align: justify;">
-            Spesifikasi khusus;
+            <div class="col-11" style="text-align: justify;">
+            f.&nbsp;&nbsp;Spesifikasi khusus;
             </div>
         </div>
         <div class="row">
             <div class="col-1">
             
             </div>
-            <div class="col-1">
-            g.
-            </div>
-            <div class="col-10" style="text-align: justify;">
-            Spesifikasi umum;dan
+            <div class="col-11" style="text-align: justify;">
+            g. Spesifikasi umum;dan
             </div>
         </div>
         <div class="row">
             <div class="col-1">
             
             </div>
-            <div class="col-1">
-            h.
-            </div>
-            <div class="col-10" style="text-align: justify;">
-            Dokumen lainnya seperti: BA.Klarifiksi dan negosiasi, SPPBJ, BAHP.
+            <div class="col-11" style="text-align: justify;">
+            h. Dokumen lainnya seperti: BA.Klarifiksi dan negosiasi, SPPBJ, BAHP.
             </div>
         </div>
         <div class="row">
@@ -388,11 +368,8 @@
             <div class="col-1">
             
             </div>
-            <div class="col-1">
-            a.
-            </div>
-            <div class="col-10" style="text-align: justify;">
-            PIHAK KESATUmempunyai hak dan kewajiban untuk:
+            <div class="col-11" style="text-align: justify;">
+            a. PIHAK KESATUmempunyai hak dan kewajiban untuk:
             </div>
         </div>
         <div class="row">
@@ -444,11 +421,8 @@
             <div class="col-1">
             
             </div>
-            <div class="col-1">
-            b.
-            </div>
-            <div class="col-10" style="text-align: justify;">
-            PIHAK KEDUA mempunyai hak dan kewajiban untuk:
+            <div class="col-11" style="text-align: justify;">
+             b. PIHAK KEDUA mempunyai hak dan kewajiban untuk:
             </div>
         </div>
         <div class="row">

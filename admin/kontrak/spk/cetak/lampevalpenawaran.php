@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -107,7 +108,7 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size: 15px;">
+<section class="sheet padding-10mm" style="font-size: 13px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -130,7 +131,7 @@
                 Nilai HPS
             </div>
             <div class="col-9">
-            : Rp. <?php echo number_format($row['nilaihps']);?>,-
+            : Rp. <?php echo number_format($row['nilaitotalhps']);?>,-
             </div>
         </div>
         <div class="row">
@@ -138,7 +139,7 @@
             Harga Penawaran
             </div>
             <div class="col-9">
-            : Rp. <?php echo number_format($row['nilaihps']);?>,-
+            : Rp. <?php echo number_format($row['nilaitotalhps']);?>,-
             </div>
         </div>
         <div class="row">
@@ -153,7 +154,7 @@
         <div class="row fw-bold">
         I. EVALUASI TEKNIS
         </div>
-        <table class="table table-bordered border-dark text-center table-sm" style="font-size: 15px; line-height: 15px;">
+        <table class="table table-bordered border-dark text-center table-sm" style="line-height: 15px;">
             <thead class="fw-bold">
                 <tr class="align-middle">
                     <th class="col-1">No.</th>
@@ -177,7 +178,7 @@
                 </tr>
                 <tr>
                     <td class="col-1">3</td>
-                    <td class="col-7" style="text-align: justify;">gambar/brosur barang [jika dipersyaratkan];																	                    </td>
+                    <td class="col-7" style="text-align: justify;">gambar/brosur barang <i>[jika dipersyaratkan]</i>;</td>
                     <td class="col-2">YA</td>
                     <td class="col-2">LULUS</td>
                 </tr>
@@ -189,25 +190,25 @@
                 </tr>
                 <tr>
                     <td class="col-1">5</td>
-                    <td class="col-7" style="text-align: justify;">surat dukungan pabrikan/distributor [jika dipersyaratkan]; 																	                    </td>
+                    <td class="col-7" style="text-align: justify;">surat dukungan pabrikan/distributor <i>[jika dipersyaratkan];</i></td>
                     <td class="col-2">YA</td>
                     <td class="col-2">LULUS</td>
                 </tr>
+                <tr>
+                    <td colspan="4" class="text-start fw-bold">KESIMPULAN  : LULUS</td>
+                    
+                </tr>
+                <tr>
+                   <td colspan="4" class="text-start fw-bold">REKOMENDASI : LANJUTKAN EVALUASI KE TAHAP BERIKUTNYA</td>
+                </tr>
             </tbody>
         </table>
-        <div class="row fw-bold">
-            <div class="col-3">KESIMPULAN</div>
-            <div class="col-9">: LULUS</div>
-        </div>
-        <div class="row fw-bold">
-            <div class="col-3">REKOMENDASI</div>
-            <div class="col-9">: LANJUTKAN EVALUASI KE TAHAP BERIKUTNYA</div>
-        </div>
+        
         <br>
         <div class="row fw-bold">
         II. EVALUASI HARGA
         </div>
-        <table class="table table-bordered border-dark text-center table-sm" style="font-size: 15px; line-height: 15px;">
+        <table class="table table-bordered border-dark text-center table-sm" style="line-height: 15px;">
             <thead class="fw-bold">
                 <tr class="align-middle">
                     <th class="col-1">No.</th>
@@ -240,18 +241,18 @@
                     <td class="col-2">Wajar			                    </td>
                     <td class="col-4" style="text-align: justify;">Jika harga penawaran terkoreksi < 80% HPS, lakukan klarifikasi                    </td>
                 </tr>
+                <tr>
+                    <td colspan="5" class="text-start fw-bold">KESIMPULAN  : LULUS</td>
+                    
+                </tr>
+                <tr>
+                   <td colspan="5" class="text-start fw-bold">REKOMENDASI : LANJUTKAN EVALUASI KE TAHAP BERIKUTNYA</td>
+                </tr>
                 
             </tbody>
         </table>
 
-        <div class="row fw-bold">
-            <div class="col-3">KESIMPULAN</div>
-            <div class="col-9">: LULUS</div>
-        </div>
-        <div class="row fw-bold" >
-            <div class="col-3">REKOMENDASI</div>
-            <div class="col-9">: LANJUTKAN EVALUASI KE TAHAP BERIKUTNYA													            </div>
-        </div>
+        
         <br>
         <div class="fw-bold text-center" >
         RESUME HASIL PENILAIAN DOKUMEN PENAWARAN
@@ -260,7 +261,7 @@
         <div class="row fw-bold">
         III. HASIL EVALUASI DOKUMEN PENAWARAN
         </div>
-        <table class="table table-bordered border-dark text-center" style="font-size: 15px; line-height: 15px;">
+        <table class="table table-bordered border-dark text-center" style="line-height: 15px;">
             <thead class="fw-bold">
                 <tr class="align-middle">
                     <th class="col-1">No.</th>
@@ -282,16 +283,15 @@
                     <td class="col-5">LULUS</td>
                     <td class="col-5"></td>
                 </tr>
+                <!-- <tr>-->
+                <!--    <td colspan="4" class="text-start fw-bold">KESIMPULAN  : LULUS</td>-->
+                    
+                <!--</tr>-->
+                <tr>
+                   <td colspan="4" class="text-start fw-bold">REKOMENDASI : LANJUTKAN EVALUASI KE TAHAP BERIKUTNYA</td>
+                </tr>
             </tbody>
         </table>
-        
-        <div class="row fw-bold" >
-            <div class="col-3">REKOMENDASI</div>
-            <div class="col-9">: LANJUTKAN EVALUASI KE TAHAP BERIKUTNYA													            </div>
-        </div>
-       
-
-
 
 
         <br>

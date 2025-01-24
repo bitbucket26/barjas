@@ -10,11 +10,12 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
-<body style="background-color: white; font-family: times new roman; line-height: 20px;">
+<body style="background-color: white; font-family: Batang; line-height: 20px;">
     <?php
         
         include "../../../../koneksi.php";
@@ -58,7 +59,7 @@
         <div class="d-flex justify-content-center">
             <!-- <img src="../../../img/kop3.png"> -->
         </div>
-            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><be></be>
         <!-- Judul Nota -->
 
 <table style="width:100%;">

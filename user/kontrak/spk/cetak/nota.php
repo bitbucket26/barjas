@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <title>BA. Evaluasi Penetapan Pemenang</title>
+    <title>Nota Dinas</title>
 </head>
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -107,7 +108,7 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:15px;">
+<section class="sheet padding-10mm" style="font-size:16px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -115,7 +116,7 @@
         </div>
             <br>
         <!-- Judul Nota -->
-         <u><h3 class="text-center">NOTA - DINAS</h3></u>
+         <u><h4 class="text-center">NOTA - DINAS</h4></u>
 
         
         <br>

@@ -33,11 +33,11 @@
                                     <td class="text-uppercase"><?php echo $d['namaproduk']; ?></td>
                                     <td class="text-center text-uppercase"><?php echo $d['satuan'] ?></td>
                                     <td class="text-center"><?php echo $d['volumehps'] ?></td>
-                                    <td class="text-center"><?php echo number_format($d['hargasatuanhps'],2) ?></td>
-                                    <td class="text-center"><?php echo number_format($d['jumlahhps']) ?></td>
+                                    <td class="text-center"><?php echo number_format((float)$d['hargasatuanhps'],2) ?></td>
+                                    <td class="text-center"><?php echo number_format((float)$d['jumlahhps']) ?></td>
                                     <td class="text-center"><?php echo $d['volumenego'] ?></td>
-                                    <td class="text-center"><?php echo number_format($d['hargasatuannego'],2) ?></td>
-                                    <td class="text-center"><?php echo number_format($d['jumlahnego']) ?></td>
+                                    <td class="text-center"><?php echo number_format((float)$d['hargasatuannego'],2) ?></td>
+                                    <td class="text-center"><?php echo number_format((float)$d['jumlahnego']) ?></td>
                                     <td>
                                     <button id="<?php echo $d['id']; ?>" data-no="<?php echo $d['no']; ?>" class="btn btn-danger btn-sm hapus_data"><i class="fa fa-trash"></i></button>
                                  </td>

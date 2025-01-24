@@ -31,7 +31,7 @@
                 <a class="nav-link" href="kontrak/spk/spk.php">
 
                     <i class="bi bi-journal-text"></i>
-                    <span>MANUAL ( SP/SPK )</span></a>
+                    <span>SP / SPK</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="kontrak/ekatalog/ekatalog.php">
@@ -42,7 +42,15 @@
 
 
             <hr class="sidebar-divider">
+            
 
+
+            <li class="nav-item">
+                <a class="nav-link" href="penyedia.php">
+                    <i class="bi bi-buildings"></i>
+
+                    <span>PERUSAHAAN</span></a>
+            </li>
             <!-- <div class="sidebar-heading">
                 Menu
             </div>

@@ -124,7 +124,7 @@ if($_SESSION['role']==""){
                                             <th>Tanggal</th>
                                             <th>Nilai Kontrak</th>
                                             <th>Pekerjaan</th>
-                                            <th>Aksi</th>
+                                            <th class="text-center">Aksi</th>
                                            
                                         </tr>
                                     </thead>

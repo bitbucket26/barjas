@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -162,7 +163,7 @@
             <div class="col-3">
             </div>
             <div class="col-8">
-            ( <?php echo $row['terbilangtotalhps']; ?> )
+            &nbsp;( <?php echo $row['terbilangtotalhps']; ?> )
             </div>
         </div>
         <div class="row">
@@ -172,7 +173,8 @@
                 Sumber Pendanaan
             </div>
             <div class="col-8">
-            : <?php echo $row['sumberdana']; ?>
+            : <?php echo $row['sumberdana']; ?> 
+            <!--<?php echo $row['tahunanggaran']; ?>-->
             </div>
         </div>
 <br>
@@ -205,7 +207,7 @@
             </div>
         </div>
         <br>
-        <table class="table table-bordered table-sm">
+        <table class="table table-bordered table-sm border-dark">
             <thead class="text-center">
                 <tr class="align-middle">
                     <th class="col-1">No.</th>

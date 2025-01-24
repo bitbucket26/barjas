@@ -31,22 +31,13 @@ if($cek > 0){
 		header("location:admin/dashboard.php");
  
 	// cek jika user login sebagai pegawai
-	}else if($data['role']=="user1"){
+	}else if($data['role']=="user"){
 		session_start();
 		// buat session login dan username
 		$_SESSION['username'] = $username;
-		$_SESSION['role'] = "user1";
+		$_SESSION['role'] = "user";
 		// alihkan ke halaman dashboard pegawai
-		header("location:hanik/dashboard.php");
-
-	// cek jika user login sebagai pegawai
-	}else if($data['role']=="user2"){
-		session_start();
-		// buat session login dan username
-		$_SESSION['username'] = $username;
-		$_SESSION['role'] = "user2";
-		// alihkan ke halaman dashboard pegawai
-		header("location:risna/dashboard.php");
+		header("location:user/dashboard.php");
  
 	// cek jika user login sebagai pengurus
 	}else if($data['role']=="vendor"){
@@ -60,10 +51,12 @@ if($cek > 0){
 	}else{
  
 		// alihkan ke halaman login kembali
-		header("location:index.php?pesan=gagal");
+		header("location:index.php");
+// 		echo '<a href="destroyed.php">NOW GOING TO DESTROYED PHP<a/>';
 	}	
 }else{
-	header("location:index.php?pesan=gagal");
+	header("location:index.php");
+	
 }
- 
+//  echo '<a href="destroyed.php">NOW GOING TO DESTROYED PHP<a/>';
 ?>

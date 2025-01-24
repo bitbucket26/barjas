@@ -10,11 +10,12 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
-<body style="background-color: white; font-family: Arial, Helvetica, sans-serif; ">
+<body style="background-color: white; font-family: tahoma; ">
 <?php
         
         include "../../../../koneksi.php";
@@ -107,7 +108,7 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size: 15px;">
+<section class="sheet padding-10mm" style="font-size: 18px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">

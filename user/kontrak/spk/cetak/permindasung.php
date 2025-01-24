@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -52,7 +53,7 @@
         }
 
     ?>
-<section class="sheet padding-10mm" style="font-size:15px;">
+<section class="sheet padding-10mm" style="font-size:20px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -73,6 +74,7 @@
 				<td class="col-1"></td>
 				<td class="col-4" >Indramayu, <?php echo tglindo($row['tglhps']);?></label></td>
 			</tr>
+			<br>
             <tr>
 				<td class="col-2"></td>
 				<td class="col-5"></td>
@@ -173,6 +175,16 @@
                     : <?php echo $row['waktupelaksanaan']; ?> (<?php echo $row['terbilangwaktupelaksanaan']; ?>) hari kalender
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-3">
+                    Sumber Dana
+                    </div>
+                    <div class="col-9">
+                    : <?php echo $row['sumberdana']; ?> 
+                    <!--<?php echo $row['tahunanggaran']; ?>-->
+                    </div>
+                </div>
+                
 
 
 

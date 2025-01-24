@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -52,7 +53,7 @@
         }
 
     ?>
-<section class="sheet padding-10mm" style="font-size:18px;">
+<section class="sheet padding-10mm" style="font-size:17px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -88,9 +89,21 @@
                 Nomor dan Tanggal DPA
                 </div>
                 <div class="col-7">
-                : <?php echo $row['nomordpa']; ?> <br>tanggal <?php echo tglindo($row['tgldpa']); ?>
+                : <?php echo $row['nomordpa']; ?>
                 </div>
         </div>
+        <div class="row">
+                <div class="col-1 text-end">
+                
+                </div>
+                <div class="col-4">
+                
+                </div>
+                <div class="col-7">
+                &nbsp;&nbsp;tanggal <?php echo tglindo($row['tgldpa']); ?>
+                </div>
+        </div>
+        
         <div class="row">
                 <div class="col-1 text-end">
                 3.
@@ -187,7 +200,7 @@
                 
                 </div>
                 <div class="col-7">
-                : a/n <?php echo $row['namarekbank']; ?>
+                &nbsp;&nbsp;a/n <?php echo $row['namarekbank']; ?>
                 </div>
         </div>
         <div class="row">

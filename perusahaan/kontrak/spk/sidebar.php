@@ -32,7 +32,7 @@
                 <a class="nav-link" href="../spk/spk.php">
                     <!-- <i class="fas fa-fw fa-tachometer-alt"></i> -->
                     <i class="bi bi-journal-text"></i>
-                    <span>MANUAL ( SP/SPK )</span></a>
+                    <span>SP / SPK</span></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="../ekatalog/ekatalog.php">
@@ -42,7 +42,12 @@
             </li>
                         <!-- Divider -->
                         <hr class="sidebar-divider">
-           
+           <li class="nav-item">
+                <a class="nav-link" href="../../penyedia.php">
+                    <i class="bi bi-buildings"></i>
+
+                    <span>PERUSAHAAN</span></a>
+            </li>
 
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">

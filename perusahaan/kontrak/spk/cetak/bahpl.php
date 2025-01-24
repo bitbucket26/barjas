@@ -10,8 +10,12 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+   size: F4;
+    size: portrait;
   }
+}
+@media print {
+    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
 }
 </style>
 <body style="background-color: white; line-height: 20px; font-family: tahoma;">
@@ -95,19 +99,19 @@
 		return $hasil;
 	}
  
-        $tglbastb= $row['tglbahpl'];
+        $tglbahasildasung= $row['tglbahasildasung'];
         $hari = array("Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu");
         $tanggal = array("", "Satu", "Dua", "Tiga", "Empat", "Lima", "Enam", "Tujuh", "Delapan", "Sembilan", "Sepuluh", 
                             "Sebelas", "Dua Belas", "tiga Belas", "Empat Belas", "Lima Belas", "Enam Belas", "Tujuh Belas", "Delapan Belas", "Sembilan Belas", 
                             "Dua Puluh", "Dua Puluh Satu", "Dua Puluh Dua", "Dua Puluh Tiga", "Dua Puluh Empat", "Dua Puluh Lima", "Dua Puluh Enam", "Dua Puluh Tujuh", "Dua Puluh Delapan", "Dua Puluh Sembilan", "Tiga Puluh", "Tiga Puluh Satu");
         
         $bulan = array("","Januari","Februari","Maret","April","Mei","Juni","Juli","Agustus","September","Oktober","November","Desember");
-	    $angka = date("Y", strtotime($tglbastb));
+	    $angka = date("Y", strtotime($tglbahasildasung));
 
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:15px;">
+<section class="sheet padding-10mm" style="font-size:16px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -138,10 +142,10 @@
         </div>
         <br>
         <div class="row" style="text-align: justify;">
-        Pada hari ini <?php echo $hari[date("w", strtotime($tglbastb))].", 
-                Tanggal ".$tanggal[date("j", strtotime($tglbastb))]." 
-                Bulan ".$bulan[date("n", strtotime($tglbastb))]; ?> 
-                Tahun <?php echo terbilang($angka) ?> (<?php echo date("d-m-Y", strtotime($tglbastb)); ?>) 
+        Pada hari ini <?php echo $hari[date("w", strtotime($tglbahasildasung))].", 
+                Tanggal ".$tanggal[date("j", strtotime($tglbahasildasung))]." 
+                Bulan ".$bulan[date("n", strtotime($tglbahasildasung))]; ?> 
+                Tahun <?php echo terbilang($angka) ?> (<?php echo date("d-m-Y", strtotime($tglbahasildasung)); ?>) 
                 bertempat di RSUD Indramayu, saya selaku Pejabat Pengadaan Barang/Jasa RSUD Indramayu Tahun Anggaran <?php echo $row['tahunanggaran'];?> 
                 yang diangkat berdasarkan Surat Keputusan Pemimpin BLUD RSUD Indramayu Nomor : <?php echo $row['nomorskpejabatbarjas'];?>  
                 telah mengadakan Klarifikasi Teknis dan Negosiasi Harga kepada Calon Penyedia Paket Pekerjaan tersebut di atas 
@@ -240,7 +244,7 @@
             <div class="col-3">
             Harga Penawaran
             </div>
-            <div class="col-7">
+            <div class="col-7" style="text-align: justify;">
             : Rp. <?php echo number_format($row['nilaitotalhps']); ?> (<?php echo $row['terbilangtotalhps']; ?>)						
             </div>
         </div>
@@ -254,11 +258,11 @@
             <div class="col-3">
             Harga Penawaran setelah Koreksi Aritmatik
             </div>
-            <div class="col-7">
+            <div class="col-7" style="text-align: justify;">
             : Rp. <?php echo number_format($row['nilaitotalhps']); ?> (<?php echo $row['terbilangtotalhps']; ?>)						
             </div>
         </div>
-
+<br>
         <div class="row">
             <div class="col-1 text-end">
             III.
@@ -398,6 +402,7 @@
             </table>
             </div>
         </div>
+        <div class="pagebreak"></div>
         <div class="row">
             <div class="col-1">
             
@@ -550,7 +555,7 @@
             <div class="col-3">
             Harga Penawaran
             </div>
-            <div class="col-8">
+            <div class="col-8" style="text-align: justify;">
             : Rp. <?php echo number_format($row['nilaitotalhps']); ?>,- (<?php echo $row['terbilangtotalhps']; ?>)						
             </div>
         </div>
@@ -562,7 +567,7 @@
             <div class="col-3">
             Negosiasi
             </div>
-            <div class="col-8">
+            <div class="col-8" style="text-align: justify;">
             : Rp. <?php echo number_format($row['nilaitotalnego']); ?>,- (<?php echo $row['terbilangtotalnego']; ?>)						
             </div>
         </div>

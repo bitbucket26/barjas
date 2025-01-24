@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -122,7 +123,7 @@
 
         <div class="row">
                 <div class="col-12 text-center">
-                <h4><u><b>BERITA ACARA SERAH TERIMA BARANG</b></u></h4>
+                <h5><u><b>BERITA ACARA SERAH TERIMA BARANG</b></u></h5>
                 </div>
                 <div class="col-12 text-center">
                 Nomor : <?php echo $row['nobastb']; ?>
@@ -144,7 +145,7 @@
                 1. <?php echo $row['namappk']; ?>
                 </div>
                 <div class="col-8">
-                : <?php echo $row['jabatanppk']; ?> yang diangkat berdasarkan Keputusan Direktur RSUD Indramayu 
+                <?php echo $row['jabatanppk']; ?> yang diangkat berdasarkan Keputusan Direktur RSUD Indramayu 
                 Nomor : <?php echo $row['nomorskppk']; ?> 
                 Tanggal <?php echo tglindo($row['tglskppk']); ?> 
                 bertindak untuk dan atas nama jabatannya, selanjutnya disebut PIHAK KESATU.
@@ -156,7 +157,7 @@
                 2. <?php echo $row['namapimpinan']; ?>
                 </div>
                 <div class="col-8">
-                : <?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> beralamat 
+                <?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> beralamat 
                 di <?php echo $row['alamat']; ?> 
                 selaku pelaksana kegiatan <?php echo $row['subkegiatan']; ?> pekerjaan <?php echo $row['pekerjaan']; ?> 
                 berdasarkan <?php echo $row['bilangjeniskontrak']; ?> (<?php echo $row['jeniskontrak']; ?>) Nomor : <?php echo $row['nomorkontrak']; ?> 

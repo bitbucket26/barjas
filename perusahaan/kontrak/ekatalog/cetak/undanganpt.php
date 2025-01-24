@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -58,7 +59,7 @@
         <div class="d-flex justify-content-center">
             <!-- <img src="../../../img/kop3.png"> -->
         </div>
-            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br><br>
         <!-- Judul Nota -->
         <div class="d-flex justify-content-end">
             <label class="text-capitalize"><?php echo $row['kota']; ?>, <?php echo tglindo($row['tglpemeriksaan']);?></label>

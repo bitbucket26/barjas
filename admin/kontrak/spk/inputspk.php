@@ -1072,14 +1072,15 @@ if($_SESSION['role']==""){
                                                     <div class="col-4">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Tahun Anggaran</label>
-                                                            <select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="tahunanggaran" id="tahunanggaran" required>
-                                                                <option value="">--Pilih--</option>
-                                                                <option value="2024">2024</option>
-                                                                <option value="2025">2025</option>
-                                                                <option value="2026">2026</option>
-                                                                <option value="2027">2027</option>
-                                                                <option value="2028">2028</option>
-                                                            </select>
+                                                            <!--<select style="height: 30px; font-size: 13px;" type="text" class="form-control" name="tahunanggaran" id="tahunanggaran" required>-->
+                                                            <!--    <option value="">--Pilih--</option>-->
+                                                            <!--    <option value="2024">2024</option>-->
+                                                            <!--    <option value="2025">2025</option>-->
+                                                            <!--    <option value="2026">2026</option>-->
+                                                            <!--    <option value="2027">2027</option>-->
+                                                            <!--    <option value="2028">2028</option>-->
+                                                            <!--</select>-->
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="tahunanggaran" value="2025" class="form-control" id="tahunanggaran" readonly>
                                                             <!-- <input style="height: 30px; font-size: 13px;" type="text" name="tahunanggaran"  class="form-control" id="satuankerja" readonly> -->
                                                         </div>
                                                     </div>
@@ -1089,7 +1090,7 @@ if($_SESSION['role']==""){
                                                     <div class="col-6">
                                                         <div class="form-floating">
                                                             <label class="labeldata">Sumber Dana</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="sumberdana" value="BLUD RSUD Indramayu Tahun 2025" class="form-control" id="sumberdana" readonly>
+                                                            <input style="height: 30px; font-size: 13px;" type="text" name="sumberdana" value="BLUD RSUD Indramayu" class="form-control" id="sumberdana" readonly>
                                                         </div>
                                                     </div>
                                                     <div class="col-6">

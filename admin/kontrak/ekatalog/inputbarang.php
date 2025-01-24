@@ -33,7 +33,7 @@ if($_SESSION['role']==""){
     <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
     <?php	
        include "../../../koneksi.php";
@@ -112,11 +112,11 @@ if($_SESSION['role']==""){
                                         <div class="row">
                                                         <div class="col-2" style="padding-top: 10px;">
                                                             <label class="labeldata">Volume HPS</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="number" name="volumehps" class="form-control" step="0.01"  id="volumehps" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" type="number" name="volumehps" class="form-control"  id="volumehps" required>                                               
                                                         </div>
                                                         <div class="col-2" style="padding-top: 10px;">
                                                             <label class="labeldata">Harga Satuan HPS</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="hargasatuanhps" class="form-control"  id="hargasatuanhps" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" type="number" name="hargasatuanhps" class="form-control"  id="hargasatuanhps" required>                                               
                                                         </div>
                                                         <div class="col-2" style="padding-top: 10px;">
                                                             <label class="labeldata">Jumlah HPS</label>
@@ -128,13 +128,11 @@ if($_SESSION['role']==""){
                                                         </div>
                                                         <div class="col-2" style="padding-top: 10px;">
                                                             <label class="labeldata">Harga Satuan Nego</label>
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="hargasatuannego" class="form-control"  id="hargasatuannego" required>                                               
+                                                            <input style="height: 30px; font-size: 13px;" type="number" name="hargasatuannego" class="form-control"  id="hargasatuannego" required>                                               
                                                         </div>
                                                         <div class="col-2" style="padding-top: 10px;">
                                                             <label class="labeldata">Jumlah Nego</label>
                                                             <input style="height: 30px; font-size: 13px;" type="number" name="jumlahnego" class="form-control"  id="jumlahnego" required>                                               
-                                                            <input style="height: 30px; font-size: 13px;" type="text" name="user" value="<?php echo $_SESSION['username']; ?>"  class="form-control" id="user" hidden>
-
                                                         </div>
                                         </div>
                                         <br>
@@ -145,7 +143,7 @@ if($_SESSION['role']==""){
                     <br>
                     <div class="card shadow mb-4" >
                             <div class="card-header py-3">
-                                <h6 class="m-0 font-weight-bold text-primary">Data Barang (E-Catalogue)</h6>
+                                <h6 class="m-0 font-weight-bold text-primary">Data Barang (SP-Ecatalogue)</h6>
                             </div>
                             <div class="card-body " style="font-size: 12px;">
                                 <div class="table-responsive">

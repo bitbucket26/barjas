@@ -124,8 +124,8 @@ if($_SESSION['role']==""){
                                             <th>Tanggal</th>
                                             <th>Nilai Kontrak</th>
                                             <th>Pekerjaan</th>
-                                            <th>Kontrak</th>
-                                            <!-- <th>Aksi</th> -->
+                                            <th>Kategori</th>
+                                             <th>Maker</th> 
                                            
                                         </tr>
                                     </thead>
@@ -142,6 +142,7 @@ if($_SESSION['role']==""){
                                             <td class="align-middle">Rp. <?php echo number_format($d['nilaitotalnego']); ?>,-</td>
                                             <td class="align-middle"><?php echo $d['pekerjaan']; ?></td>
                                             <td class="align-middle"><?php echo $d['jeniskontrak']; ?></td>
+                                            <td class="align-middle"><?php echo $d['user']; ?></td>
                                            
                                         </tr>
                                     <!-- </tbody> -->

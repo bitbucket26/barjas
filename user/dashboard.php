@@ -132,11 +132,12 @@ if($_SESSION['role']==""){
                                            
                                         </tr>
                                     </thead>
-                                    <?php
-                                        $manual = mysqli_query($koneksi,"select * from kontrak where user='risna'");
+                                   <?php
+                                        $users = $_SESSION['username'];
+                                        $manual = mysqli_query($koneksi,"select * from kontrak where user='$users'");
                                         while($d = mysqli_fetch_array($manual)){
+                                           
                                     ?>
-                                    <!-- <tbody style="font-size: 12px;"> -->
                                         <tr>
                                         <td class="text-center align-middle"><?php echo $d['id']; ?></td> 
                                             <td class=""><?php echo $d['nomorkontrak']; ?></td> 

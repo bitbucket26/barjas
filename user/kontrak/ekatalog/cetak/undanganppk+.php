@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -107,7 +108,7 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:20px;">
+<section class="sheet padding-10mm" style="font-size:18px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -194,9 +195,9 @@
                 Tahun Anggaran 2024, 
                 Pekerjaan <?php echo $row['pekerjaan']; ?> 
                 Lokasi di RSUD Indramayu.
+                <p style="text-indent: 0in;">Bersumber dari Dana BLUD RSUD Indramayu.</p>
                 </div>
         </div>
-        <br>
         <div class="row">
                 <div class="col-1">
                 </div>

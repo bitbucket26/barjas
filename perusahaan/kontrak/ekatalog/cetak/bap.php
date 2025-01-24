@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+   size: F4;
+    size: portrait;
   }
 }
 @media print {
@@ -82,23 +83,32 @@
                 </div>
         </div>
         <br>
+        <?php
+                                // $no=1;
+                                 $data = mysqli_query($koneksi,"select * from direktur");
+                                 while($d = mysqli_fetch_array($data)){
+                                ?>
         <div class="row">
+                                
                 <div class="col-3">
-                <b>dr. DEDEN BONNI KOSWARA, MM</b>
+                <b><?php echo $d['namadirektur']; ?></b>
                 </div>
+                
                 <div class="col-9" style="text-align: justify;">
-                :Pemimpin Badan Layanan Umum Daerah (BLUD) RSUD Indramayu yang diangkat berdasarkan Keputusan Bupati Kabupaten Indramayu 
-                Nomor : 440/Kep.24-Dinkes/2024 
-                Tanggal 02 Januari 2024 
+                Pemimpin Badan Layanan Umum Daerah (BLUD) RSUD Indramayu yang diangkat berdasarkan Keputusan Bupati Kabupaten Indramayu 
+                Nomor : <?php echo $d['nomorskdirektur']; ?> 
+                Tanggal <?php echo tglindo($d['tglskdirektur']); ?> 
                 bertindak untuk dan atas nama jabatannya, selanjutnya disebut sebagai PIHAK KESATU.
                 </div>
-        </div>
+                 </div>
+                <?php } ?>
+                <br>
         <div class="row">
                 <div class="col-3">
                 <b><?php echo $row['namapimpinan']; ?></b>
                 </div>
                 <div class="col-9" style="text-align: justify;">
-                :<?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> beralamat 
+                <?php echo $row['jabatan']; ?> <?php echo $row['namaperusahaan']; ?> beralamat 
                 di <?php echo $row['alamat']; ?> 
                 selaku pelaksana sub kegiatan <?php echo $row['subkegiatan']; ?> 
                 Pekerjaan <?php echo $row['pekerjaan']; ?> 
@@ -261,53 +271,65 @@
 
 <div class="pagebreak"></div>
         <div class="row" style="text-align: justify;">
-                <div class="col-12">
+                <div class="col-1">
+                </div>
+                <div class="col-11">
                 Pelaksanaan pembayaran pekerjaan tersebut dilaksanakan melalui kas BLUD RSUD Indramayu, yang akan dilaksanakan oleh PIHAK KESATU dengan cara transfer bank kepada PIHAK KEDUA atas :
                 </div>        
         </div>
         <br>
         <div class="row" style="text-align: justify;">
-                  
+                <div class="col-1">
+                
+                </div>  
                 <div class="col-3">
                 Nama Perusahaan
                 </div>         
-                <div class="col-9">
+                <div class="col-8">
                 : <?php echo $row['namaperusahaan']; ?>
                 </div>         
         </div>
         <div class="row" style="text-align: justify;">
-                  
+                <div class="col-1">
+                
+                </div>  
                 <div class="col-3">
                 Alamat
                 </div>         
-                <div class="col-9">
+                <div class="col-8">
                 : <?php echo $row['alamat']; ?>
                 </div>         
         </div>
         <div class="row" style="text-align: justify;">
-                  
+                <div class="col-1">
+                
+                </div>  
                 <div class="col-3">
                 Nama Rekening
                 </div>         
-                <div class="col-9">
+                <div class="col-8">
                 : <?php echo $row['namarekbank']; ?>
                 </div>         
         </div>
         <div class="row" style="text-align: justify;">
-                  
+                <div class="col-1">
+                
+                </div>  
                 <div class="col-3">
                 No Rekening
                 </div>         
-                <div class="col-9">
+                <div class="col-8">
                 : <?php echo $row['norekening']; ?>
                 </div>         
         </div>
         <div class="row" style="text-align: justify;">
-                  
+                <div class="col-1">
+                
+                </div>  
                 <div class="col-3">
                 Nama Bank
                 </div>         
-                <div class="col-9">
+                <div class="col-8">
                 : <?php echo $row['namabank']; ?>
                 </div>         
         </div>

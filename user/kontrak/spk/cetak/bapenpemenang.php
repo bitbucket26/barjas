@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -115,7 +116,7 @@
         </div>
             <br>
         <!-- Judul Nota -->
-        <h5 class="text-center fw-bold"><u>BERITA CARA PENETAPAN PEMENANG</u></h5>
+        <h5 class="text-center fw-bold"><u>BERITA ACARA PENETAPAN PEMENANG</u></h5>
 
          <div class="row">
             <div class="col-12 text-center">
@@ -133,7 +134,7 @@
                 yang bertanda tangan di bawah ini adalah Pejabat Pengadaan yang ditetapkan dengan Surat Keputusan Pemimpin BLUD RSUD Indramayu, 
                 melaksanakan penetapan pemenang Pengadaan Langsung :
         </div>
-
+        <br>
         <div class="row">
             <div class="col-4">
             Sub Kegiatan
@@ -181,7 +182,7 @@
             Nomor  : <?php echo $row['baklarifikasi'];?> Tanggal <?php echo tglindo($row['tglbaklarifikasi']);?> dan Berita Acara Hasil Pengadaan Langsung 
             Nomor : <?php echo $row['bahasildasung'];?> Tanggal <?php echo tglindo($row['tglbahasildasung']);?>, Pejabat Pengadaan dengan ini menetapkan Pemenang untuk Pekerjaan di atas :</div>
         </div>
-        
+        <br>
         <div class="row">
             <div class="col-4">
             Nama Perusahaan

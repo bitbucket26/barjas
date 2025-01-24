@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -107,7 +108,7 @@
         // echo $hari[date("w", strtotime($tglbaphp))].", Tanggal ".$tanggal[date("j", strtotime($tglbaphp))]." Bulan ".$bulan[date("n", strtotime($tglbaphp))];
         // echo terbilang($angka);
         ?>
-<section class="sheet padding-10mm" style="font-size:20px;">
+<section class="sheet padding-10mm" style="font-size:18px;">
     <div class="container-xxl">
         <!-- KOP -->
         <div class="d-flex justify-content-center">
@@ -191,9 +192,10 @@
                 Nomor : <?php echo $row['nopemeriksaan']; ?> 
                 tanggal <?php echo tglindo($row['tglpemeriksaan']); ?> dalam rangka pelaksanaan 
                 Sub Kegiatan <?php echo $row['subkegiatan']; ?> 
-                Tahun Anggaran 2024, 
+                Tahun Anggaran <?php echo $row['tahunanggaran']; ?>, 
                 Pekerjaan <?php echo $row['pekerjaan']; ?> 
-                Lokasi di RSUD Indramayu.
+                Lokasi di RSUD Indramayu. 
+                <p style="text-indent: 0in;">Bersumber dari Dana BLUD RSUD Indramayu.</p>
                 </div>
         </div>
         <br>
@@ -264,7 +266,7 @@
                     <div class="col-7">
                     </div>
                     <div class="col-5">
-                    RUmah Sakit Umum Daerah Indramayu
+                    Rumah Sakit Umum Daerah Indramayu
                     </div>
                 </div>
                 <br><br><br><br><br>

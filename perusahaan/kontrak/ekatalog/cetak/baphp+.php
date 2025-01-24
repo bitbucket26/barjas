@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 @media print {
@@ -311,6 +312,7 @@
                 : Nomor <?php echo $row['nopemeriksaan']; ?> Tanggal <?php echo tglindo($row['tglpemeriksaan']); ?>
                 </div>
         </div>
+        <br>
         <div class="row" style="text-align: justify;">
                 <div class="col-12">
                 Dengan mengingat memperhatikan serta mempertimbangkan tugas, Kewenangan dan rentang kendali para pihak (oranisasi) pengadaan barang/jasa sebagaimana ketentuan peraturan perundangan yang berlaku, maka pemeriksaan yang dilaksanakan oleh Panitia Pemeriksa Hasil Pekerjaan adalah sebagai berikut :

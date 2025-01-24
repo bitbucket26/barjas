@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -195,6 +196,7 @@
                 Tahun Anggaran 2025, 
                 Pekerjaan <?php echo $row['pekerjaan']; ?> 
                 Lokasi di RSUD Indramayu.
+                <p style="text-indent: 0in;">Bersumber dari Dana BLUD RSUD Indramayu.</p>
                 </div>
         </div>
         <br>

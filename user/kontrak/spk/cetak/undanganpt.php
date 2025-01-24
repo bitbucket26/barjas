@@ -10,11 +10,12 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+   size: F4;
+    size: portrait;
   }
 }
 </style>
-<body style="background-color: white; font-family: BatangChe; line-height: 20px;">
+<body style="background-color: white; font-family: Batang; line-height: 20px;">
     <?php
         
         include "../../../../koneksi.php";

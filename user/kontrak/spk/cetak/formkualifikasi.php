@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 @media print {
@@ -445,7 +446,7 @@
             
             </div>
             <div class="col-11">
-                <table class="table table-bordered text-center">
+                <table class="table table-bordered text-center border-dark">
                     <thead>
                         <tr>
                             <th class="col-1">No.</th>
@@ -479,10 +480,10 @@
             
             </div>
             <div class="col-11">
-                <table class="table table-bordered text-center">
+                <table class="table table-bordered text-cente border-dark">
                     <thead>
                         <tr>
-                            <th>No.</th>
+                            <th class="text-center">No.</th>
                             <th>Nama</th>
                             <th>No.KTP</th>
                             <th>Jabatan dalam Badan Usaha</th>
@@ -490,7 +491,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td >1</td>
+                            <td class="text-center">1</td>
                             <td><?php echo $row['namapimpinan'];?></trow>
                             <td>-</td>
                             <td><?php echo $row['jabatan'];?></td>
@@ -521,10 +522,10 @@
             
             </div>
             <div class="col-11">
-                <table class="table table-bordered text-center">
+                <table class="table table-bordered text-center border-dark">
                     <thead>
                         <tr>
-                            <th class="col-1">No.</th>
+                            <th class="col-1 text-center">No.</th>
                             <th class="col-5">Nama</th>
                             <th class="col-3">No.KTP</th>
                             <th class="col-3">persentase</th>
@@ -532,7 +533,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>-</td>
+                            <td class="text-center">-</td>
                             <td>-</td>
                             <td>-</td>
                             <td>-</td>
@@ -555,22 +556,22 @@
             
             </div>
             <div class="col-11">
-                <table class="table table-bordered">
+                <table class="table table-bordered border-dark">
                     <thead>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="col-1">1.</td>
+                            <td class="col-1 text-center">1.</td>
                             <td class="col-7">Nomor Pokok Wajib Pajak</td>
                             <td class="col-4"><?php echo $row['npwp'];?></td>
                         </tr>
                         <tr>
-                            <td>2.</td>
+                            <td class="col-1 text-center">2.</td>
                             <td>Bukti laporan Pajak Tahun terakhir</td>
                             <td>Terlampir</td>
                         </tr>
                         <tr>
-                            <td>3.</td>
+                            <td class="col-1 text-center">3.</td>
                             <td>Bukti Laporan bulanan (tiga bulan terakhir):</td>
                             <td></td>
                         </tr>

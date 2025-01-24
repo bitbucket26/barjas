@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 </style>
@@ -115,7 +116,7 @@
         </div>
             <br>
         <!-- Judul Nota -->
-         <h5 class="text-center"><u><b>BERITA ACARA EALUASI PENAWARAN</b></u></h5>
+         <h5 class="text-center"><u><b>BERITA ACARA HASIL EALUASI PENAWARAN</b></u></h5>
         <div class="row">
             <div class="col-4">
             </div>

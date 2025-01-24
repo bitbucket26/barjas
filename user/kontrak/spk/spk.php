@@ -3,10 +3,36 @@ session_start();
 
 // cek apakah yang mengakses halaman ini sudah login
 if($_SESSION['role']==""){
-    header("location:login.php?pesan=gagal");
+    header("location:index.php?pesan=gagal");
 }
 
 ?>
+ <?php
+        function tglindo($tanggal){
+            $bulan = array (
+                1 =>   'Januari',
+                'Februari',
+                'Maret',
+                'April',
+                'Mei',
+                'Juni',
+                'Juli',
+                'Agustus',
+                'September',
+                'Oktober',
+                'November',
+                'Desember'
+            );
+            $pecahkan = explode('-', $tanggal);
+            
+            // variabel pecahkan 0 = tanggal
+            // variabel pecahkan 1 = bulan
+            // variabel pecahkan 2 = tahun
+        
+            return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+        }
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,41 +64,7 @@ if($_SESSION['role']==""){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 </head>
-    <?php	
-       include "../../../koneksi.php";
-         
-       // Check connection
-       if (mysqli_connect_error()){
-           echo "Koneksi database gagal : " . mysqli_connect_error();
-       }
-        
-    ?>
-    <?php
-        function tglindo($tanggal){
-            $bulan = array (
-                1 =>   'Januari',
-                'Februari',
-                'Maret',
-                'April',
-                'Mei',
-                'Juni',
-                'Juli',
-                'Agustus',
-                'September',
-                'Oktober',
-                'November',
-                'Desember'
-            );
-            $pecahkan = explode('-', $tanggal);
-            
-            // variabel pecahkan 0 = tanggal
-            // variabel pecahkan 1 = bulan
-            // variabel pecahkan 2 = tahun
-        
-            return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
-        }
-
-    ?>
+    
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -115,7 +107,7 @@ if($_SESSION['role']==""){
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
+                                <table class="table table-bordered table-hover" id="dataTable" width="100%" cellspacing="0" style="border-radius: 15px; font-size: 12px;">
                                     <thead style="font-size: 15px;">
                                         <tr>
                                             <th>ID</th>
@@ -128,8 +120,9 @@ if($_SESSION['role']==""){
                                            
                                         </tr>
                                     </thead>
-                                    <?php
-                                        $kontrak = mysqli_query($koneksi,"SELECT * from kontrak WHERE jeniskontrak='SPK' OR jeniskontrak='SP' and user='risna'");
+                                   <?php
+                                        $users = $_SESSION['username'];
+                                        $kontrak = mysqli_query($koneksi,"SELECT * from kontrak WHERE jeniskontrak='SPK' OR jeniskontrak='SP' and user='$users'");
                                         while($d = mysqli_fetch_array($kontrak)){
                                     ?>
                                     <!-- <tbody style="font-size: 12px;"> -->
@@ -140,7 +133,7 @@ if($_SESSION['role']==""){
                                             <td class="align-middle"><?php echo tglindo($d['tglmulaikontrak']); ?></td>
                                             <td class="align-middle">Rp. <?php echo number_format($d['nilaitotalnego']); ?>,-</td>
                                             <td class="align-middle"><?php echo $d['pekerjaan']; ?></td>
-                                            <td class="">
+                                            <td class="" style="white-space: nowrap;">
                                                 <a href="" type="button" class="btn btn-success btn-sm" data-bs-toggle="modal" data-bs-target="#modalcetak<?php echo $d['id']; ?>" style="border-radius: 10px;">
                                                 <i class="bi bi-printer"></i>
                                                 </a>

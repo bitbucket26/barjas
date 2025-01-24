@@ -3,10 +3,36 @@ session_start();
 
 // cek apakah yang mengakses halaman ini sudah login
 if($_SESSION['role']==""){
-    header("location:login.php?pesan=gagal");
+    header("location:index.php?pesan=gagal");
 }
 
 ?>
+ <?php
+        function tglindo($tanggal){
+            $bulan = array (
+                1 =>   'Januari',
+                'Februari',
+                'Maret',
+                'April',
+                'Mei',
+                'Juni',
+                'Juli',
+                'Agustus',
+                'September',
+                'Oktober',
+                'November',
+                'Desember'
+            );
+            $pecahkan = explode('-', $tanggal);
+            
+            // variabel pecahkan 0 = tanggal
+            // variabel pecahkan 1 = bulan
+            // variabel pecahkan 2 = tahun
+        
+            return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
+        }
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,41 +64,7 @@ if($_SESSION['role']==""){
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
 </head>
-    <?php	
-       include "../../../koneksi.php";
-         
-       // Check connection
-       if (mysqli_connect_error()){
-           echo "Koneksi database gagal : " . mysqli_connect_error();
-       }
-        
-    ?>
-    <?php
-        function tglindo($tanggal){
-            $bulan = array (
-                1 =>   'Januari',
-                'Februari',
-                'Maret',
-                'April',
-                'Mei',
-                'Juni',
-                'Juli',
-                'Agustus',
-                'September',
-                'Oktober',
-                'November',
-                'Desember'
-            );
-            $pecahkan = explode('-', $tanggal);
-            
-            // variabel pecahkan 0 = tanggal
-            // variabel pecahkan 1 = bulan
-            // variabel pecahkan 2 = tahun
-        
-            return $pecahkan[2] . ' ' . $bulan[ (int)$pecahkan[1] ] . ' ' . $pecahkan[0];
-        }
-
-    ?>
+    
 <body id="page-top">
 
     <!-- Page Wrapper -->
@@ -129,8 +121,12 @@ if($_SESSION['role']==""){
                                         </tr>
                                     </thead>
                                     <?php
-                                        $kontrak = mysqli_query($koneksi,"select * from kontrak where jeniskontrak='E-Catalogue' and user='rindiyanto'");
-                                        while($d = mysqli_fetch_array($kontrak)){
+                                        
+                                        $users = $_SESSION['username'];
+                                        $manual = mysqli_query($koneksi,"select * from kontrak where jeniskontrak='E-Catalogue' and user='$users'");
+                                        while($d = mysqli_fetch_array($manual)){
+                                           
+                                    
                                     ?>
                                     <!-- <tbody style="font-size: 12px;"> -->
                                         <tr>
@@ -141,7 +137,7 @@ if($_SESSION['role']==""){
                                             <td class="align-middle">Rp. <?php echo number_format($d['nilaitotalnego']); ?>,-</td>
                                             <td class="align-middle"><?php echo $d['pekerjaan']; ?></td>
                                             
-                                            <td class="">
+                                            <td class="" style="white-space: nowrap;">
                                             <!-- <a href="updateppk.php?id=<?php echo $d['id']; ?>" type="button" data-toggle="modal" class="btn btn-danger btn-sm text-start" data-target="#myModaleditppk<?php echo $d['id']; ?>">
                                                 <i class="fa fa-edit fa-sm"></i>
                                                 </a> -->

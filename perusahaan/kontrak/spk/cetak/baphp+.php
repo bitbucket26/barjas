@@ -10,7 +10,8 @@
 <style>
 @media print {
   @page {
-    size: F4 portrait;
+    size: F4;
+    size: portrait;
   }
 }
 @media print {
@@ -123,7 +124,7 @@
         </div>
 
         <div class="row">
-                <div class="col-12 text-center" style="font-size:15px;">
+                <div class="col-12 text-center" style="font-size:17px;">
                 <u><b>BERITA ACARA PEMERIKSAAN HASIL PEKERJAAN DAN ADMINISTRASI PEKERJAAN</b></u>
                 </div>
                 <div class="col-12 text-center">
@@ -311,6 +312,7 @@
                 : Nomor <?php echo $row['nopemeriksaan']; ?> Tanggal <?php echo tglindo($row['tglpemeriksaan']); ?>
                 </div>
         </div>
+        <br>
         <div class="row" style="text-align: justify;">
                 <div class="col-12">
                 Dengan mengingat memperhatikan serta mempertimbangkan tugas, Kewenangan dan rentang kendali para pihak (oranisasi) pengadaan barang/jasa sebagaimana ketentuan peraturan perundangan yang berlaku, maka pemeriksaan yang dilaksanakan oleh Panitia Pemeriksa Hasil Pekerjaan adalah sebagai berikut :
@@ -432,20 +434,14 @@
                 kelebihan pembayaran menjadi tanggungjawab penyedia.								
                 </div>
         </div>
+        <br>
         <div class="row" style="text-align: justify;">
                 <div class="col-12">
                 Demikian Berita Acara ini dibuat dengan sebenarnya, dalam rangkap 7 (tujuh) dan untuk dipergunakan 
                 sebagaimana mestinya.									
-
                 </div>        
         </div>
-        <div class="row" style="text-align: justify;">
-                <div class="col-12">
-                Demikian Berita Acara ini dibuat dengan sebenarnya, dalam rangkap 7 (tujuh) dan untuk dipergunakan sebagaimana 
-                mestinya.									
-
-                </div>        
-        </div>
+        
         <br>
                 <div class="row">
                     <div class="col-6">

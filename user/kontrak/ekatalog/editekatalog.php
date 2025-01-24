@@ -82,7 +82,9 @@ if($_SESSION['role']==""){
                             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                 <a href="inputbarang.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-success me-md-2" style="border-radius: 30px;">
                                 <i class="bi bi-plus-circle"></i> Barang</i>
-                                </a>.
+                                </a>
+                                <!--<a></a>-->
+                                </a>
                                 <a href="hapus.php?id=<?php echo $row['id']; ?>" type="button" class="btn btn-danger" style="border-radius: 30px;">
                                 <i class="bi bi-trash"></i> Hapus</i>    
                                 </a>
